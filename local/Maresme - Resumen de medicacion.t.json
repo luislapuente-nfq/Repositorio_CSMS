@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "5.1.0",
+      "sem_ver" : "5.1.1",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "8bbfb67c3aa05bb87e050a2a7b42dbe9",
+      "MD5-CAM-1.0.1" : "4af20653ea1f0f67ebcb8ceb6c57f0f4",
       "PARENT:MD5-CAM-1.0.1" : "cfa9058dbd794ff9c1686358f319df3c"
     },
     "details" : {
@@ -396,6 +396,51 @@
           "copyright" : "© openEHR Foundation",
           "originalResourceUri" : { },
           "otherDetails" : { }
+        },
+        "sk" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sk"
+          },
+          "purpose" : "*To record all aspects of an order of a medication, vaccine, nutritional product or other therapeutic item for an identified individual.(en)",
+          "keywords" : [ "*medication(en)", "*order(en)", "*prescribe(en)", "*therapy(en)", "*substance(en)", "*drug(en)", "*therapeutic(en)", "*otc(en)", "*therapeutic good(en)", "*pharmaceutical(en)", "*product(en)", "*posology(en)", "*treatment(en)", "*fluid(en)", "*nutrition(en)", "*CPOE(en)", "*medicine(en)" ],
+          "use" : "*Use to record all aspects of an order of a medication, vaccine, nutritional product or other therapeutic item for an identified individual.\r\n\r\nIt is intended to be used for any type of medication and related order, whether prescribed by a health professional or available for purchase 'over the counter'. The scope of this medication archetype also includes orders for vaccinations, parenteral fluids or other therapeutic goods, such as bandages, nutritional products or other items that are applied or administered to have a therapeutic effect and which have a common pattern for data recording.\r\n\r\nThis archetype is designed to be used in a number of clinical contexts, including but not limited to:\r\n- a record in a clinical consultation (COMPOSITION.encounter);\r\n- a written prescription by a physician, dentist, nurse practitioner, or other designated health professional for a medication or nutritional product to be dispensed and administered (within a COMPOSITION.prescription);\r\n- an item in a current medication list, prescription or drug chart (within COMPOSITION.medication_list); and\r\n- an item in a summary document such as transfer of care (COMPOSITION.transfer_summary) or a referral (COMPOSITION.request).\r\n\r\nIn many cases a medication order will be simple – typically for a single medication item with uncomplicated instructions for dispensing and administration. However this archetype is also designed to allow for more complex therapeutic orders. For example:\r\n\r\n- a reducing dose of prednisolone over a period of weeks;\r\n- titration of insulin, with dosing dependent on test results;\r\n- multiple medications prescribed simultaneously as part of a single drug regimen, such as a triple therapy for peptic ulcer; and\r\n- intravenous administration of medications or nutrition supplements, including parenteral nutrition.\r\n\r\nThe archetype has therefore been designed to allow for a range of complexity, from:\r\n- simple narrative instructions for orders like 'furosemide 40mg two tablets in the morning and one at lunch' to ensure compatibility with existing systems; and\r\n- the amount of medication is usually represented in terms of a number and corresponding dose unit, however there can alternatively be a narrative statement to ensure compatibility with existing systems and coverage of all clinical scenarios; through to\r\n- structured detail for dose, route and timing to represent a fully computable specification.\r\n\r\nIt has also been designed so that a single medication order structure can represent:\r\n- complex sequential medication orders using the same preparation strength to be supported within a single order structure; and\r\n- multiple medication orders can be chained in circumstances where different medications or preparations need to be given sequentially.\r\n\r\nThis archetype is also suitable for ordering parenteral fluids, in care settings where it is normal practice to make these 'prescribable' items. In other settings a separate 'parenteral fluid order' may be appropriate.\r\n\r\nSLOTs containing CLUSTER archetypes have been used to represent some of the content for three reasons:\r\n- To ensure a core archetype that can be used for all the above use cases, yet allow flexibility where it is required, for example the ‘Preparation details’ SLOT where additional structured detail can be added. A candidate archetype has been suggested for Medications. It is possible that other CLUSTER archetypes may be required in future for other purposes such as complex parenteral nutrition orders;\r\n- to support archetype re-use in situations where the content has been identified as being also used in other clinical contexts, in particular the paired ACTION.medication archetype for recording actual dispensing, administration etc; and\r\n- to remove less commonly used content from the core archetype framework.\r\n\r\nMultiple orders can be represented as separate activities within this single archetype instance to carry tightly bound orders of different medications, for example, H. pylori therapy when this is not prescribed as a single pack.\r\n\r\nIt should be noted that these uses subsume both the FHIR Medication Order and Medication Statement use cases. i.e this archetype is a match for both FHIR resources, used in the appropriate context.(en)",
+          "misuse" : "*Not to be used to record the activities related to carrying out the order for medication, vaccine, nutritional product or therapeutic item, such as details about actual administration or dispensing. Use the ACTION.medication for this purpose.\r\n\r\nNot to be used to record the ordering of blood products, which involves a fundamentally different clinical process and is likely to require different supporting information Use the INSTRUCTION.transfusion for this purpose.\r\n\r\nNot to be used to record the order for insertion of implants or medical devices such as pacemakers and defibrillators. Use the INSTRUCTION.procedure for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Pour enregistrer tous les aspects d'une prescription de médicament, de vaccin, de produit nutritionnel ou de tout autre produit thérapeutique destinée à une personne identifiée.",
+          "keywords" : [ "médication", "ordonnance", "prescrire", "thérapie", "substance", "médicament", "thérapeutique", "en vente libre", "produit thérapeutique", "pharmaceutique", "produit", "posologie", "traitement", "liquide", "nutrition", "système de saisie électronique des ordonnances par les médecins (SEOM)", "médecine" ],
+          "use" : "À utiliser pour enregistrer tous les aspects d’une prescription de médicament, de vaccin, de produit nutritionnel ou de tout autre produit thérapeutique destinée à une personne identifiée.\r\n\r\nIl est destiné à être utilisé pour tout type de médicament et de prescription associée, qu’il s’agisse d’une prescription délivrée par un professionnel de santé ou d’un produit disponible en vente libre. Le champ d’application de cet archétype de médicament inclut également les prescriptions de vaccins, de solutions parentérales ou d’autres produits thérapeutiques, tels que les pansements, les produits nutritionnels ou d’autres articles appliqués ou administrés dans un but thérapeutique et dont l’enregistrement des données suit un schéma commun.\r\n\r\nCet archétype est conçu pour être utilisé dans divers contextes cliniques, notamment, mais sans s’y limiter :\r\n- un enregistrement lors d’une consultation clinique (COMPOSITION.encounter) ;\r\n- une ordonnance rédigée par un médecin, un dentiste, une infirmière praticienne ou tout autre professionnel de santé désigné, portant sur un médicament ou un produit nutritionnel devant être délivré et administré (au sein d’un COMPOSITION.prescription) ;\r\n- un élément figurant dans une liste de médicaments en cours, une ordonnance ou un tableau de médicaments (au sein de COMPOSITION.medication_list) ; et\r\n- un élément figurant dans un document de synthèse tel qu’un transfert de soins (COMPOSITION.transfer_summary) ou une demande de consultation (COMPOSITION.request).\r\n\r\nDans de nombreux cas, une prescription médicamenteuse sera simple – généralement pour un seul médicament accompagné d’instructions simples concernant sa délivrance et son administration. Cependant, cet archétype est également conçu pour permettre des prescriptions thérapeutiques plus complexes. Par exemple :\r\n\r\n- une réduction progressive de la dose de prednisolone sur plusieurs semaines ;\r\n- un ajustement posologique de l’insuline, la posologie dépendant des résultats des analyses ;\r\n- plusieurs médicaments prescrits simultanément dans le cadre d’un même traitement, comme une trithérapie contre l’ulcère gastro-duodénal ; et\r\n- l’administration intraveineuse de médicaments ou de compléments nutritionnels, y compris la nutrition parentérale.\r\n\r\nL’archétype a donc été conçu pour s’adapter à différents niveaux de complexité, allant de :\r\n- de simples instructions narratives pour des prescriptions telles que « furosémide 40 mg : deux comprimés le matin et un au repas de midi » afin d’assurer la compatibilité avec les systèmes existants ; et\r\n- la quantité de médicament est généralement représentée par un nombre et l’unité de dose correspondante, mais il peut également y avoir une description narrative pour garantir la compatibilité avec les systèmes existants et couvrir tous les scénarios cliniques ; jusqu’à\r\n- des détails structurés concernant la dose, la voie d’administration et le timing de prise, afin de représenter une spécification entièrement calculable.\r\n\r\nIl a également été conçu de manière à ce qu’une seule structure de prescription médicamenteuse puisse représenter :\r\n- des prescriptions médicamenteuses séquentielles complexes utilisant la même concentration de préparation, prises en charge au sein d’une seule structure de prescription ; et\r\n- plusieurs prescriptions médicamenteuses pouvant être enchaînées dans les cas où différents médicaments ou préparations doivent être administrés de manière séquentielle.\r\n\r\nCet archétype convient également à la prescription de liquides parentéraux, dans les établissements de soins où il est courant de rendre ces articles « prescriptibles ». Dans d’autres contextes, une « prescription de fluide parentéral » distincte peut s’avérer appropriée.\r\n\r\nDes slots contenant des archétypes CLUSTER ont été utilisés pour représenter une partie du contenu, et ce pour trois raisons :\r\n- Pour garantir un archétype de base pouvant être utilisé pour tous les cas d’utilisation susmentionnés, tout en permettant une certaine flexibilité lorsque cela est nécessaire, par exemple le slot « Détails de la préparation » où des détails structurés supplémentaires peuvent être ajoutés. Un archétype candidat a été proposé pour les médicaments. Il est possible que d’autres archétypes CLUSTER soient nécessaires à l’avenir à d’autres fins, telles que les ordonnances complexes de nutrition parentérale ;\r\n- pour favoriser la réutilisation des archétypes dans les situations où le contenu a été identifié comme étant également utilisé dans d’autres contextes cliniques, en particulier l’archétype apparié ACTION.medication destiné à enregistrer la distribution effective, l’administration, etc. ; et\r\n- afin d'éliminer le contenu le moins utilisé de la structure de base des archétypes.\r\n\r\nPlusieurs ordonnances peuvent être représentées comme des activités distinctes au sein de cette instance d’archétype unique afin de prendre en charge des ordonnances étroitement liées portant sur différents médicaments, par exemple un traitement contre H. pylori lorsque celui-ci n’est pas prescrit sous la forme d’un seul emballage.\r\n\r\nIl convient de noter que ces utilisations englobent à la fois les cas d’utilisation « FHIR Medication Order » et « Medication Statement ». Autrement dit, cet archétype correspond à ces deux ressources FHIR, utilisées dans le contexte approprié.",
+          "misuse" : "À ne pas utiliser pour enregistrer les activités liées à l’exécution de la prescription de médicaments, de vaccins, de produits nutritionnels ou d’articles thérapeutiques, telles que les détails concernant l’administration ou la distribution effective. Utilisez l’élément ACTION.medication à cette fin.\r\n\r\nÀ ne pas utiliser pour enregistrer la prescription de produits sanguins, qui implique un processus clinique fondamentalement différent et est susceptible de nécessiter des informations complémentaires différentes. Utilisez l’élément INSTRUCTION.transfusion à cette fin.\r\n\r\nÀ ne pas utiliser pour enregister la prescription de la pose d’implants ou de dispositifs médicaux tels que les stimulateurs cardiaques et les défibrillateurs. Utilisez INSTRUCTION.procedure à cette fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "purpose" : "Enregistrar tots els aspectes d'una ordre de medicació, vacuna, producte nutricional o un altre element terapèutic per a un individu identificat.",
+          "keywords" : [ "medicació", "ordre", "prescriure", "teràpia", "substància", "fàrmac", "terapèutica", "otc", "element terapèutic", "farmacèutica", "producte", "posologia", "tractament", "fluid", "nutrició", "CPOE", "medicina" ],
+          "use" : "Utilitzar per a registrar tots els aspectes d'una ordre de medicació, vacuna, producte nutricional o un altre element terapèutic per a un individu identificat.\r\n\r\nEstà destinat a ser emprat per a qualsevol classe de medicació i ordre relacionada, estigui prescrita per un professional sanitari o disponible per la compra \"sense recepta\". L'àmbit d'aplicació d'aquest arquetip de medicació també inclou ordres de vacunació, fluids parenterals o altres productes terapèutics, com ara embenats, productes nutricionals o altres productes que s'apliquen o s'administren per tindre un efecte terapèutic i que tenen un patró comú per al registre de dades.\r\n\r\nAquest arquetip està dissenyat per ser emprat en diversos contextos clínics, incloent-hi però no limitat a:\r\n- un registre en una consulta clínica (COMPOSICIÓ.trobada);\r\n- una recepta escrita per un metge, dentista, infermer facultatiu o un altre professional de la salut designat a distribuir o administrar una medicació o producte nutricional (dins d'una COMPOSICIÓ.prescripció);\r\n- un element en una llista actual de medicació, recepta o gràfic de mediació (dins de COMPOSICIÓ.llista_medicació); i\r\n- un element en un document de resum com ara un trasllat d'atenció (COMPOSICIÓ.resum_trasllat) o una derivació (COMPOSICIÓ.sol·licitud).\r\n\r\nEn molts casos, una ordre de medicació serà simple ― generalment per a un únic element de medicació amb instruccions senzilles per a la dispensació i administració. No obstant això, aquest arquetip també està dissenyat per permetre ordres terapèutiques més complexes. Per exemple:\r\n\r\n- una dosi de reducció de prednisolona durant un període de setmanes;\r\n- titulació (valoració) de la insulina, amb dosificació depenent dels resultats de la prova;\r\n- múltiples medicaments prescrits simultàniament com a part d'un règim d’un únic fàrmac, com una triple teràpia per a úlcera pèptica; i\r\n- Administració intravenosa de medicaments o suplements nutricionals, incloent-hi la nutrició parenteral.\r\n\r\nPer tant, l'arquetip ha estat dissenyat per permetre un rang de complexitat, des de:\r\n- instruccions narratives senzilles per a ordres com \"furosemida 40mg dos comprimits al matí i una al dinar\" per garantir la compatibilitat amb sistemes existents; i\r\n- la quantitat de medicació es representa normalment en termes d'una xifra i la corresponent unitat de dosi, però alternativament pot haver-hi una declaració narrativa per assegurar la compatibilitat amb sistemes existents i la cobertura de tots els escenaris clínics; a través de\r\n- detall estructurat per dosi, ruta i temps d'administració per representar una especificació totalment mesurable.\r\n\r\nTambé s'ha dissenyat de manera que una única estructura d'ordre de medicació pugui representar:\r\n- ordres complexes de medicació seqüencial utilitzant la mateixa dosificació de preparació per ser recolzada dins d'una única estructura d'ordre; i\r\n- es poden encadenar múltiples ordres de medicació en circumstàncies on cal donar seqüencialment diferents medicaments o preparats.\r\nAquest arquetip també és adequat per ordenar fluids parenterals, en entorns assistencials on és pràctica normal fer aquests elements \"prescriptibles\". En altres entorns pot ser apropiada una \"ordre de fluid parental\" separat.\r\n\r\nEls SLOTs que contenen arquetips CLUSTER s'han utilitzat per representar una mica del contingut per tres raons:\r\n- Per a garantir un arquetip central que es pot utilitzar per a tots els anteriors casos d'ús, però permet flexibilitat quan sigui necessari, per exemple el SLOT «Detall de preparació» on es pot afegir detall estructurat addicional. Es va suggerir un arquetip candidat per a Medicacions. És possible que altres arquetips CLUSTER en el futur es puguin necessitar per a altres propòsits com ordres complexes de nutrició parenteral;\r\n- donar suport a la reutilització d'arquetips en situacions en què el contingut s'ha identificat com a també fet servit en altres contextos clínics, en particular l'arquetip aparellat ACCIÓ.medicació per registrar la dispensació real, administració, etc; i\r\n- per a eliminar el contingut menys habitualment usat del marc de l'arquetip base.\r\n\r\nMúltiples ordres es poden representar com a activitats separades dins d'un únic arquetip per portar ordres estretament lligades de diferents medicaments, per exemple, la teràpia H. Pylori quan això no es prescriu com un sol paquet.\r\n\r\nCal assenyalar que aquests usos subsumeixen tant els casos d'ús de l'Ordre de Medicació FHIR com els de la Declaració de Medicació. És a dir, aquest arquetip coincideix amb els dos recursos FHIR, utilitzats en el context apropiat.",
+          "misuse" : "No utilitzar-se per a registrar les activitats relacionades amb la realització de l'ordre de medicació, vacuna, producte nutricional o terapèutic, com ara detalls sobre l'administració actual o dispensació. Utilitzeu la ACCIÓ.medicació per a aquest propòsit.\r\n\r\nNo s'ha d'utilitzar per registrar l'ordre de productes sanguinis, el qual implica un procés clínic fonamentalment diferent i és probable que requereixi informació de suport diferent. Utilitzeu INSTRUCCIÓ.transfusió per a aquest propòsit.\r\n\r\nNo s'ha d'utilitzar per registrar l'ordre d'inserció d'implants o dispositius mèdics com marcapassos i desfibril·ladors. Utilitzeu INSTRUCCIÓ.procediment per a aquest propòsit.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
         }
       }
     },
@@ -702,7 +747,10 @@
         "es-ar" : { },
         "de" : { },
         "sv" : { },
-        "es" : { }
+        "es" : { },
+        "ca" : { },
+        "sk" : { },
+        "fr" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -802,6 +850,47 @@
       },
       "author" : { },
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sk"
+      },
+      "author" : {
+        "name" : "Alica Ciglanska",
+        "organisation" : "Prosoft Košice, a.s.",
+        "email" : "ciglanska.alica@prosoftke.sk"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fr"
+      },
+      "author" : {
+        "name" : "Jonas Bucher",
+        "organisation" : "Cistec AG",
+        "email" : "jonas.bucher@cistec.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : {
+        "name" : "Jaqueline Peredo",
+        "email" : "jperedo2003@gmail.com"
+      },
+      "otherDetails" : { }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
@@ -885,6 +974,19 @@
           "purpose" : "Pour enregistrer les détails structurés d’une instruction thérapeutique unique pour un produit thérapeutique / pour un produit soumis à prescription médicale.\r\n\r\nChaque instruction s’applique généralement pendant une durée déterminée ou pour un nombre fixe d’administrations.",
           "keywords" : [ "médication", "ordonnance", "prescrire", "thérapie", "substance", "médicament", "thérapeutique", "en vente libre", "produit thérapeutique", "pharmaceutique", "produit", "posologie", "traitement", "transfusion" ],
           "use" : "Une posologie décrit un ou plusieurs schémas d’administration thérapeutique séquentiels, associés à une durée globale de la posologie et aux détails de tout schéma répétitif d’administration prévu au-delà d’une seule journée.\r\n\r\nPar exemple : « 1 comprimé le matin, 1 comprimé le soir, pendant 3 semaines, les lundis, mercredis et vendredis ». Cet archétype de type cluster permet des occurrences multiples afin de représenter un ensemble complet de posologies pour une seule prescription médicamenteuse. Le cluster peut être renommé dans le template ou lors de l’exécution pour représenter un événement posologique spécifique tel qu’une « dose de charge » ou un « bolus ».\r\n\r\nCet archétype sera généralement utilisé dans le contexte d’un archétype parent INSTRUCTION. Il a été spécialement conçu pour être utilisé dans le cadre d’une prescription médicamenteuse complexe comprenant des médicaments administrés par voie intraveineuse, ou pour des prescriptions de liquides dans le cadre d’une transfusion ou d’une dialyse.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -1230,6 +1332,14 @@
             "code" : "ac0.1",
             "description" : ""
           }
+        },
+        "ca" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
         }
       },
       "termBindings" : { },
@@ -1310,6 +1420,16 @@
         "organisation" : "Cistec AG",
         "email" : "jonas.bucher@cistec.com"
       },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
       "otherDetails" : { }
     } ]
   }, {
@@ -1394,6 +1514,48 @@
           "keywords" : [ "medication", "order", "prescribe", "therapy", "substance", "drug", "therapeutic", "therapeutic good", "pharmaceutical", "product", "posology", "treatment", "fluid", "nutrition", "timing", "administration", "dose" ],
           "use" : "Use to record the combination of a medication amount and the administration timing for a single day, as part of a medication order or medication management or for other appropriate therapeutic/prescribable items. \r\nThe timing pattern for a single day can be as simple as a single administration time, or multiple administration times with varying levels of complexity.\r\n\r\nTiming details which are not within a single day, for example, weekly or monthly timings, are carried in the CLUSTER 'Timing - non-daily' archetype carried within the CLUSTER 'Therapeutic direction' archetype.\r\n\r\nIn the context of a therapeutic INSTRUCTION, this archetype may be inserted into the 'Structured dose and timing directions' SLOT in the 'Therapeutic direction' CLUSTER to record the dose and timing details of the pattern of single intended administrations of a therapeutic item. \r\n\r\nIn the context of an ACTION archetype insert this archetype directly into the 'Amount' SLOT to record the dose and timing of the actual administration of a therapeutic item.\r\n\r\nSpecific administration start/stop times should be specified within a contained CLUSTER 'Timing - daily' archetype.",
           "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sk" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sk"
+          },
+          "purpose" : "Slúži pre záznam množstva dávky a časov podania za jeden deň - ako časť preskripcie alebo medikácie alebo pre iné terapeutické/preskribovateľné položky.",
+          "keywords" : [ "medikácia", "objendávka", "preskricpia", "terapia", "účinná látka", "liek", "terapeutický", "farmaceutický", "produkt", "liečba", "tekutina", "výživa", "časový rozpis", "podanie", "dávka" ],
+          "use" : "Slúži pre záznam množstva dávky a časov podania za jeden deň - ako časť preskripcie alebo medikácie alebo pre iné terapeutické/preskribovateľné položky.\r\nČasový rozpis pre jeden deň môže byť jednoduchý - ako napr. jeden konkrétny čas podania alebo viacej časov podania - v závislosti od úrovne komplexity\r\nČasový rozpis, ktorý sa netýka iba jedného dňa napr. týždenný alebo mesačný rozpis, je potrebné zadať v CLUSTER 'Timing - non-daily' archetype , ktorý má byť vnorený v rámci CLUSTER 'Therapeutic direction' archetype.\r\n\r\nV kontexte INSTRUCTION tento archetyp má byť vložený v SLOTe \"Štrukturované dávkovanie a časy podania\" v rámci CLUSTER 'Therapeutic direction' archetypu - aby bolo možné zadať dávku a časový rozpis pre jednotlivé požadované podanie preskribovanej položky\r\nV kontexte ACTION tento archetyp má byť vložený priamo do SLOTu \"Množstvo\" - aby bolo možné zadať dávku a čas pre aktuálne podanie položky\r\n\r\nŠpecifické časy pre začiatok podávania a koniec podávania majú byť špecifikované vo vloženom CLUSTER 'Timing - daily' archetype.\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "purpose" : "Registrar la combinación de una cantidad de medicación y el momento de administración en un mismo día, como parte de una prescripción o gestión de medicación, o para otros elementos terapéuticos/prescribibles apropiados.",
+          "keywords" : [ "medicación", "orden", "prescribir", "terapia", "sustancia", "medicamento", "terapéutico", "bien terapéutico", "farmacéutico", "producto", "posología", "tratamiento", "fluido", "nutrición", "timing", "administración", "dosis" ],
+          "use" : "Se utiliza para registrar la combinación de una cantidad de medicación y el momento de administración para un solo día, como parte de una prescripción o gestión de medicación, o para otros elementos terapéuticos/prescribibles apropiados. \r\n\r\nLa pauta temporal de un único día puede ser tan simple como una sola hora de administración, o varias horas de administración con distintos niveles de complejidad.\r\n\r\nLos detalles de temporización que no correspondan a un único día, por ejemplo, temporizaciones semanales o mensuales, han de llevarse a cabo en el arquetipo de tipo CLUSTER 'Temporización - no diaria', dentro del arquetipo CLUSTER 'Dirección terapéutica'.\r\n\r\nEn el contexto de una INSTRUCTION terapéutica, este arquetipo puede insertarse en el SLOT \"Direcciones estructuradas de dosis y timing\", dentro del CLUSTER \"Dirección terapéutica\", para registrar los detalles de dosis y timing del patrón de administraciones únicas previstas de un elemento terapéutico. \r\n\r\nEn el contexto de un arquetipo de tipo ACTION, inserte este arquetipo directamente en el SLOT \"Cantidad\" para registrar la dosis y el momento de la administración real de un elemento terapéutico.\r\n\r\nLas horas específicas de inicio y finalización de la administración deben especificarse dentro de un arquetipo CLUSTER \"Timing - diario\".\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "purpose" : "Registrar la combinació d’una quantitat de medicació i el moment d’administració en un mateix dia, com a part d’una prescripció o gestió de medicació o per a altres elements terapèutics/prescriptibles apropiats.",
+          "keywords" : [ "medicació", "encàrrec", "prescriure", "teràpia", "substància", "medicament", "terapèutic", "producte terapèutic", "fàrmac", "producte", "posologia", "tractament", "fluid", "nutrició", "temporització", "administració", "dosi" ],
+          "use" : "Utilitzar per a registrar la combinació d’una quantitat de medicació i el moment d’administració en un mateix dia, com a part d’una prescripció o gestió de medicació o per a altres elements terapèutics/prescriptibles apropiats.\r\nLa pauta horària d’un únic dia pot ser tan simple com una sola hora d’administració o diverses hores d’administració amb diversos nivells de complexitat.\r\n\r\nLes dades de temporització que no corresponguin a un únic dia; per exemple, temporitzacions setmanals o mensuals, estan contingudes en l’arquetip de tipus CLUSTER «Temporització – no diària», que es troba dins de l’arquetip de tipus CLUSTER «Instruccions terapèutiques».\r\n\r\nEn el context d’una INSTRUCTION terapèutica, aquest arquetip es pot inserir al SLOT «Instruccions estructurals de dosi i temporització» dins del CLUSTER «Instruccions terapèutiques» per a registrar les dades de dosi i temporalització de les pautes d’administracions úniques previstes d’un element terapèutic.\r\n\r\nEn el context d’un arquetip de tipus ACTION, aquest arquetip s’ha d’inserir directament al SLOT «Quantitat» per a registrar la dosi i el moment d’una administració concreta d’un element terapèutic.\r\n\r\nEls moments específics d’inici i de finalització s’han d’especificar dins d’un arquetip «Temporització – diària» de tipus CLUSTER.",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -1727,7 +1889,10 @@
         "nb" : { },
         "pt-br" : { },
         "de" : { },
-        "sv" : { }
+        "sv" : { },
+        "es" : { },
+        "ca" : { },
+        "sk" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -1802,6 +1967,50 @@
       },
       "accreditation" : "Hospital Alemão Oswaldo Cruz (HAOC)",
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sk"
+      },
+      "author" : {
+        "name" : "Alica Ciglanska",
+        "organisation" : "Prosoft Košice, a.s.",
+        "email" : "ciglanska.alica@prosoftke.sk"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : {
+        "name" : "Julio de Sosa",
+        "organisation" : "Servei Català de la Salut",
+        "email" : "juliodesosa@catsalut.cat"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : {
+        "name" : "Manuel José Zafra Doménech",
+        "organisation" : "TRADCREA, S.L.",
+        "email" : "mzafra@tradcrea.com"
+      },
+      "otherDetails" : {
+        "other_contributors" : "Servei Català de la Salut"
+      }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
@@ -1904,6 +2113,19 @@
           "keywords" : [ "timming", "l'administration", "dosage", "fréquence", "intervalle", "ordre", "recommandation", "horaire", "par jour" ],
           "use" : "A utiliser pour enregistrer des informations structurées sur le moment prévu pour une activité thérapeutique ou diagnostique au cours d'une période de 24 heures.\r\n\r\nCet archétype est conçu pour être utilisé dans le SLOT 'Timing' de l'archétype CLUSTER.dosage, mais peut également être utilisé dans d'autres archétypes de classe CLUSTER et ENTRY lorsque cela est cliniquement approprié.",
           "misuse" : "Ne doit pas être utilisé pour enregistrer les détails du chronométrage sur des périodes plus longues qu'une seule période de 24 heures. Utilisez l'archétype CLUSTER.timing_repetition à cette fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -2511,7 +2733,8 @@
         "nb" : { },
         "de" : { },
         "sk" : { },
-        "fr" : { }
+        "fr" : { },
+        "ca" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -2596,6 +2819,16 @@
         "email" : "vanessapereira@protonmail.com"
       },
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
@@ -2668,6 +2901,19 @@
           "keywords" : [ "timing, administration, dosing, frequency, interval, order, recommendation, schedule, plan, repetition" ],
           "use" : "Use to record structured information about the intended timing pattern for a therapeutic or diagnostic activity occurring over days, weeks, months or years.\r\n\r\nThis archetype is designed to be used within the 'Direction repetition' SLOT within the CLUSTER.therapeutic_direction archetype, but can also be used in other CLUSTER and ENTRY class archetypes where clinically appropriate.\r\n\r\nIn use cases where it's necessary to specify explicitly that an activity is to take place every day, the \"Repetition interval\" element can be set to \"1 day\".",
           "misuse" : "Not to be used to record timing details within a single 24 hour time period. Use the CLUSTER.timing_daily archetype for this purpose.\r\n\r\nIn use cases where it can be safely assumed that an activity should be carried out every single day, this archetype is redundant.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
           "copyright" : "© openEHR Foundation",
           "originalResourceUri" : { },
           "otherDetails" : { }
@@ -3612,6 +3858,14 @@
             "code" : "ac0.1",
             "description" : ""
           }
+        },
+        "ca" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
         }
       },
       "termBindings" : { },
@@ -3677,6 +3931,16 @@
         "organisation" : "Hospital Sírio Libanês - SP",
         "email" : "osmeire.acsanzovo@hsl.org.br"
       },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
       "otherDetails" : { }
     } ]
   }, {
@@ -3906,6 +4170,21 @@
           "misuse" : "No s'ha de deixar sense canvis en una plantilla.",
           "originalResourceUri" : { },
           "otherDetails" : { }
+        },
+        "tr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "tr"
+          },
+          "purpose" : "Belirli bir klinik bağlama uyacak şekilde bir şablonda yeniden adlandırılacak genel bir bölüm başlığı sağlamak için.",
+          "keywords" : [ ],
+          "use" : "Bir şablonda, belirli klinik bağlama uyacak şekilde yeniden adlandırılacak bir bölüm başlığı oluşturmak için kullanılır. Örneğin: “Geçici başlık”ın “Muayene bulguları” olarak yeniden adlandırılması.",
+          "misuse" : "Bir şablonda değiştirilmeden bırakılmamalıdır.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
         }
       }
     },
@@ -4030,7 +4309,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Capçalera ad hoc (2)",
+            "text" : "Medicació durant l'hospitalització",
             "description" : "Una capçalera de secció genèrica que s'ha de rebatejar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
@@ -4057,7 +4336,8 @@
             "text" : "Título ad hoc (2)",
             "description" : "Um cabeçalho de secção genérico que deve ser renomeado ao nível do template para se adequar a um contexto clínico específico."
           }
-        }
+        },
+        "tr" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -4254,6 +4534,22 @@
         "email" : "lmorallopez@gmail.com, lauramoral@catsalut.cat"
       },
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "tr"
+      },
+      "author" : {
+        "name" : "Olha Nikolaieva",
+        "organisation" : "University Hospital Basel",
+        "email" : "olha.nikolaieva@usb.ch"
+      },
+      "otherDetails" : {
+        "other_contributors" : "Koray Atalag, GALATA-Digital, New Zealand"
+      }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
@@ -4326,6 +4622,19 @@
           "keywords" : [ "drug, lifelong, medication, self-medicate, medicine, history, lifetime, cumulative, dose, use, administration, consumption" ],
           "use" : "Use to record summary information about the use of a single medication or group or class of medications, especially where the pattern of use or cumulative dosage needs to be monitored.\r\n \r\nThis archetype has been designed to represent an overview of the use of medication only in specific situations where it adds value to the health record, such as where the cumulative dose of the medication has significant toxic effects or long term use has adverse health impacts. A single instance of the archetype will be used to capture one or more episodes of use, so that a pattern of use can be identified and/or a cumulative dose can be calculated.\r\n \r\nExamples of use include:\r\n- monitoring of the cumulative dose of doxorubicin or methotrexate taken over a lifetime.\r\n- monitoring the duration of high dose bisphosphanates.\r\n- monitoring the use of an experimental medication in a trial.\r\n \r\nUse a new instance of this archetype to record details about each medication or group or class of medications.\r\n \r\nTriggers for closing one episode and commencing a new one will largely reflect local data collection preferences and clinical priorities, including if the individual:\r\n- stops using the medication for a significant period of time (which will likely be locally defined).\r\n- significantly changes their amount or pattern of use.\r\n- changes in the route by which the medication was administered.",
           "misuse" : "Not to be used to represent a 'Medication list' - use COMPOSITION.medication_list for this purpose. In addition, not to be used to represent a medication within a 'Medication list' - use either an INSTRUCTION.medication_order or ACTION.medication for this purpose.\r\n\r\nNot to be used for recording an order for a medication to be administered or consumed - use INSTRUCTION.medication_order for this purpose.\r\n\r\nNot to be used for documenting the actual administration or consumption of a medication - use ACTION.medication for this purpose.\r\n\r\nNot to be used for recording the status of use or screening question/answer pairs regarding the medication - use OBSERVATION.medication_screening for this purpose.\r\n\r\nNot to be used to record an observation about the use of a medication - use OBSERVATION.medication_statement for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
           "copyright" : "© openEHR Foundation",
           "originalResourceUri" : { },
           "otherDetails" : { }
@@ -4498,7 +4807,8 @@
             "text" : "Zusammenfassung der Medikation (2)",
             "description" : "Zusammenfassende oder dauerhafte Informationen über die Anwendung eines einzelnen Medikaments oder einer Medikamentengruppe oder -klasse, insbesondere wenn das Anwendungsmuster oder die kumulative Dosierung überwacht werden muss."
           }
-        }
+        },
+        "ca" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -4558,6 +4868,16 @@
         "email" : "contato@coreconsulting.com.br"
       },
       "accreditation" : "Hospital Alemão Oswaldo Cruz (HAOC)",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
       "otherDetails" : { }
     } ]
   }, {
@@ -4787,6 +5107,21 @@
           "misuse" : "No s'ha de deixar sense canvis en una plantilla.",
           "originalResourceUri" : { },
           "otherDetails" : { }
+        },
+        "tr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "tr"
+          },
+          "purpose" : "Belirli bir klinik bağlama uyacak şekilde bir şablonda yeniden adlandırılacak genel bir bölüm başlığı sağlamak için.",
+          "keywords" : [ ],
+          "use" : "Bir şablonda, belirli klinik bağlama uyacak şekilde yeniden adlandırılacak bir bölüm başlığı oluşturmak için kullanılır. Örneğin: “Geçici başlık”ın “Muayene bulguları” olarak yeniden adlandırılması.",
+          "misuse" : "Bir şablonda değiştirilmeden bırakılmamalıdır.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
         }
       }
     },
@@ -4911,7 +5246,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Capçalera ad hoc (4)",
+            "text" : "Resum de la medicació",
             "description" : "Una capçalera de secció genèrica que s'ha de rebatejar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
@@ -4938,7 +5273,8 @@
             "text" : "Título ad hoc (4)",
             "description" : "Um cabeçalho de secção genérico que deve ser renomeado ao nível do template para se adequar a um contexto clínico específico."
           }
-        }
+        },
+        "tr" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -5135,6 +5471,22 @@
         "email" : "lmorallopez@gmail.com, lauramoral@catsalut.cat"
       },
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "tr"
+      },
+      "author" : {
+        "name" : "Olha Nikolaieva",
+        "organisation" : "University Hospital Basel",
+        "email" : "olha.nikolaieva@usb.ch"
+      },
+      "otherDetails" : {
+        "other_contributors" : "Koray Atalag, GALATA-Digital, New Zealand"
+      }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
@@ -5237,6 +5589,19 @@
           "keywords" : [ "timming", "l'administration", "dosage", "fréquence", "intervalle", "ordre", "recommandation", "horaire", "par jour" ],
           "use" : "A utiliser pour enregistrer des informations structurées sur le moment prévu pour une activité thérapeutique ou diagnostique au cours d'une période de 24 heures.\r\n\r\nCet archétype est conçu pour être utilisé dans le SLOT 'Timing' de l'archétype CLUSTER.dosage, mais peut également être utilisé dans d'autres archétypes de classe CLUSTER et ENTRY lorsque cela est cliniquement approprié.",
           "misuse" : "Ne doit pas être utilisé pour enregistrer les détails du chronométrage sur des périodes plus longues qu'une seule période de 24 heures. Utilisez l'archétype CLUSTER.timing_repetition à cette fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -5844,7 +6209,8 @@
         "nb" : { },
         "de" : { },
         "sk" : { },
-        "fr" : { }
+        "fr" : { },
+        "ca" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -5929,6 +6295,16 @@
         "email" : "vanessapereira@protonmail.com"
       },
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
@@ -6012,6 +6388,48 @@
           "keywords" : [ "medication", "order", "prescribe", "therapy", "substance", "drug", "therapeutic", "therapeutic good", "pharmaceutical", "product", "posology", "treatment", "fluid", "nutrition", "timing", "administration", "dose" ],
           "use" : "Use to record the combination of a medication amount and the administration timing for a single day, as part of a medication order or medication management or for other appropriate therapeutic/prescribable items. \r\nThe timing pattern for a single day can be as simple as a single administration time, or multiple administration times with varying levels of complexity.\r\n\r\nTiming details which are not within a single day, for example, weekly or monthly timings, are carried in the CLUSTER 'Timing - non-daily' archetype carried within the CLUSTER 'Therapeutic direction' archetype.\r\n\r\nIn the context of a therapeutic INSTRUCTION, this archetype may be inserted into the 'Structured dose and timing directions' SLOT in the 'Therapeutic direction' CLUSTER to record the dose and timing details of the pattern of single intended administrations of a therapeutic item. \r\n\r\nIn the context of an ACTION archetype insert this archetype directly into the 'Amount' SLOT to record the dose and timing of the actual administration of a therapeutic item.\r\n\r\nSpecific administration start/stop times should be specified within a contained CLUSTER 'Timing - daily' archetype.",
           "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sk" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sk"
+          },
+          "purpose" : "Slúži pre záznam množstva dávky a časov podania za jeden deň - ako časť preskripcie alebo medikácie alebo pre iné terapeutické/preskribovateľné položky.",
+          "keywords" : [ "medikácia", "objendávka", "preskricpia", "terapia", "účinná látka", "liek", "terapeutický", "farmaceutický", "produkt", "liečba", "tekutina", "výživa", "časový rozpis", "podanie", "dávka" ],
+          "use" : "Slúži pre záznam množstva dávky a časov podania za jeden deň - ako časť preskripcie alebo medikácie alebo pre iné terapeutické/preskribovateľné položky.\r\nČasový rozpis pre jeden deň môže byť jednoduchý - ako napr. jeden konkrétny čas podania alebo viacej časov podania - v závislosti od úrovne komplexity\r\nČasový rozpis, ktorý sa netýka iba jedného dňa napr. týždenný alebo mesačný rozpis, je potrebné zadať v CLUSTER 'Timing - non-daily' archetype , ktorý má byť vnorený v rámci CLUSTER 'Therapeutic direction' archetype.\r\n\r\nV kontexte INSTRUCTION tento archetyp má byť vložený v SLOTe \"Štrukturované dávkovanie a časy podania\" v rámci CLUSTER 'Therapeutic direction' archetypu - aby bolo možné zadať dávku a časový rozpis pre jednotlivé požadované podanie preskribovanej položky\r\nV kontexte ACTION tento archetyp má byť vložený priamo do SLOTu \"Množstvo\" - aby bolo možné zadať dávku a čas pre aktuálne podanie položky\r\n\r\nŠpecifické časy pre začiatok podávania a koniec podávania majú byť špecifikované vo vloženom CLUSTER 'Timing - daily' archetype.\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "purpose" : "Registrar la combinación de una cantidad de medicación y el momento de administración en un mismo día, como parte de una prescripción o gestión de medicación, o para otros elementos terapéuticos/prescribibles apropiados.",
+          "keywords" : [ "medicación", "orden", "prescribir", "terapia", "sustancia", "medicamento", "terapéutico", "bien terapéutico", "farmacéutico", "producto", "posología", "tratamiento", "fluido", "nutrición", "timing", "administración", "dosis" ],
+          "use" : "Se utiliza para registrar la combinación de una cantidad de medicación y el momento de administración para un solo día, como parte de una prescripción o gestión de medicación, o para otros elementos terapéuticos/prescribibles apropiados. \r\n\r\nLa pauta temporal de un único día puede ser tan simple como una sola hora de administración, o varias horas de administración con distintos niveles de complejidad.\r\n\r\nLos detalles de temporización que no correspondan a un único día, por ejemplo, temporizaciones semanales o mensuales, han de llevarse a cabo en el arquetipo de tipo CLUSTER 'Temporización - no diaria', dentro del arquetipo CLUSTER 'Dirección terapéutica'.\r\n\r\nEn el contexto de una INSTRUCTION terapéutica, este arquetipo puede insertarse en el SLOT \"Direcciones estructuradas de dosis y timing\", dentro del CLUSTER \"Dirección terapéutica\", para registrar los detalles de dosis y timing del patrón de administraciones únicas previstas de un elemento terapéutico. \r\n\r\nEn el contexto de un arquetipo de tipo ACTION, inserte este arquetipo directamente en el SLOT \"Cantidad\" para registrar la dosis y el momento de la administración real de un elemento terapéutico.\r\n\r\nLas horas específicas de inicio y finalización de la administración deben especificarse dentro de un arquetipo CLUSTER \"Timing - diario\".\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "purpose" : "Registrar la combinació d’una quantitat de medicació i el moment d’administració en un mateix dia, com a part d’una prescripció o gestió de medicació o per a altres elements terapèutics/prescriptibles apropiats.",
+          "keywords" : [ "medicació", "encàrrec", "prescriure", "teràpia", "substància", "medicament", "terapèutic", "producte terapèutic", "fàrmac", "producte", "posologia", "tractament", "fluid", "nutrició", "temporització", "administració", "dosi" ],
+          "use" : "Utilitzar per a registrar la combinació d’una quantitat de medicació i el moment d’administració en un mateix dia, com a part d’una prescripció o gestió de medicació o per a altres elements terapèutics/prescriptibles apropiats.\r\nLa pauta horària d’un únic dia pot ser tan simple com una sola hora d’administració o diverses hores d’administració amb diversos nivells de complexitat.\r\n\r\nLes dades de temporització que no corresponguin a un únic dia; per exemple, temporitzacions setmanals o mensuals, estan contingudes en l’arquetip de tipus CLUSTER «Temporització – no diària», que es troba dins de l’arquetip de tipus CLUSTER «Instruccions terapèutiques».\r\n\r\nEn el context d’una INSTRUCTION terapèutica, aquest arquetip es pot inserir al SLOT «Instruccions estructurals de dosi i temporització» dins del CLUSTER «Instruccions terapèutiques» per a registrar les dades de dosi i temporalització de les pautes d’administracions úniques previstes d’un element terapèutic.\r\n\r\nEn el context d’un arquetip de tipus ACTION, aquest arquetip s’ha d’inserir directament al SLOT «Quantitat» per a registrar la dosi i el moment d’una administració concreta d’un element terapèutic.\r\n\r\nEls moments específics d’inici i de finalització s’han d’especificar dins d’un arquetip «Temporització – diària» de tipus CLUSTER.",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -6345,7 +6763,10 @@
         "nb" : { },
         "pt-br" : { },
         "de" : { },
-        "sv" : { }
+        "sv" : { },
+        "es" : { },
+        "ca" : { },
+        "sk" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -6420,6 +6841,50 @@
       },
       "accreditation" : "Hospital Alemão Oswaldo Cruz (HAOC)",
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sk"
+      },
+      "author" : {
+        "name" : "Alica Ciglanska",
+        "organisation" : "Prosoft Košice, a.s.",
+        "email" : "ciglanska.alica@prosoftke.sk"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : {
+        "name" : "Julio de Sosa",
+        "organisation" : "Servei Català de la Salut",
+        "email" : "juliodesosa@catsalut.cat"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : {
+        "name" : "Manuel José Zafra Doménech",
+        "organisation" : "TRADCREA, S.L.",
+        "email" : "mzafra@tradcrea.com"
+      },
+      "otherDetails" : {
+        "other_contributors" : "Servei Català de la Salut"
+      }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
@@ -6492,6 +6957,19 @@
           "keywords" : [ "timing, administration, dosing, frequency, interval, order, recommendation, schedule, plan, repetition" ],
           "use" : "Use to record structured information about the intended timing pattern for a therapeutic or diagnostic activity occurring over days, weeks, months or years.\r\n\r\nThis archetype is designed to be used within the 'Direction repetition' SLOT within the CLUSTER.therapeutic_direction archetype, but can also be used in other CLUSTER and ENTRY class archetypes where clinically appropriate.\r\n\r\nIn use cases where it's necessary to specify explicitly that an activity is to take place every day, the \"Repetition interval\" element can be set to \"1 day\".",
           "misuse" : "Not to be used to record timing details within a single 24 hour time period. Use the CLUSTER.timing_daily archetype for this purpose.\r\n\r\nIn use cases where it can be safely assumed that an activity should be carried out every single day, this archetype is redundant.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
           "copyright" : "© openEHR Foundation",
           "originalResourceUri" : { },
           "otherDetails" : { }
@@ -7436,6 +7914,14 @@
             "code" : "ac0.1",
             "description" : ""
           }
+        },
+        "ca" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
         }
       },
       "termBindings" : { },
@@ -7501,6 +7987,16 @@
         "organisation" : "Hospital Sírio Libanês - SP",
         "email" : "osmeire.acsanzovo@hsl.org.br"
       },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
       "otherDetails" : { }
     } ]
   }, {
@@ -7585,6 +8081,19 @@
           "purpose" : "Pour enregistrer les détails structurés d’une instruction thérapeutique unique pour un produit thérapeutique / pour un produit soumis à prescription médicale.\r\n\r\nChaque instruction s’applique généralement pendant une durée déterminée ou pour un nombre fixe d’administrations.",
           "keywords" : [ "médication", "ordonnance", "prescrire", "thérapie", "substance", "médicament", "thérapeutique", "en vente libre", "produit thérapeutique", "pharmaceutique", "produit", "posologie", "traitement", "transfusion" ],
           "use" : "Une posologie décrit un ou plusieurs schémas d’administration thérapeutique séquentiels, associés à une durée globale de la posologie et aux détails de tout schéma répétitif d’administration prévu au-delà d’une seule journée.\r\n\r\nPar exemple : « 1 comprimé le matin, 1 comprimé le soir, pendant 3 semaines, les lundis, mercredis et vendredis ». Cet archétype de type cluster permet des occurrences multiples afin de représenter un ensemble complet de posologies pour une seule prescription médicamenteuse. Le cluster peut être renommé dans le template ou lors de l’exécution pour représenter un événement posologique spécifique tel qu’une « dose de charge » ou un « bolus ».\r\n\r\nCet archétype sera généralement utilisé dans le contexte d’un archétype parent INSTRUCTION. Il a été spécialement conçu pour être utilisé dans le cadre d’une prescription médicamenteuse complexe comprenant des médicaments administrés par voie intraveineuse, ou pour des prescriptions de liquides dans le cadre d’une transfusion ou d’une dialyse.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -7930,6 +8439,14 @@
             "code" : "ac0.1",
             "description" : ""
           }
+        },
+        "ca" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
         }
       },
       "termBindings" : { },
@@ -8010,6 +8527,16 @@
         "organisation" : "Cistec AG",
         "email" : "jonas.bucher@cistec.com"
       },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
       "otherDetails" : { }
     } ]
   }, {
@@ -8127,6 +8654,51 @@
           },
           "keywords" : [ ],
           "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sk" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sk"
+          },
+          "purpose" : "*To record all aspects of an order of a medication, vaccine, nutritional product or other therapeutic item for an identified individual.(en)",
+          "keywords" : [ "*medication(en)", "*order(en)", "*prescribe(en)", "*therapy(en)", "*substance(en)", "*drug(en)", "*therapeutic(en)", "*otc(en)", "*therapeutic good(en)", "*pharmaceutical(en)", "*product(en)", "*posology(en)", "*treatment(en)", "*fluid(en)", "*nutrition(en)", "*CPOE(en)", "*medicine(en)" ],
+          "use" : "*Use to record all aspects of an order of a medication, vaccine, nutritional product or other therapeutic item for an identified individual.\r\n\r\nIt is intended to be used for any type of medication and related order, whether prescribed by a health professional or available for purchase 'over the counter'. The scope of this medication archetype also includes orders for vaccinations, parenteral fluids or other therapeutic goods, such as bandages, nutritional products or other items that are applied or administered to have a therapeutic effect and which have a common pattern for data recording.\r\n\r\nThis archetype is designed to be used in a number of clinical contexts, including but not limited to:\r\n- a record in a clinical consultation (COMPOSITION.encounter);\r\n- a written prescription by a physician, dentist, nurse practitioner, or other designated health professional for a medication or nutritional product to be dispensed and administered (within a COMPOSITION.prescription);\r\n- an item in a current medication list, prescription or drug chart (within COMPOSITION.medication_list); and\r\n- an item in a summary document such as transfer of care (COMPOSITION.transfer_summary) or a referral (COMPOSITION.request).\r\n\r\nIn many cases a medication order will be simple – typically for a single medication item with uncomplicated instructions for dispensing and administration. However this archetype is also designed to allow for more complex therapeutic orders. For example:\r\n\r\n- a reducing dose of prednisolone over a period of weeks;\r\n- titration of insulin, with dosing dependent on test results;\r\n- multiple medications prescribed simultaneously as part of a single drug regimen, such as a triple therapy for peptic ulcer; and\r\n- intravenous administration of medications or nutrition supplements, including parenteral nutrition.\r\n\r\nThe archetype has therefore been designed to allow for a range of complexity, from:\r\n- simple narrative instructions for orders like 'furosemide 40mg two tablets in the morning and one at lunch' to ensure compatibility with existing systems; and\r\n- the amount of medication is usually represented in terms of a number and corresponding dose unit, however there can alternatively be a narrative statement to ensure compatibility with existing systems and coverage of all clinical scenarios; through to\r\n- structured detail for dose, route and timing to represent a fully computable specification.\r\n\r\nIt has also been designed so that a single medication order structure can represent:\r\n- complex sequential medication orders using the same preparation strength to be supported within a single order structure; and\r\n- multiple medication orders can be chained in circumstances where different medications or preparations need to be given sequentially.\r\n\r\nThis archetype is also suitable for ordering parenteral fluids, in care settings where it is normal practice to make these 'prescribable' items. In other settings a separate 'parenteral fluid order' may be appropriate.\r\n\r\nSLOTs containing CLUSTER archetypes have been used to represent some of the content for three reasons:\r\n- To ensure a core archetype that can be used for all the above use cases, yet allow flexibility where it is required, for example the ‘Preparation details’ SLOT where additional structured detail can be added. A candidate archetype has been suggested for Medications. It is possible that other CLUSTER archetypes may be required in future for other purposes such as complex parenteral nutrition orders;\r\n- to support archetype re-use in situations where the content has been identified as being also used in other clinical contexts, in particular the paired ACTION.medication archetype for recording actual dispensing, administration etc; and\r\n- to remove less commonly used content from the core archetype framework.\r\n\r\nMultiple orders can be represented as separate activities within this single archetype instance to carry tightly bound orders of different medications, for example, H. pylori therapy when this is not prescribed as a single pack.\r\n\r\nIt should be noted that these uses subsume both the FHIR Medication Order and Medication Statement use cases. i.e this archetype is a match for both FHIR resources, used in the appropriate context.(en)",
+          "misuse" : "*Not to be used to record the activities related to carrying out the order for medication, vaccine, nutritional product or therapeutic item, such as details about actual administration or dispensing. Use the ACTION.medication for this purpose.\r\n\r\nNot to be used to record the ordering of blood products, which involves a fundamentally different clinical process and is likely to require different supporting information Use the INSTRUCTION.transfusion for this purpose.\r\n\r\nNot to be used to record the order for insertion of implants or medical devices such as pacemakers and defibrillators. Use the INSTRUCTION.procedure for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Pour enregistrer tous les aspects d'une prescription de médicament, de vaccin, de produit nutritionnel ou de tout autre produit thérapeutique destinée à une personne identifiée.",
+          "keywords" : [ "médication", "ordonnance", "prescrire", "thérapie", "substance", "médicament", "thérapeutique", "en vente libre", "produit thérapeutique", "pharmaceutique", "produit", "posologie", "traitement", "liquide", "nutrition", "système de saisie électronique des ordonnances par les médecins (SEOM)", "médecine" ],
+          "use" : "À utiliser pour enregistrer tous les aspects d’une prescription de médicament, de vaccin, de produit nutritionnel ou de tout autre produit thérapeutique destinée à une personne identifiée.\r\n\r\nIl est destiné à être utilisé pour tout type de médicament et de prescription associée, qu’il s’agisse d’une prescription délivrée par un professionnel de santé ou d’un produit disponible en vente libre. Le champ d’application de cet archétype de médicament inclut également les prescriptions de vaccins, de solutions parentérales ou d’autres produits thérapeutiques, tels que les pansements, les produits nutritionnels ou d’autres articles appliqués ou administrés dans un but thérapeutique et dont l’enregistrement des données suit un schéma commun.\r\n\r\nCet archétype est conçu pour être utilisé dans divers contextes cliniques, notamment, mais sans s’y limiter :\r\n- un enregistrement lors d’une consultation clinique (COMPOSITION.encounter) ;\r\n- une ordonnance rédigée par un médecin, un dentiste, une infirmière praticienne ou tout autre professionnel de santé désigné, portant sur un médicament ou un produit nutritionnel devant être délivré et administré (au sein d’un COMPOSITION.prescription) ;\r\n- un élément figurant dans une liste de médicaments en cours, une ordonnance ou un tableau de médicaments (au sein de COMPOSITION.medication_list) ; et\r\n- un élément figurant dans un document de synthèse tel qu’un transfert de soins (COMPOSITION.transfer_summary) ou une demande de consultation (COMPOSITION.request).\r\n\r\nDans de nombreux cas, une prescription médicamenteuse sera simple – généralement pour un seul médicament accompagné d’instructions simples concernant sa délivrance et son administration. Cependant, cet archétype est également conçu pour permettre des prescriptions thérapeutiques plus complexes. Par exemple :\r\n\r\n- une réduction progressive de la dose de prednisolone sur plusieurs semaines ;\r\n- un ajustement posologique de l’insuline, la posologie dépendant des résultats des analyses ;\r\n- plusieurs médicaments prescrits simultanément dans le cadre d’un même traitement, comme une trithérapie contre l’ulcère gastro-duodénal ; et\r\n- l’administration intraveineuse de médicaments ou de compléments nutritionnels, y compris la nutrition parentérale.\r\n\r\nL’archétype a donc été conçu pour s’adapter à différents niveaux de complexité, allant de :\r\n- de simples instructions narratives pour des prescriptions telles que « furosémide 40 mg : deux comprimés le matin et un au repas de midi » afin d’assurer la compatibilité avec les systèmes existants ; et\r\n- la quantité de médicament est généralement représentée par un nombre et l’unité de dose correspondante, mais il peut également y avoir une description narrative pour garantir la compatibilité avec les systèmes existants et couvrir tous les scénarios cliniques ; jusqu’à\r\n- des détails structurés concernant la dose, la voie d’administration et le timing de prise, afin de représenter une spécification entièrement calculable.\r\n\r\nIl a également été conçu de manière à ce qu’une seule structure de prescription médicamenteuse puisse représenter :\r\n- des prescriptions médicamenteuses séquentielles complexes utilisant la même concentration de préparation, prises en charge au sein d’une seule structure de prescription ; et\r\n- plusieurs prescriptions médicamenteuses pouvant être enchaînées dans les cas où différents médicaments ou préparations doivent être administrés de manière séquentielle.\r\n\r\nCet archétype convient également à la prescription de liquides parentéraux, dans les établissements de soins où il est courant de rendre ces articles « prescriptibles ». Dans d’autres contextes, une « prescription de fluide parentéral » distincte peut s’avérer appropriée.\r\n\r\nDes slots contenant des archétypes CLUSTER ont été utilisés pour représenter une partie du contenu, et ce pour trois raisons :\r\n- Pour garantir un archétype de base pouvant être utilisé pour tous les cas d’utilisation susmentionnés, tout en permettant une certaine flexibilité lorsque cela est nécessaire, par exemple le slot « Détails de la préparation » où des détails structurés supplémentaires peuvent être ajoutés. Un archétype candidat a été proposé pour les médicaments. Il est possible que d’autres archétypes CLUSTER soient nécessaires à l’avenir à d’autres fins, telles que les ordonnances complexes de nutrition parentérale ;\r\n- pour favoriser la réutilisation des archétypes dans les situations où le contenu a été identifié comme étant également utilisé dans d’autres contextes cliniques, en particulier l’archétype apparié ACTION.medication destiné à enregistrer la distribution effective, l’administration, etc. ; et\r\n- afin d'éliminer le contenu le moins utilisé de la structure de base des archétypes.\r\n\r\nPlusieurs ordonnances peuvent être représentées comme des activités distinctes au sein de cette instance d’archétype unique afin de prendre en charge des ordonnances étroitement liées portant sur différents médicaments, par exemple un traitement contre H. pylori lorsque celui-ci n’est pas prescrit sous la forme d’un seul emballage.\r\n\r\nIl convient de noter que ces utilisations englobent à la fois les cas d’utilisation « FHIR Medication Order » et « Medication Statement ». Autrement dit, cet archétype correspond à ces deux ressources FHIR, utilisées dans le contexte approprié.",
+          "misuse" : "À ne pas utiliser pour enregistrer les activités liées à l’exécution de la prescription de médicaments, de vaccins, de produits nutritionnels ou d’articles thérapeutiques, telles que les détails concernant l’administration ou la distribution effective. Utilisez l’élément ACTION.medication à cette fin.\r\n\r\nÀ ne pas utiliser pour enregistrer la prescription de produits sanguins, qui implique un processus clinique fondamentalement différent et est susceptible de nécessiter des informations complémentaires différentes. Utilisez l’élément INSTRUCTION.transfusion à cette fin.\r\n\r\nÀ ne pas utiliser pour enregister la prescription de la pose d’implants ou de dispositifs médicaux tels que les stimulateurs cardiaques et les défibrillateurs. Utilisez INSTRUCTION.procedure à cette fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "purpose" : "Enregistrar tots els aspectes d'una ordre de medicació, vacuna, producte nutricional o un altre element terapèutic per a un individu identificat.",
+          "keywords" : [ "medicació", "ordre", "prescriure", "teràpia", "substància", "fàrmac", "terapèutica", "otc", "element terapèutic", "farmacèutica", "producte", "posologia", "tractament", "fluid", "nutrició", "CPOE", "medicina" ],
+          "use" : "Utilitzar per a registrar tots els aspectes d'una ordre de medicació, vacuna, producte nutricional o un altre element terapèutic per a un individu identificat.\r\n\r\nEstà destinat a ser emprat per a qualsevol classe de medicació i ordre relacionada, estigui prescrita per un professional sanitari o disponible per la compra \"sense recepta\". L'àmbit d'aplicació d'aquest arquetip de medicació també inclou ordres de vacunació, fluids parenterals o altres productes terapèutics, com ara embenats, productes nutricionals o altres productes que s'apliquen o s'administren per tindre un efecte terapèutic i que tenen un patró comú per al registre de dades.\r\n\r\nAquest arquetip està dissenyat per ser emprat en diversos contextos clínics, incloent-hi però no limitat a:\r\n- un registre en una consulta clínica (COMPOSICIÓ.trobada);\r\n- una recepta escrita per un metge, dentista, infermer facultatiu o un altre professional de la salut designat a distribuir o administrar una medicació o producte nutricional (dins d'una COMPOSICIÓ.prescripció);\r\n- un element en una llista actual de medicació, recepta o gràfic de mediació (dins de COMPOSICIÓ.llista_medicació); i\r\n- un element en un document de resum com ara un trasllat d'atenció (COMPOSICIÓ.resum_trasllat) o una derivació (COMPOSICIÓ.sol·licitud).\r\n\r\nEn molts casos, una ordre de medicació serà simple ― generalment per a un únic element de medicació amb instruccions senzilles per a la dispensació i administració. No obstant això, aquest arquetip també està dissenyat per permetre ordres terapèutiques més complexes. Per exemple:\r\n\r\n- una dosi de reducció de prednisolona durant un període de setmanes;\r\n- titulació (valoració) de la insulina, amb dosificació depenent dels resultats de la prova;\r\n- múltiples medicaments prescrits simultàniament com a part d'un règim d’un únic fàrmac, com una triple teràpia per a úlcera pèptica; i\r\n- Administració intravenosa de medicaments o suplements nutricionals, incloent-hi la nutrició parenteral.\r\n\r\nPer tant, l'arquetip ha estat dissenyat per permetre un rang de complexitat, des de:\r\n- instruccions narratives senzilles per a ordres com \"furosemida 40mg dos comprimits al matí i una al dinar\" per garantir la compatibilitat amb sistemes existents; i\r\n- la quantitat de medicació es representa normalment en termes d'una xifra i la corresponent unitat de dosi, però alternativament pot haver-hi una declaració narrativa per assegurar la compatibilitat amb sistemes existents i la cobertura de tots els escenaris clínics; a través de\r\n- detall estructurat per dosi, ruta i temps d'administració per representar una especificació totalment mesurable.\r\n\r\nTambé s'ha dissenyat de manera que una única estructura d'ordre de medicació pugui representar:\r\n- ordres complexes de medicació seqüencial utilitzant la mateixa dosificació de preparació per ser recolzada dins d'una única estructura d'ordre; i\r\n- es poden encadenar múltiples ordres de medicació en circumstàncies on cal donar seqüencialment diferents medicaments o preparats.\r\nAquest arquetip també és adequat per ordenar fluids parenterals, en entorns assistencials on és pràctica normal fer aquests elements \"prescriptibles\". En altres entorns pot ser apropiada una \"ordre de fluid parental\" separat.\r\n\r\nEls SLOTs que contenen arquetips CLUSTER s'han utilitzat per representar una mica del contingut per tres raons:\r\n- Per a garantir un arquetip central que es pot utilitzar per a tots els anteriors casos d'ús, però permet flexibilitat quan sigui necessari, per exemple el SLOT «Detall de preparació» on es pot afegir detall estructurat addicional. Es va suggerir un arquetip candidat per a Medicacions. És possible que altres arquetips CLUSTER en el futur es puguin necessitar per a altres propòsits com ordres complexes de nutrició parenteral;\r\n- donar suport a la reutilització d'arquetips en situacions en què el contingut s'ha identificat com a també fet servit en altres contextos clínics, en particular l'arquetip aparellat ACCIÓ.medicació per registrar la dispensació real, administració, etc; i\r\n- per a eliminar el contingut menys habitualment usat del marc de l'arquetip base.\r\n\r\nMúltiples ordres es poden representar com a activitats separades dins d'un únic arquetip per portar ordres estretament lligades de diferents medicaments, per exemple, la teràpia H. Pylori quan això no es prescriu com un sol paquet.\r\n\r\nCal assenyalar que aquests usos subsumeixen tant els casos d'ús de l'Ordre de Medicació FHIR com els de la Declaració de Medicació. És a dir, aquest arquetip coincideix amb els dos recursos FHIR, utilitzats en el context apropiat.",
+          "misuse" : "No utilitzar-se per a registrar les activitats relacionades amb la realització de l'ordre de medicació, vacuna, producte nutricional o terapèutic, com ara detalls sobre l'administració actual o dispensació. Utilitzeu la ACCIÓ.medicació per a aquest propòsit.\r\n\r\nNo s'ha d'utilitzar per registrar l'ordre de productes sanguinis, el qual implica un procés clínic fonamentalment diferent i és probable que requereixi informació de suport diferent. Utilitzeu INSTRUCCIÓ.transfusió per a aquest propòsit.\r\n\r\nNo s'ha d'utilitzar per registrar l'ordre d'inserció d'implants o dispositius mèdics com marcapassos i desfibril·ladors. Utilitzeu INSTRUCCIÓ.procediment per a aquest propòsit.",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -8435,7 +9007,10 @@
         "es-ar" : { },
         "de" : { },
         "sv" : { },
-        "es" : { }
+        "es" : { },
+        "ca" : { },
+        "sk" : { },
+        "fr" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -8534,6 +9109,47 @@
         "codeString" : "es"
       },
       "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sk"
+      },
+      "author" : {
+        "name" : "Alica Ciglanska",
+        "organisation" : "Prosoft Košice, a.s.",
+        "email" : "ciglanska.alica@prosoftke.sk"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fr"
+      },
+      "author" : {
+        "name" : "Jonas Bucher",
+        "organisation" : "Cistec AG",
+        "email" : "jonas.bucher@cistec.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : {
+        "name" : "Jaqueline Peredo",
+        "email" : "jperedo2003@gmail.com"
+      },
       "otherDetails" : { }
     } ]
   }, {
@@ -8763,6 +9379,21 @@
           "misuse" : "No s'ha de deixar sense canvis en una plantilla.",
           "originalResourceUri" : { },
           "otherDetails" : { }
+        },
+        "tr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "tr"
+          },
+          "purpose" : "Belirli bir klinik bağlama uyacak şekilde bir şablonda yeniden adlandırılacak genel bir bölüm başlığı sağlamak için.",
+          "keywords" : [ ],
+          "use" : "Bir şablonda, belirli klinik bağlama uyacak şekilde yeniden adlandırılacak bir bölüm başlığı oluşturmak için kullanılır. Örneğin: “Geçici başlık”ın “Muayene bulguları” olarak yeniden adlandırılması.",
+          "misuse" : "Bir şablonda değiştirilmeden bırakılmamalıdır.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
         }
       }
     },
@@ -8820,10 +9451,18 @@
         "de" : { },
         "it" : { },
         "fr" : { },
-        "ca" : { },
+        "ca" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Medicació a l'ingrés",
+            "description" : "Una capçalera de secció genèrica que s'ha de rebatejar en una plantilla per adaptar-se a un context clínic específic."
+          }
+        },
         "es" : { },
         "pt-pt" : { },
-        "pt" : { }
+        "pt" : { },
+        "tr" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -9020,6 +9659,22 @@
         "email" : "lmorallopez@gmail.com, lauramoral@catsalut.cat"
       },
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "tr"
+      },
+      "author" : {
+        "name" : "Olha Nikolaieva",
+        "organisation" : "University Hospital Basel",
+        "email" : "olha.nikolaieva@usb.ch"
+      },
+      "otherDetails" : {
+        "other_contributors" : "Koray Atalag, GALATA-Digital, New Zealand"
+      }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
@@ -9122,6 +9777,19 @@
           "keywords" : [ "timming", "l'administration", "dosage", "fréquence", "intervalle", "ordre", "recommandation", "horaire", "par jour" ],
           "use" : "A utiliser pour enregistrer des informations structurées sur le moment prévu pour une activité thérapeutique ou diagnostique au cours d'une période de 24 heures.\r\n\r\nCet archétype est conçu pour être utilisé dans le SLOT 'Timing' de l'archétype CLUSTER.dosage, mais peut également être utilisé dans d'autres archétypes de classe CLUSTER et ENTRY lorsque cela est cliniquement approprié.",
           "misuse" : "Ne doit pas être utilisé pour enregistrer les détails du chronométrage sur des périodes plus longues qu'une seule période de 24 heures. Utilisez l'archétype CLUSTER.timing_repetition à cette fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -9729,7 +10397,8 @@
         "nb" : { },
         "de" : { },
         "sk" : { },
-        "fr" : { }
+        "fr" : { },
+        "ca" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -9814,6 +10483,16 @@
         "email" : "vanessapereira@protonmail.com"
       },
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
@@ -9897,6 +10576,48 @@
           "keywords" : [ "medication", "order", "prescribe", "therapy", "substance", "drug", "therapeutic", "therapeutic good", "pharmaceutical", "product", "posology", "treatment", "fluid", "nutrition", "timing", "administration", "dose" ],
           "use" : "Use to record the combination of a medication amount and the administration timing for a single day, as part of a medication order or medication management or for other appropriate therapeutic/prescribable items. \r\nThe timing pattern for a single day can be as simple as a single administration time, or multiple administration times with varying levels of complexity.\r\n\r\nTiming details which are not within a single day, for example, weekly or monthly timings, are carried in the CLUSTER 'Timing - non-daily' archetype carried within the CLUSTER 'Therapeutic direction' archetype.\r\n\r\nIn the context of a therapeutic INSTRUCTION, this archetype may be inserted into the 'Structured dose and timing directions' SLOT in the 'Therapeutic direction' CLUSTER to record the dose and timing details of the pattern of single intended administrations of a therapeutic item. \r\n\r\nIn the context of an ACTION archetype insert this archetype directly into the 'Amount' SLOT to record the dose and timing of the actual administration of a therapeutic item.\r\n\r\nSpecific administration start/stop times should be specified within a contained CLUSTER 'Timing - daily' archetype.",
           "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sk" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sk"
+          },
+          "purpose" : "Slúži pre záznam množstva dávky a časov podania za jeden deň - ako časť preskripcie alebo medikácie alebo pre iné terapeutické/preskribovateľné položky.",
+          "keywords" : [ "medikácia", "objendávka", "preskricpia", "terapia", "účinná látka", "liek", "terapeutický", "farmaceutický", "produkt", "liečba", "tekutina", "výživa", "časový rozpis", "podanie", "dávka" ],
+          "use" : "Slúži pre záznam množstva dávky a časov podania za jeden deň - ako časť preskripcie alebo medikácie alebo pre iné terapeutické/preskribovateľné položky.\r\nČasový rozpis pre jeden deň môže byť jednoduchý - ako napr. jeden konkrétny čas podania alebo viacej časov podania - v závislosti od úrovne komplexity\r\nČasový rozpis, ktorý sa netýka iba jedného dňa napr. týždenný alebo mesačný rozpis, je potrebné zadať v CLUSTER 'Timing - non-daily' archetype , ktorý má byť vnorený v rámci CLUSTER 'Therapeutic direction' archetype.\r\n\r\nV kontexte INSTRUCTION tento archetyp má byť vložený v SLOTe \"Štrukturované dávkovanie a časy podania\" v rámci CLUSTER 'Therapeutic direction' archetypu - aby bolo možné zadať dávku a časový rozpis pre jednotlivé požadované podanie preskribovanej položky\r\nV kontexte ACTION tento archetyp má byť vložený priamo do SLOTu \"Množstvo\" - aby bolo možné zadať dávku a čas pre aktuálne podanie položky\r\n\r\nŠpecifické časy pre začiatok podávania a koniec podávania majú byť špecifikované vo vloženom CLUSTER 'Timing - daily' archetype.\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "purpose" : "Registrar la combinación de una cantidad de medicación y el momento de administración en un mismo día, como parte de una prescripción o gestión de medicación, o para otros elementos terapéuticos/prescribibles apropiados.",
+          "keywords" : [ "medicación", "orden", "prescribir", "terapia", "sustancia", "medicamento", "terapéutico", "bien terapéutico", "farmacéutico", "producto", "posología", "tratamiento", "fluido", "nutrición", "timing", "administración", "dosis" ],
+          "use" : "Se utiliza para registrar la combinación de una cantidad de medicación y el momento de administración para un solo día, como parte de una prescripción o gestión de medicación, o para otros elementos terapéuticos/prescribibles apropiados. \r\n\r\nLa pauta temporal de un único día puede ser tan simple como una sola hora de administración, o varias horas de administración con distintos niveles de complejidad.\r\n\r\nLos detalles de temporización que no correspondan a un único día, por ejemplo, temporizaciones semanales o mensuales, han de llevarse a cabo en el arquetipo de tipo CLUSTER 'Temporización - no diaria', dentro del arquetipo CLUSTER 'Dirección terapéutica'.\r\n\r\nEn el contexto de una INSTRUCTION terapéutica, este arquetipo puede insertarse en el SLOT \"Direcciones estructuradas de dosis y timing\", dentro del CLUSTER \"Dirección terapéutica\", para registrar los detalles de dosis y timing del patrón de administraciones únicas previstas de un elemento terapéutico. \r\n\r\nEn el contexto de un arquetipo de tipo ACTION, inserte este arquetipo directamente en el SLOT \"Cantidad\" para registrar la dosis y el momento de la administración real de un elemento terapéutico.\r\n\r\nLas horas específicas de inicio y finalización de la administración deben especificarse dentro de un arquetipo CLUSTER \"Timing - diario\".\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "purpose" : "Registrar la combinació d’una quantitat de medicació i el moment d’administració en un mateix dia, com a part d’una prescripció o gestió de medicació o per a altres elements terapèutics/prescriptibles apropiats.",
+          "keywords" : [ "medicació", "encàrrec", "prescriure", "teràpia", "substància", "medicament", "terapèutic", "producte terapèutic", "fàrmac", "producte", "posologia", "tractament", "fluid", "nutrició", "temporització", "administració", "dosi" ],
+          "use" : "Utilitzar per a registrar la combinació d’una quantitat de medicació i el moment d’administració en un mateix dia, com a part d’una prescripció o gestió de medicació o per a altres elements terapèutics/prescriptibles apropiats.\r\nLa pauta horària d’un únic dia pot ser tan simple com una sola hora d’administració o diverses hores d’administració amb diversos nivells de complexitat.\r\n\r\nLes dades de temporització que no corresponguin a un únic dia; per exemple, temporitzacions setmanals o mensuals, estan contingudes en l’arquetip de tipus CLUSTER «Temporització – no diària», que es troba dins de l’arquetip de tipus CLUSTER «Instruccions terapèutiques».\r\n\r\nEn el context d’una INSTRUCTION terapèutica, aquest arquetip es pot inserir al SLOT «Instruccions estructurals de dosi i temporització» dins del CLUSTER «Instruccions terapèutiques» per a registrar les dades de dosi i temporalització de les pautes d’administracions úniques previstes d’un element terapèutic.\r\n\r\nEn el context d’un arquetip de tipus ACTION, aquest arquetip s’ha d’inserir directament al SLOT «Quantitat» per a registrar la dosi i el moment d’una administració concreta d’un element terapèutic.\r\n\r\nEls moments específics d’inici i de finalització s’han d’especificar dins d’un arquetip «Temporització – diària» de tipus CLUSTER.",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -10230,7 +10951,10 @@
         "nb" : { },
         "pt-br" : { },
         "de" : { },
-        "sv" : { }
+        "sv" : { },
+        "es" : { },
+        "ca" : { },
+        "sk" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -10305,6 +11029,50 @@
       },
       "accreditation" : "Hospital Alemão Oswaldo Cruz (HAOC)",
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sk"
+      },
+      "author" : {
+        "name" : "Alica Ciglanska",
+        "organisation" : "Prosoft Košice, a.s.",
+        "email" : "ciglanska.alica@prosoftke.sk"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : {
+        "name" : "Julio de Sosa",
+        "organisation" : "Servei Català de la Salut",
+        "email" : "juliodesosa@catsalut.cat"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : {
+        "name" : "Manuel José Zafra Doménech",
+        "organisation" : "TRADCREA, S.L.",
+        "email" : "mzafra@tradcrea.com"
+      },
+      "otherDetails" : {
+        "other_contributors" : "Servei Català de la Salut"
+      }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
@@ -10377,6 +11145,19 @@
           "keywords" : [ "timing, administration, dosing, frequency, interval, order, recommendation, schedule, plan, repetition" ],
           "use" : "Use to record structured information about the intended timing pattern for a therapeutic or diagnostic activity occurring over days, weeks, months or years.\r\n\r\nThis archetype is designed to be used within the 'Direction repetition' SLOT within the CLUSTER.therapeutic_direction archetype, but can also be used in other CLUSTER and ENTRY class archetypes where clinically appropriate.\r\n\r\nIn use cases where it's necessary to specify explicitly that an activity is to take place every day, the \"Repetition interval\" element can be set to \"1 day\".",
           "misuse" : "Not to be used to record timing details within a single 24 hour time period. Use the CLUSTER.timing_daily archetype for this purpose.\r\n\r\nIn use cases where it can be safely assumed that an activity should be carried out every single day, this archetype is redundant.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
           "copyright" : "© openEHR Foundation",
           "originalResourceUri" : { },
           "otherDetails" : { }
@@ -11321,6 +12102,14 @@
             "code" : "ac0.1",
             "description" : ""
           }
+        },
+        "ca" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
         }
       },
       "termBindings" : { },
@@ -11386,6 +12175,16 @@
         "organisation" : "Hospital Sírio Libanês - SP",
         "email" : "osmeire.acsanzovo@hsl.org.br"
       },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
       "otherDetails" : { }
     } ]
   }, {
@@ -11470,6 +12269,19 @@
           "purpose" : "Pour enregistrer les détails structurés d’une instruction thérapeutique unique pour un produit thérapeutique / pour un produit soumis à prescription médicale.\r\n\r\nChaque instruction s’applique généralement pendant une durée déterminée ou pour un nombre fixe d’administrations.",
           "keywords" : [ "médication", "ordonnance", "prescrire", "thérapie", "substance", "médicament", "thérapeutique", "en vente libre", "produit thérapeutique", "pharmaceutique", "produit", "posologie", "traitement", "transfusion" ],
           "use" : "Une posologie décrit un ou plusieurs schémas d’administration thérapeutique séquentiels, associés à une durée globale de la posologie et aux détails de tout schéma répétitif d’administration prévu au-delà d’une seule journée.\r\n\r\nPar exemple : « 1 comprimé le matin, 1 comprimé le soir, pendant 3 semaines, les lundis, mercredis et vendredis ». Cet archétype de type cluster permet des occurrences multiples afin de représenter un ensemble complet de posologies pour une seule prescription médicamenteuse. Le cluster peut être renommé dans le template ou lors de l’exécution pour représenter un événement posologique spécifique tel qu’une « dose de charge » ou un « bolus ».\r\n\r\nCet archétype sera généralement utilisé dans le contexte d’un archétype parent INSTRUCTION. Il a été spécialement conçu pour être utilisé dans le cadre d’une prescription médicamenteuse complexe comprenant des médicaments administrés par voie intraveineuse, ou pour des prescriptions de liquides dans le cadre d’une transfusion ou d’une dialyse.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -11815,6 +12627,14 @@
             "code" : "ac0.1",
             "description" : ""
           }
+        },
+        "ca" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
         }
       },
       "termBindings" : { },
@@ -11895,6 +12715,16 @@
         "organisation" : "Cistec AG",
         "email" : "jonas.bucher@cistec.com"
       },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : { },
       "otherDetails" : { }
     } ]
   }, {
@@ -12012,6 +12842,51 @@
           },
           "keywords" : [ ],
           "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sk" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sk"
+          },
+          "purpose" : "*To record all aspects of an order of a medication, vaccine, nutritional product or other therapeutic item for an identified individual.(en)",
+          "keywords" : [ "*medication(en)", "*order(en)", "*prescribe(en)", "*therapy(en)", "*substance(en)", "*drug(en)", "*therapeutic(en)", "*otc(en)", "*therapeutic good(en)", "*pharmaceutical(en)", "*product(en)", "*posology(en)", "*treatment(en)", "*fluid(en)", "*nutrition(en)", "*CPOE(en)", "*medicine(en)" ],
+          "use" : "*Use to record all aspects of an order of a medication, vaccine, nutritional product or other therapeutic item for an identified individual.\r\n\r\nIt is intended to be used for any type of medication and related order, whether prescribed by a health professional or available for purchase 'over the counter'. The scope of this medication archetype also includes orders for vaccinations, parenteral fluids or other therapeutic goods, such as bandages, nutritional products or other items that are applied or administered to have a therapeutic effect and which have a common pattern for data recording.\r\n\r\nThis archetype is designed to be used in a number of clinical contexts, including but not limited to:\r\n- a record in a clinical consultation (COMPOSITION.encounter);\r\n- a written prescription by a physician, dentist, nurse practitioner, or other designated health professional for a medication or nutritional product to be dispensed and administered (within a COMPOSITION.prescription);\r\n- an item in a current medication list, prescription or drug chart (within COMPOSITION.medication_list); and\r\n- an item in a summary document such as transfer of care (COMPOSITION.transfer_summary) or a referral (COMPOSITION.request).\r\n\r\nIn many cases a medication order will be simple – typically for a single medication item with uncomplicated instructions for dispensing and administration. However this archetype is also designed to allow for more complex therapeutic orders. For example:\r\n\r\n- a reducing dose of prednisolone over a period of weeks;\r\n- titration of insulin, with dosing dependent on test results;\r\n- multiple medications prescribed simultaneously as part of a single drug regimen, such as a triple therapy for peptic ulcer; and\r\n- intravenous administration of medications or nutrition supplements, including parenteral nutrition.\r\n\r\nThe archetype has therefore been designed to allow for a range of complexity, from:\r\n- simple narrative instructions for orders like 'furosemide 40mg two tablets in the morning and one at lunch' to ensure compatibility with existing systems; and\r\n- the amount of medication is usually represented in terms of a number and corresponding dose unit, however there can alternatively be a narrative statement to ensure compatibility with existing systems and coverage of all clinical scenarios; through to\r\n- structured detail for dose, route and timing to represent a fully computable specification.\r\n\r\nIt has also been designed so that a single medication order structure can represent:\r\n- complex sequential medication orders using the same preparation strength to be supported within a single order structure; and\r\n- multiple medication orders can be chained in circumstances where different medications or preparations need to be given sequentially.\r\n\r\nThis archetype is also suitable for ordering parenteral fluids, in care settings where it is normal practice to make these 'prescribable' items. In other settings a separate 'parenteral fluid order' may be appropriate.\r\n\r\nSLOTs containing CLUSTER archetypes have been used to represent some of the content for three reasons:\r\n- To ensure a core archetype that can be used for all the above use cases, yet allow flexibility where it is required, for example the ‘Preparation details’ SLOT where additional structured detail can be added. A candidate archetype has been suggested for Medications. It is possible that other CLUSTER archetypes may be required in future for other purposes such as complex parenteral nutrition orders;\r\n- to support archetype re-use in situations where the content has been identified as being also used in other clinical contexts, in particular the paired ACTION.medication archetype for recording actual dispensing, administration etc; and\r\n- to remove less commonly used content from the core archetype framework.\r\n\r\nMultiple orders can be represented as separate activities within this single archetype instance to carry tightly bound orders of different medications, for example, H. pylori therapy when this is not prescribed as a single pack.\r\n\r\nIt should be noted that these uses subsume both the FHIR Medication Order and Medication Statement use cases. i.e this archetype is a match for both FHIR resources, used in the appropriate context.(en)",
+          "misuse" : "*Not to be used to record the activities related to carrying out the order for medication, vaccine, nutritional product or therapeutic item, such as details about actual administration or dispensing. Use the ACTION.medication for this purpose.\r\n\r\nNot to be used to record the ordering of blood products, which involves a fundamentally different clinical process and is likely to require different supporting information Use the INSTRUCTION.transfusion for this purpose.\r\n\r\nNot to be used to record the order for insertion of implants or medical devices such as pacemakers and defibrillators. Use the INSTRUCTION.procedure for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Pour enregistrer tous les aspects d'une prescription de médicament, de vaccin, de produit nutritionnel ou de tout autre produit thérapeutique destinée à une personne identifiée.",
+          "keywords" : [ "médication", "ordonnance", "prescrire", "thérapie", "substance", "médicament", "thérapeutique", "en vente libre", "produit thérapeutique", "pharmaceutique", "produit", "posologie", "traitement", "liquide", "nutrition", "système de saisie électronique des ordonnances par les médecins (SEOM)", "médecine" ],
+          "use" : "À utiliser pour enregistrer tous les aspects d’une prescription de médicament, de vaccin, de produit nutritionnel ou de tout autre produit thérapeutique destinée à une personne identifiée.\r\n\r\nIl est destiné à être utilisé pour tout type de médicament et de prescription associée, qu’il s’agisse d’une prescription délivrée par un professionnel de santé ou d’un produit disponible en vente libre. Le champ d’application de cet archétype de médicament inclut également les prescriptions de vaccins, de solutions parentérales ou d’autres produits thérapeutiques, tels que les pansements, les produits nutritionnels ou d’autres articles appliqués ou administrés dans un but thérapeutique et dont l’enregistrement des données suit un schéma commun.\r\n\r\nCet archétype est conçu pour être utilisé dans divers contextes cliniques, notamment, mais sans s’y limiter :\r\n- un enregistrement lors d’une consultation clinique (COMPOSITION.encounter) ;\r\n- une ordonnance rédigée par un médecin, un dentiste, une infirmière praticienne ou tout autre professionnel de santé désigné, portant sur un médicament ou un produit nutritionnel devant être délivré et administré (au sein d’un COMPOSITION.prescription) ;\r\n- un élément figurant dans une liste de médicaments en cours, une ordonnance ou un tableau de médicaments (au sein de COMPOSITION.medication_list) ; et\r\n- un élément figurant dans un document de synthèse tel qu’un transfert de soins (COMPOSITION.transfer_summary) ou une demande de consultation (COMPOSITION.request).\r\n\r\nDans de nombreux cas, une prescription médicamenteuse sera simple – généralement pour un seul médicament accompagné d’instructions simples concernant sa délivrance et son administration. Cependant, cet archétype est également conçu pour permettre des prescriptions thérapeutiques plus complexes. Par exemple :\r\n\r\n- une réduction progressive de la dose de prednisolone sur plusieurs semaines ;\r\n- un ajustement posologique de l’insuline, la posologie dépendant des résultats des analyses ;\r\n- plusieurs médicaments prescrits simultanément dans le cadre d’un même traitement, comme une trithérapie contre l’ulcère gastro-duodénal ; et\r\n- l’administration intraveineuse de médicaments ou de compléments nutritionnels, y compris la nutrition parentérale.\r\n\r\nL’archétype a donc été conçu pour s’adapter à différents niveaux de complexité, allant de :\r\n- de simples instructions narratives pour des prescriptions telles que « furosémide 40 mg : deux comprimés le matin et un au repas de midi » afin d’assurer la compatibilité avec les systèmes existants ; et\r\n- la quantité de médicament est généralement représentée par un nombre et l’unité de dose correspondante, mais il peut également y avoir une description narrative pour garantir la compatibilité avec les systèmes existants et couvrir tous les scénarios cliniques ; jusqu’à\r\n- des détails structurés concernant la dose, la voie d’administration et le timing de prise, afin de représenter une spécification entièrement calculable.\r\n\r\nIl a également été conçu de manière à ce qu’une seule structure de prescription médicamenteuse puisse représenter :\r\n- des prescriptions médicamenteuses séquentielles complexes utilisant la même concentration de préparation, prises en charge au sein d’une seule structure de prescription ; et\r\n- plusieurs prescriptions médicamenteuses pouvant être enchaînées dans les cas où différents médicaments ou préparations doivent être administrés de manière séquentielle.\r\n\r\nCet archétype convient également à la prescription de liquides parentéraux, dans les établissements de soins où il est courant de rendre ces articles « prescriptibles ». Dans d’autres contextes, une « prescription de fluide parentéral » distincte peut s’avérer appropriée.\r\n\r\nDes slots contenant des archétypes CLUSTER ont été utilisés pour représenter une partie du contenu, et ce pour trois raisons :\r\n- Pour garantir un archétype de base pouvant être utilisé pour tous les cas d’utilisation susmentionnés, tout en permettant une certaine flexibilité lorsque cela est nécessaire, par exemple le slot « Détails de la préparation » où des détails structurés supplémentaires peuvent être ajoutés. Un archétype candidat a été proposé pour les médicaments. Il est possible que d’autres archétypes CLUSTER soient nécessaires à l’avenir à d’autres fins, telles que les ordonnances complexes de nutrition parentérale ;\r\n- pour favoriser la réutilisation des archétypes dans les situations où le contenu a été identifié comme étant également utilisé dans d’autres contextes cliniques, en particulier l’archétype apparié ACTION.medication destiné à enregistrer la distribution effective, l’administration, etc. ; et\r\n- afin d'éliminer le contenu le moins utilisé de la structure de base des archétypes.\r\n\r\nPlusieurs ordonnances peuvent être représentées comme des activités distinctes au sein de cette instance d’archétype unique afin de prendre en charge des ordonnances étroitement liées portant sur différents médicaments, par exemple un traitement contre H. pylori lorsque celui-ci n’est pas prescrit sous la forme d’un seul emballage.\r\n\r\nIl convient de noter que ces utilisations englobent à la fois les cas d’utilisation « FHIR Medication Order » et « Medication Statement ». Autrement dit, cet archétype correspond à ces deux ressources FHIR, utilisées dans le contexte approprié.",
+          "misuse" : "À ne pas utiliser pour enregistrer les activités liées à l’exécution de la prescription de médicaments, de vaccins, de produits nutritionnels ou d’articles thérapeutiques, telles que les détails concernant l’administration ou la distribution effective. Utilisez l’élément ACTION.medication à cette fin.\r\n\r\nÀ ne pas utiliser pour enregistrer la prescription de produits sanguins, qui implique un processus clinique fondamentalement différent et est susceptible de nécessiter des informations complémentaires différentes. Utilisez l’élément INSTRUCTION.transfusion à cette fin.\r\n\r\nÀ ne pas utiliser pour enregister la prescription de la pose d’implants ou de dispositifs médicaux tels que les stimulateurs cardiaques et les défibrillateurs. Utilisez INSTRUCTION.procedure à cette fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "purpose" : "Enregistrar tots els aspectes d'una ordre de medicació, vacuna, producte nutricional o un altre element terapèutic per a un individu identificat.",
+          "keywords" : [ "medicació", "ordre", "prescriure", "teràpia", "substància", "fàrmac", "terapèutica", "otc", "element terapèutic", "farmacèutica", "producte", "posologia", "tractament", "fluid", "nutrició", "CPOE", "medicina" ],
+          "use" : "Utilitzar per a registrar tots els aspectes d'una ordre de medicació, vacuna, producte nutricional o un altre element terapèutic per a un individu identificat.\r\n\r\nEstà destinat a ser emprat per a qualsevol classe de medicació i ordre relacionada, estigui prescrita per un professional sanitari o disponible per la compra \"sense recepta\". L'àmbit d'aplicació d'aquest arquetip de medicació també inclou ordres de vacunació, fluids parenterals o altres productes terapèutics, com ara embenats, productes nutricionals o altres productes que s'apliquen o s'administren per tindre un efecte terapèutic i que tenen un patró comú per al registre de dades.\r\n\r\nAquest arquetip està dissenyat per ser emprat en diversos contextos clínics, incloent-hi però no limitat a:\r\n- un registre en una consulta clínica (COMPOSICIÓ.trobada);\r\n- una recepta escrita per un metge, dentista, infermer facultatiu o un altre professional de la salut designat a distribuir o administrar una medicació o producte nutricional (dins d'una COMPOSICIÓ.prescripció);\r\n- un element en una llista actual de medicació, recepta o gràfic de mediació (dins de COMPOSICIÓ.llista_medicació); i\r\n- un element en un document de resum com ara un trasllat d'atenció (COMPOSICIÓ.resum_trasllat) o una derivació (COMPOSICIÓ.sol·licitud).\r\n\r\nEn molts casos, una ordre de medicació serà simple ― generalment per a un únic element de medicació amb instruccions senzilles per a la dispensació i administració. No obstant això, aquest arquetip també està dissenyat per permetre ordres terapèutiques més complexes. Per exemple:\r\n\r\n- una dosi de reducció de prednisolona durant un període de setmanes;\r\n- titulació (valoració) de la insulina, amb dosificació depenent dels resultats de la prova;\r\n- múltiples medicaments prescrits simultàniament com a part d'un règim d’un únic fàrmac, com una triple teràpia per a úlcera pèptica; i\r\n- Administració intravenosa de medicaments o suplements nutricionals, incloent-hi la nutrició parenteral.\r\n\r\nPer tant, l'arquetip ha estat dissenyat per permetre un rang de complexitat, des de:\r\n- instruccions narratives senzilles per a ordres com \"furosemida 40mg dos comprimits al matí i una al dinar\" per garantir la compatibilitat amb sistemes existents; i\r\n- la quantitat de medicació es representa normalment en termes d'una xifra i la corresponent unitat de dosi, però alternativament pot haver-hi una declaració narrativa per assegurar la compatibilitat amb sistemes existents i la cobertura de tots els escenaris clínics; a través de\r\n- detall estructurat per dosi, ruta i temps d'administració per representar una especificació totalment mesurable.\r\n\r\nTambé s'ha dissenyat de manera que una única estructura d'ordre de medicació pugui representar:\r\n- ordres complexes de medicació seqüencial utilitzant la mateixa dosificació de preparació per ser recolzada dins d'una única estructura d'ordre; i\r\n- es poden encadenar múltiples ordres de medicació en circumstàncies on cal donar seqüencialment diferents medicaments o preparats.\r\nAquest arquetip també és adequat per ordenar fluids parenterals, en entorns assistencials on és pràctica normal fer aquests elements \"prescriptibles\". En altres entorns pot ser apropiada una \"ordre de fluid parental\" separat.\r\n\r\nEls SLOTs que contenen arquetips CLUSTER s'han utilitzat per representar una mica del contingut per tres raons:\r\n- Per a garantir un arquetip central que es pot utilitzar per a tots els anteriors casos d'ús, però permet flexibilitat quan sigui necessari, per exemple el SLOT «Detall de preparació» on es pot afegir detall estructurat addicional. Es va suggerir un arquetip candidat per a Medicacions. És possible que altres arquetips CLUSTER en el futur es puguin necessitar per a altres propòsits com ordres complexes de nutrició parenteral;\r\n- donar suport a la reutilització d'arquetips en situacions en què el contingut s'ha identificat com a també fet servit en altres contextos clínics, en particular l'arquetip aparellat ACCIÓ.medicació per registrar la dispensació real, administració, etc; i\r\n- per a eliminar el contingut menys habitualment usat del marc de l'arquetip base.\r\n\r\nMúltiples ordres es poden representar com a activitats separades dins d'un únic arquetip per portar ordres estretament lligades de diferents medicaments, per exemple, la teràpia H. Pylori quan això no es prescriu com un sol paquet.\r\n\r\nCal assenyalar que aquests usos subsumeixen tant els casos d'ús de l'Ordre de Medicació FHIR com els de la Declaració de Medicació. És a dir, aquest arquetip coincideix amb els dos recursos FHIR, utilitzats en el context apropiat.",
+          "misuse" : "No utilitzar-se per a registrar les activitats relacionades amb la realització de l'ordre de medicació, vacuna, producte nutricional o terapèutic, com ara detalls sobre l'administració actual o dispensació. Utilitzeu la ACCIÓ.medicació per a aquest propòsit.\r\n\r\nNo s'ha d'utilitzar per registrar l'ordre de productes sanguinis, el qual implica un procés clínic fonamentalment diferent i és probable que requereixi informació de suport diferent. Utilitzeu INSTRUCCIÓ.transfusió per a aquest propòsit.\r\n\r\nNo s'ha d'utilitzar per registrar l'ordre d'inserció d'implants o dispositius mèdics com marcapassos i desfibril·ladors. Utilitzeu INSTRUCCIÓ.procediment per a aquest propòsit.",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -12320,7 +13195,10 @@
         "es-ar" : { },
         "de" : { },
         "sv" : { },
-        "es" : { }
+        "es" : { },
+        "ca" : { },
+        "sk" : { },
+        "fr" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -12419,6 +13297,47 @@
         "codeString" : "es"
       },
       "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sk"
+      },
+      "author" : {
+        "name" : "Alica Ciglanska",
+        "organisation" : "Prosoft Košice, a.s.",
+        "email" : "ciglanska.alica@prosoftke.sk"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fr"
+      },
+      "author" : {
+        "name" : "Jonas Bucher",
+        "organisation" : "Cistec AG",
+        "email" : "jonas.bucher@cistec.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : {
+        "name" : "Jaqueline Peredo",
+        "email" : "jperedo2003@gmail.com"
+      },
       "otherDetails" : { }
     } ]
   }, {
@@ -12648,6 +13567,21 @@
           "misuse" : "No s'ha de deixar sense canvis en una plantilla.",
           "originalResourceUri" : { },
           "otherDetails" : { }
+        },
+        "tr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "tr"
+          },
+          "purpose" : "Belirli bir klinik bağlama uyacak şekilde bir şablonda yeniden adlandırılacak genel bir bölüm başlığı sağlamak için.",
+          "keywords" : [ ],
+          "use" : "Bir şablonda, belirli klinik bağlama uyacak şekilde yeniden adlandırılacak bir bölüm başlığı oluşturmak için kullanılır. Örneğin: “Geçici başlık”ın “Muayene bulguları” olarak yeniden adlandırılması.",
+          "misuse" : "Bir şablonda değiştirilmeden bırakılmamalıdır.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
         }
       }
     },
@@ -12772,7 +13706,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Capçalera ad hoc (3)",
+            "text" : "Medicació a l'alta",
             "description" : "Una capçalera de secció genèrica que s'ha de rebatejar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
@@ -12799,7 +13733,8 @@
             "text" : "Título ad hoc (3)",
             "description" : "Um cabeçalho de secção genérico que deve ser renomeado ao nível do template para se adequar a um contexto clínico específico."
           }
-        }
+        },
+        "tr" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -12996,6 +13931,22 @@
         "email" : "lmorallopez@gmail.com, lauramoral@catsalut.cat"
       },
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "tr"
+      },
+      "author" : {
+        "name" : "Olha Nikolaieva",
+        "organisation" : "University Hospital Basel",
+        "email" : "olha.nikolaieva@usb.ch"
+      },
+      "otherDetails" : {
+        "other_contributors" : "Koray Atalag, GALATA-Digital, New Zealand"
+      }
     } ]
   } ],
   "originalLanguage" : {
