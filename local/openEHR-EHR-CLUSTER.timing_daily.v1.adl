@@ -121,7 +121,7 @@ Cet archétype est conçu pour être utilisé dans le SLOT 'Timing' de l'archét
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"eb76644488ebaa5f81bb83174909a100">
+		["MD5-CAM-1.0.1"] = <"237558dbfb3433160280a37d4bd15874">
 		["build_uid"] = <"40503a79-6d6e-4eba-ba13-b51bf56726e4">
 		["revision"] = <"1.0.2">
 	>
@@ -772,12 +772,12 @@ ontology
 					comment = <"*For example when administering antiparkinson medications. (en)">
 				>
 				["at0024"] = <
-					text = <"Segons calgui">
+					text = <"Segons necessitat">
 					description = <"*Record as True if the activity should only occur when the \"'As required' criterion\" is met. (en)">
 					comment = <"*Termed 'PRN' (\"pro re nata\", latin: \"as the situation arises\") or 'PN' (\"per necessare\", latin: \"when required\") in some cultures. (en)">
 				>
 				["at0025"] = <
-					text = <"Criteri de «segons calgui»">
+					text = <"Criteri de l'administració segons necessitat">
 					description = <"*The condition which triggers an 'As required' activity. (en)">
 					comment = <"*For example: \"for pain\". (en)">
 				>
@@ -787,7 +787,7 @@ ontology
 					comment = <"*For example: \"Before each meal\", \"at bedtime\", \"in the morning\". It is understood that these event names may not equate to the same exact times in different cultures. Coding with a terminology, for example HL7 FHIR Named events, is recommended where appropriate. (en)">
 				>
 				["at0027"] = <
-					text = <"Descripció de la temporalització">
+					text = <"Descripció de la pauta temporal">
 					description = <"*Text description of the daily timing. This element is intended to allow implementers to use the structures for different timings without necessarily specifying the timings in a structured way. (en)">
 					comment = <"*For example: \"Take morning and evening\". (en)">
 				>
@@ -797,15 +797,15 @@ ontology
 					comment = <"*For example: \"Apply an ice pack on for 20 minutes, off for an hour, repeat\". (en)">
 				>
 				["at0036"] = <
-					text = <"On">
+					text = <"Període d'administració">
 					description = <"*The period of time for which the activity should take place. (en)">
 				>
 				["at0037"] = <
-					text = <"Off">
+					text = <"Període de descans">
 					description = <"*The period of time for which the activity should NOT take place. (en)">
 				>
 				["at0038"] = <
-					text = <"Repeticions">
+					text = <"Nombre de cicles">
 					description = <"*The number of repetitions of the on/off cycle. (en)">
 				>
 				["at0039"] = <
@@ -813,7 +813,7 @@ ontology
 					description = <"*A specific, named time event that the activity should occur in relation to. (en)">
 				>
 				["at0040"] = <
-					text = <"Desplaçament temporal">
+					text = <"Temps relatiu a l'esdeveniment">
 					description = <"*The period of time before or after the named event when the activity should take place. Negative durations can be used to signify that the activity should take place before the event. (en)">
 					comment = <"*For example: '30 minutes after meal = meal + 30 minutes', '2 hours before bedtime = bedtime -2 hours'. (en)">
 				>
