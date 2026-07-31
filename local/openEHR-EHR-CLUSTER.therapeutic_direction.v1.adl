@@ -45,6 +45,11 @@ language
 			author = <
 			>
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
 	>
 
 description
@@ -122,6 +127,10 @@ Cet archétype sera généralement utilisé dans le contexte d’un archétype p
 			language = <[ISO_639-1::ca]>
 			copyright = <"© openEHR Foundation">
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -139,26 +148,26 @@ Standards for medication and medical device records – technical annex [Interne
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"7bb82b49683f9ab6daf00c0220f00a22">
+		["MD5-CAM-1.0.1"] = <"0166de097c5c41dfb8da7feba5aaa006">
 		["build_uid"] = <"d71af5a8-bdf0-461b-b7ff-bc4bf8004687">
 		["revision"] = <"1.4.2">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- Therapeutic direction
+	CLUSTER[at0000] matches {    -- Pauta de tratamiento
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0057] occurrences matches {0..1} matches {    -- Direction sequence
+			ELEMENT[at0057] occurrences matches {0..1} matches {    -- Secuencia de la pauta
 				value matches {
 					DV_COUNT matches {
 						magnitude matches {|>=1|}
 					}
 				}
 			}
-			allow_archetype CLUSTER[at0176] occurrences matches {0..*} matches {    -- Dosage
+			allow_archetype CLUSTER[at0176] occurrences matches {0..*} matches {    -- Posología
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.dosage(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.dosage(-[a-zA-Z0-9_]+)*\.v2/}
 			}
-			ELEMENT[at0066] occurrences matches {0..1} matches {    -- Direction duration
+			ELEMENT[at0066] occurrences matches {0..1} matches {    -- Duración del tratamiento
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
@@ -185,7 +194,7 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0172] occurrences matches {0..1} matches {    -- Number of administrations
+			ELEMENT[at0172] occurrences matches {0..1} matches {    -- Número de administraciones
 				value matches {
 					DV_COUNT matches {
 						magnitude matches {|>=1|}
@@ -204,28 +213,28 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0177] occurrences matches {0..1} matches {    -- Review criterion
+			ELEMENT[at0177] occurrences matches {0..1} matches {    -- Criterio de revisión
 				value matches {
 					DV_QUANTITY matches {*}
 					DV_COUNT matches {*}
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0178] occurrences matches {0..1} matches {    -- Order start date/time
+			ELEMENT[at0178] occurrences matches {0..1} matches {    -- Fecha y hora de inicio de la prescripción
 				value matches {
 					DV_DATE_TIME matches {*}
 				}
 			}
-			ELEMENT[at0179] occurrences matches {0..1} matches {    -- Order stop date/time
+			ELEMENT[at0179] occurrences matches {0..1} matches {    -- Fecha y hora de fin de la prescripción
 				value matches {
 					DV_DATE_TIME matches {*}
 				}
 			}
-			allow_archetype CLUSTER[at0090] occurrences matches {0..1} matches {    -- Repetition timing
+			allow_archetype CLUSTER[at0090] occurrences matches {0..1} matches {    -- Frecuencia de administración
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.timing_nondaily(-[a-zA-Z0-9_]+)*\.v1/}
 			}
-			allow_archetype CLUSTER[at0156] occurrences matches {0..*} matches {    -- Additional details
+			allow_archetype CLUSTER[at0156] occurrences matches {0..*} matches {    -- Detalles adicionales
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.conditional_medication_rules(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.conditional_medication_rules(-[a-zA-Z0-9_]+)*\.v1/}
 			}
@@ -237,17 +246,17 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Therapeutic direction">
+					text = <"Pauta de tratamiento">
 					description = <"Structured details of a single therapeutic direction for an ordered item, such as a medication or blood transfusion order.">
 				>
 				["at0057"] = <
-					text = <"Direction sequence">
+					text = <"Secuencia de la pauta">
 					description = <"The intended position of this direction within the overall sequence of directions.">
 					comment = <"For example: ''1' '2', '3'.
 Where multiple dosage directions are expressed, the 'Direction sequence' makes the order in which they should be executed explicit. For example: (1) 1 tab daily for 3 days, (2) 1 tab twice daily for 4 days, (3) 1 tablet for 7 days.  ">
 				>
 				["at0066"] = <
-					text = <"Direction duration">
+					text = <"Duración del tratamiento">
 					description = <"The length of time for which this direction should be applied.">
 					comment = <"For example: 'for 7 days','Indefinite'. An example of a set of multiple directions, with varying durations might be ... '1 tablet daily for 3 days, 2 tablets daily for 4 days, then 3 tablets Indefinite'.">
 				>
@@ -260,35 +269,35 @@ Where multiple dosage directions are expressed, the 'Direction sequence' makes t
 					description = <"The direction should be continued indefinitely with a strong recommendation that it never be discontinued.">
 				>
 				["at0090"] = <
-					text = <"Repetition timing">
+					text = <"Frecuencia de administración">
 					description = <"Structured details about pattern of repetition for each set of daily directions.">
 					comment = <"For example: 'every 3 days', 'on Thursdays and Sundays', '3 days after onset of menstruation'.">
 				>
 				["at0156"] = <
-					text = <"Additional details">
+					text = <"Detalles adicionales">
 					description = <"Further details about an ordered item direction.">
 					comment = <"For example, conditional instructions such as insulin /glucose infusion rates dependent on blood glucose, or detailed administration instructions for particular preparations.">
 				>
 				["at0172"] = <
-					text = <"Number of administrations">
+					text = <"Número de administraciones">
 					description = <"The number of administrations to be given for this direction.">
 					comment = <"Example: 'Give once only' = 1 or '400mg 12hrly for 3 doses' = 3.">
 				>
 				["at0176"] = <
-					text = <"Dosage">
+					text = <"Posología">
 					description = <"The combination of a medication dose and administration timing for a single day.">
 				>
 				["at0177"] = <
-					text = <"Review criterion">
+					text = <"Criterio de revisión">
 					description = <"After a number of administrations for when a review is required.">
 					comment = <"For example: '3 administrations' or 'Two weeks'.">
 				>
 				["at0178"] = <
-					text = <"Order start date/time">
+					text = <"Fecha y hora de inicio de la prescripción">
 					description = <"The date and optional time to commence the administration.">
 				>
 				["at0179"] = <
-					text = <"Order stop date/time">
+					text = <"Fecha y hora de fin de la prescripción">
 					description = <"The date and optional time when it is planned to cease the administration.">
 				>
 			>
@@ -296,16 +305,16 @@ Where multiple dosage directions are expressed, the 'Direction sequence' makes t
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"Terapeutisk anvisning">
+					text = <"*Pauta de tratamiento (en)">
 					description = <"Detaljer om en enkelt anvisning innenfor ordineringen av f.eks. et legemiddel eller en transfusjon.">
 				>
 				["at0057"] = <
-					text = <"Anvisningsrekkefølge">
+					text = <"*Secuencia de la pauta (en)">
 					description = <"Tilsiktet rekkefølge for denne anvisningen i den overordnede anvisningssekvensen.">
 					comment = <"For eksempel \"1\", \"2\", \"3\". I tilfeller der ordineringen består av flere doseringsanvisninger, spesifiserer anvisningsrekkefølgen i hvilken rekkefølge anvisningene skal utføres. For eksempel \"(1) 1 tablett daglig i 3 dager, (2) 1 tablett to ganger daglig i 4 dager, (3) 1 tablett i 7 dager.\"">
 				>
 				["at0066"] = <
-					text = <"Anvisningsvarighet">
+					text = <"*Duración del tratamiento (en)">
 					description = <"Varigheten av denne anvisningen.">
 					comment = <"For eksempel \"i 7 dager\" eller \"på ubestemt tid\". Et eksempel som er sammensatt av flere ulike varigheter kan være: \"1 tablett daglig i 3 dager\", \"2 tabletter daglig i 4 dager\", \"3 tabletter på ubestemt tid\".">
 				>
@@ -318,35 +327,35 @@ Where multiple dosage directions are expressed, the 'Direction sequence' makes t
 					description = <"Anvisningen skal videreføres på ubestemt tid, med en sterk anbefaling om ikke å seponere.">
 				>
 				["at0090"] = <
-					text = <"Timing av repetisjoner">
+					text = <"*Frecuencia de administración (en)">
 					description = <"Strukturerte detaljer om repeteringsmønsteret for hvert sett av daglige anvisninger.">
 					comment = <"For eksempel \"hver 3. dag\", \"på tirsdager og søndager\", \"3 dager etter menstruasjonsblødningens 1. dag\".">
 				>
 				["at0156"] = <
-					text = <"Ytterligere detaljer">
+					text = <"*Detalles adicionales (en)">
 					description = <"Ytterligere detaljer om anvisningen.">
 					comment = <"For eksempel betingede instruksjoner som infusjonshastighet av insulin/glukose basert på blodsukkermåling, eller detaljerte instruksjoner for spesifikke legemidler.">
 				>
 				["at0172"] = <
-					text = <"Antall administreringer">
+					text = <"*Número de administraciones (en)">
 					description = <"Antall administreringer som skal gis innenfor denne anvisningen.">
 					comment = <"For eksempel \"kun én dose\" = 1, eller \"3 doser à 400 mg hver 12. time\" = 3.">
 				>
 				["at0176"] = <
-					text = <"Dosering">
+					text = <"*Posología (en)">
 					description = <"Kombinasjonen av legemiddeldose og administreringstidspunkter for en dag.">
 				>
 				["at0177"] = <
-					text = <"Vurderingskriterier">
+					text = <"*Criterio de revisión (en)">
 					description = <"Når det kreves en vurdering basert på en rekke administrasjoner.">
 					comment = <"For eksempel: \"3 administreringer\" eller \"to uker\".">
 				>
 				["at0178"] = <
-					text = <"Startdato/tid for ordineringen">
+					text = <"*Fecha y hora de inicio de la prescripción (en)">
 					description = <"Dato og valgfri tid for oppstart av administreringen.">
 				>
 				["at0179"] = <
-					text = <"Dato/tid for seponering">
+					text = <"*Fecha y hora de fin de la prescripción (en)">
 					description = <"Dato og valgfri tid når det er planlagt å seponere admininstrasjonen.">
 				>
 			>
@@ -354,17 +363,17 @@ Where multiple dosage directions are expressed, the 'Direction sequence' makes t
 		["pt-br"] = <
 			items = <
 				["at0000"] = <
-					text = <"Orientação terapêutica">
+					text = <"*Pauta de tratamiento (en)">
 					description = <"Detalhes estruturados de uma única orientação terapêutica para um item prescrito, como um medicamento ou uma solicitação de transfusão de sangue.">
 				>
 				["at0057"] = <
-					text = <"Ordem de execução da Orientação">
+					text = <"*Secuencia de la pauta (en)">
 					description = <"A posição desta orientação na sequência geral de orientações.">
 					comment = <"Por exemplo: '' 1 '' 2 ',' 3 '.
 Quando múltiplas orientações de dosagem são expressas, a \"seqüência de instruções\" torna a ordem na qual estas devem ser executados explicitas. Por exemplo: (1) 1 comprimido diariamente por 3 dias, (2) 1 comprimido duas vezes ao dia por 4 dias, (3) 1 comprimido por 7 dias.">
 				>
 				["at0066"] = <
-					text = <"Duração da Instrução">
+					text = <"*Duración del tratamiento (en)">
 					description = <"Período de tempo no qual esta orientação se aplica.">
 					comment = <"Por exemplo: 'por 7 dias', 'uso contínuo'. Um exemplo de um conjunto de múltiplas orientações, com diferentes durações, pode ser ... 1 comprimido por dia durante 3 dias, 2 comprimidos por dia durante 4 dias e depois 3 comprimidos de uso contínuo.">
 				>
@@ -377,35 +386,35 @@ Quando múltiplas orientações de dosagem são expressas, a \"seqüência de in
 					description = <"A orientação deve ser continuada indefinidamente com uma recomendação forte que não seja interrompida.">
 				>
 				["at0090"] = <
-					text = <"Orientações de repetição">
+					text = <"*Frecuencia de administración (en)">
 					description = <"Detalhes estruturados sobre o padrão de repetição para cada conjunto de orientações diárias.">
 					comment = <"Por exemplo: 'a cada 3 dias', 'às quintas-feiras e domingos', '3 dias após o início da menstruação'.">
 				>
 				["at0156"] = <
-					text = <"Detalhes adicionais">
+					text = <"*Detalles adicionales (en)">
 					description = <"Detalhes adicionais sobre uma orientação a respeito de um tem prescrito.">
 					comment = <"Por exemplo, instruções condicionais, tais como taxas de infusão de insulina / glicose dependentes da glicemia, ou instruções detalhadas de administração para preparações específicas.">
 				>
 				["at0172"] = <
-					text = <"*Number of administrations (en)">
+					text = <"*Número de administraciones (en)">
 					description = <"*The number of administrations to be given for this direction. (en)">
 					comment = <"Exemplo: 'Administrar uma vez somente = 1 ou '400mg a cada 12h por 3 doses' = 3">
 				>
 				["at0176"] = <
-					text = <"*Dosage(en)">
+					text = <"*Posología (en)">
 					description = <"*The combination of a medication dose and administration timing for a single day.(en)">
 				>
 				["at0177"] = <
-					text = <"*Review criterion (en)">
+					text = <"*Criterio de revisión (en)">
 					description = <"*After a number of administrations for when a review is required. (en)">
 					comment = <"*For example: '3 administrations' or 'Two weeks'. (en)">
 				>
 				["at0178"] = <
-					text = <"*Order start date/time (en)">
+					text = <"*Fecha y hora de inicio de la prescripción (en)">
 					description = <"*The date and optional time to commence the administration. (en)">
 				>
 				["at0179"] = <
-					text = <"*Order stop date/time (en)">
+					text = <"*Fecha y hora de fin de la prescripción (en)">
 					description = <"*The date and optional time when it is planned to cease the administration. (en)">
 				>
 			>
@@ -413,17 +422,17 @@ Quando múltiplas orientações de dosagem são expressas, a \"seqüência de in
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"Therapeutische Anweisung">
+					text = <"*Pauta de tratamiento (en)">
 					description = <"Strukturierte Informationen über eine einzelne therapeutische Anweisung / Anleitung für eine verordnete Einheit, wie z. B. eine Medikamenten- oder Bluttransfusionsverordnung.">
 				>
 				["at0057"] = <
-					text = <"Reihenfolge der Anweisung">
+					text = <"*Secuencia de la pauta (en)">
 					description = <"Beabsichtigte Reihenfolge dieser Anweisung in der gesamten Anweisungsfolge.">
 					comment = <"Zum Beispiel: ''1'', \"2\", \"3\". 
 Wenn mehrere Dosierungsanweisungen angegeben sind, gibt die „Reihenfolge der Anweisung“ die Reihenfolge an, in der sie explizit ausgeführt werden sollen. Zum Beispiel: (1) 1 Tablette täglich für 3 Tage, (2) 1 Tablette zweimal täglich für 4 Tage, (3) 1 Tablette für 7 Tage.">
 				>
 				["at0066"] = <
-					text = <"Dauer der Anweisung">
+					text = <"*Duración del tratamiento (en)">
 					description = <"Die Zeitspanne, für die diese Anweisung angewendet werden soll.">
 					comment = <"Zum Beispiel: \"für 7 Tage\", \"Unbestimmt\". Ein Beispiel für eine Reihe von mehreren Anweisungen mit unterschiedlicher Dauer könnte sein : \"1 Tablette täglich für 3 Tage, 2 Tabletten täglich für 4 Tage, dann 3 Tabletten auf unbestimmte Zeit\".">
 				>
@@ -436,35 +445,35 @@ Wenn mehrere Dosierungsanweisungen angegeben sind, gibt die „Reihenfolge der A
 					description = <"Die Anweisung sollte auf unbestimmte Zeit fortgesetzt werden, mit der nachdrücklichen Empfehlung niemals abzusetzen.">
 				>
 				["at0090"] = <
-					text = <"Wiederholungszeitpunkte">
+					text = <"*Frecuencia de administración (en)">
 					description = <"Strukturierte Details zum Wiederholungsmuster für jeden Satz täglicher Anweisungen.">
 					comment = <"Zum Beispiel: \"alle 3 Tage\", \"donnerstags und sonntags\", \"3 Tage nach Beginn der Menstruation\".">
 				>
 				["at0156"] = <
-					text = <"Zusätzliche Angaben">
+					text = <"*Detalles adicionales (en)">
 					description = <"Weitere Angaben zu einer verordneten Produktanweisung.">
 					comment = <"Zum Beispiel bedingte Anweisungen wie Insulin- / Glukose-Infusionsrate basierend auf der Blutzuckermessung oder detaillierte Anweisungen für bestimmte Medikamente.">
 				>
 				["at0172"] = <
-					text = <"Anzahl der Verabreichungen">
+					text = <"*Número de administraciones (en)">
 					description = <"Die Anzahl der Verabreichungen, die für diese Anweisung angegeben werden sollen.">
 					comment = <"Beispiel: \"Nur einmal verabreichen\" = 1 oder \"400 mg alle 12 Stunden für 3 Dosen\" = 3.">
 				>
 				["at0176"] = <
-					text = <"Dosierung">
+					text = <"*Posología (en)">
 					description = <"Die Kombination von Medikamentendosis und Verabreichungszeit an einem Tag.">
 				>
 				["at0177"] = <
-					text = <"Überprüfungskriterium">
+					text = <"*Criterio de revisión (en)">
 					description = <"Nach welcher Anzahl der Verabreichungen eine Überprüfung erforderlich ist.">
 					comment = <"Zum Beispiel: „Drei Verabreichungen“ oder „Zwei Wochen“.">
 				>
 				["at0178"] = <
-					text = <"Startdatum/-zeit der Verordnung">
+					text = <"*Fecha y hora de inicio de la prescripción (en)">
 					description = <"Das Datum und optional die Uhrzeit für den Beginn der Verabreichung.">
 				>
 				["at0179"] = <
-					text = <"Stopdatum/-zeit der Verordnung">
+					text = <"*Fecha y hora de fin de la prescripción (en)">
 					description = <"Das Datum und optional die Uhrzeit, wann die Verabreichung beendet werden soll.">
 				>
 			>
@@ -472,17 +481,17 @@ Wenn mehrere Dosierungsanweisungen angegeben sind, gibt die „Reihenfolge der A
 		["fr"] = <
 			items = <
 				["at0000"] = <
-					text = <"Instruction thérapeutique">
+					text = <"*Pauta de tratamiento (en)">
 					description = <"Détails structurés d’une instruction thérapeutique unique relative à un produit prescrit, tel qu’un médicament ou une transfusion sanguine.">
 				>
 				["at0057"] = <
-					text = <"Séquence des instructions">
+					text = <"*Secuencia de la pauta (en)">
 					description = <"La place prévue de cette instruction dans la séquence globale des instructions.">
 					comment = <"Par exemple : « 1 », « 2 », « 3 ».
 Lorsque plusieurs consignes posologiques sont indiquées, la « Séquence des instructions » précise l'ordre dans lequel elles doivent être suivies. Par exemple : (1) 1 comprimé par jour pendant 3 jours, (2) 1 comprimé deux fois par jour pendant 4 jours, (3) 1 comprimé pendant 7 jours.">
 				>
 				["at0066"] = <
-					text = <"Durée de l'instruction">
+					text = <"*Duración del tratamiento (en)">
 					description = <"Durée pendant laquelle cette instruction doit être suivie.">
 					comment = <"Par exemple : « pendant 7 jours », « indéfiniment ». Voici un exemple d’ensemble d'instructions multiples, avec des durées variables : « 1 comprimé par jour pendant 3 jours, 2 comprimés par jour pendant 4 jours, puis 3 comprimés indéfiniment ».">
 				>
@@ -495,35 +504,35 @@ Lorsque plusieurs consignes posologiques sont indiquées, la « Séquence des in
 					description = <"L'instruction doit être poursuivie indéfiniment, avec une recommandation forte de ne jamais l'interrompre.">
 				>
 				["at0090"] = <
-					text = <"Timing de répétition">
+					text = <"*Frecuencia de administración (en)">
 					description = <"Informations structurées concernant la fréquence de répétition pour chaque série de consignes quotidiennes.">
 					comment = <"Par exemple : « tous les 3 jours », « les jeudis et dimanches », « 3 jours après le début des règles ».">
 				>
 				["at0156"] = <
-					text = <"Détails supplémentaires">
+					text = <"*Detalles adicionales (en)">
 					description = <"Informations complémentaires concernant les instructions relatives à un produit prescrit.">
 					comment = <"Par exemple, des instructions conditionnelles telles que les débits de perfusion d’insuline ou de glucose en fonction de la glycémie, ou encore des instructions d’administration détaillées pour des préparations particulières.">
 				>
 				["at0172"] = <
-					text = <"Nombre d'administrations">
+					text = <"*Número de administraciones (en)">
 					description = <"Nombre d’administrations à effectuer dans le cadre de cette instruction.">
 					comment = <"Exemple : « À administrer une seule fois » = 1 ou « 400 mg toutes les 12 heures pendant 3 doses » = 3.">
 				>
 				["at0176"] = <
-					text = <"Posologie">
+					text = <"*Posología (en)">
 					description = <"La combinaison d’une dose de médicament et du timing d’administration pour une seule journée.">
 				>
 				["at0177"] = <
-					text = <"Critère d’évaluation">
+					text = <"*Criterio de revisión (en)">
 					description = <"Une fois ce nombre d'administrations atteint, une réévaluation est nécessaire.">
 					comment = <"Par exemple : « 3 prises » ou « deux semaines ».">
 				>
 				["at0178"] = <
-					text = <"Date et heure de début de la prescription">
+					text = <"*Fecha y hora de inicio de la prescripción (en)">
 					description = <"La date et, éventuellement, l’heure de début de l’administration.">
 				>
 				["at0179"] = <
-					text = <"Date et heure de fin de la prescription">
+					text = <"*Fecha y hora de fin de la prescripción (en)">
 					description = <"La date et, éventuellement, l’heure auxquelles il est prévu d’arrêter l’administration.">
 				>
 			>
@@ -531,17 +540,17 @@ Lorsque plusieurs consignes posologiques sont indiquées, la « Séquence des in
 		["ca"] = <
 			items = <
 				["at0000"] = <
-					text = <"Orientació terapèutica">
+					text = <"*Pauta de tratamiento (en)">
 					description = <"*Structured details of a single therapeutic direction for an ordered item, such as a medication or blood transfusion order. (en)">
 				>
 				["at0057"] = <
-					text = <"Seqüència de direccions">
+					text = <"*Secuencia de la pauta (en)">
 					description = <"*The intended position of this direction within the overall sequence of directions. (en)">
 					comment = <"*For example: ''1' '2', '3'.
 Where multiple dosage directions are expressed, the 'Direction sequence' makes the order in which they should be executed explicit. For example: (1) 1 tab daily for 3 days, (2) 1 tab twice daily for 4 days, (3) 1 tablet for 7 days.   (en)">
 				>
 				["at0066"] = <
-					text = <"Durada de la direcció">
+					text = <"*Duración del tratamiento (en)">
 					description = <"*The length of time for which this direction should be applied. (en)">
 					comment = <"*For example: 'for 7 days','Indefinite'. An example of a set of multiple directions, with varying durations might be ... '1 tablet daily for 3 days, 2 tablets daily for 4 days, then 3 tablets Indefinite'. (en)">
 				>
@@ -554,35 +563,94 @@ Where multiple dosage directions are expressed, the 'Direction sequence' makes t
 					description = <"*The direction should be continued indefinitely with a strong recommendation that it never be discontinued. (en)">
 				>
 				["at0090"] = <
-					text = <"Temporització de les repeticions">
+					text = <"*Frecuencia de administración (en)">
 					description = <"*Structured details about pattern of repetition for each set of daily directions. (en)">
 					comment = <"*For example: 'every 3 days', 'on Thursdays and Sundays', '3 days after onset of menstruation'. (en)">
 				>
 				["at0156"] = <
-					text = <"Detalls addicionals">
+					text = <"*Detalles adicionales (en)">
 					description = <"*Further details about an ordered item direction. (en)">
 					comment = <"*For example, conditional instructions such as insulin /glucose infusion rates dependent on blood glucose, or detailed administration instructions for particular preparations. (en)">
 				>
 				["at0172"] = <
-					text = <"Nombre d'administracions">
+					text = <"*Número de administraciones (en)">
 					description = <"*The number of administrations to be given for this direction. (en)">
 					comment = <"*Example: 'Give once only' = 1 or '400mg 12hrly for 3 doses' = 3. (en)">
 				>
 				["at0176"] = <
-					text = <"Dosi">
+					text = <"*Posología (en)">
 					description = <"*The combination of a medication dose and administration timing for a single day. (en)">
 				>
 				["at0177"] = <
-					text = <"Criteri de revisió">
+					text = <"*Criterio de revisión (en)">
 					description = <"*After a number of administrations for when a review is required. (en)">
 					comment = <"*For example: '3 administrations' or 'Two weeks'. (en)">
 				>
 				["at0178"] = <
-					text = <"Data i hora d'inici de la comanda">
+					text = <"*Fecha y hora de inicio de la prescripción (en)">
 					description = <"*The date and optional time to commence the administration. (en)">
 				>
 				["at0179"] = <
-					text = <"Data/hora límit de la comanda">
+					text = <"*Fecha y hora de fin de la prescripción (en)">
+					description = <"*The date and optional time when it is planned to cease the administration. (en)">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Pauta de tratamiento">
+					description = <"*Structured details of a single therapeutic direction for an ordered item, such as a medication or blood transfusion order. (en)">
+				>
+				["at0057"] = <
+					text = <"*Secuencia de la pauta">
+					description = <"*The intended position of this direction within the overall sequence of directions. (en)">
+					comment = <"*For example: ''1' '2', '3'.
+Where multiple dosage directions are expressed, the 'Direction sequence' makes the order in which they should be executed explicit. For example: (1) 1 tab daily for 3 days, (2) 1 tab twice daily for 4 days, (3) 1 tablet for 7 days.   (en)">
+				>
+				["at0066"] = <
+					text = <"*Duración del tratamiento">
+					description = <"*The length of time for which this direction should be applied. (en)">
+					comment = <"*For example: 'for 7 days','Indefinite'. An example of a set of multiple directions, with varying durations might be ... '1 tablet daily for 3 days, 2 tablets daily for 4 days, then 3 tablets Indefinite'. (en)">
+				>
+				["at0067"] = <
+					text = <"*Indefinite (en)">
+					description = <"*The direction should be continued indefinitely. (en)">
+				>
+				["at0068"] = <
+					text = <"*Indefinite - not to be discontinued (en)">
+					description = <"*The direction should be continued indefinitely with a strong recommendation that it never be discontinued. (en)">
+				>
+				["at0090"] = <
+					text = <"*Frecuencia de administración">
+					description = <"*Structured details about pattern of repetition for each set of daily directions. (en)">
+					comment = <"*For example: 'every 3 days', 'on Thursdays and Sundays', '3 days after onset of menstruation'. (en)">
+				>
+				["at0156"] = <
+					text = <"*Detalles adicionales">
+					description = <"*Further details about an ordered item direction. (en)">
+					comment = <"*For example, conditional instructions such as insulin /glucose infusion rates dependent on blood glucose, or detailed administration instructions for particular preparations. (en)">
+				>
+				["at0172"] = <
+					text = <"*Número de administraciones">
+					description = <"*The number of administrations to be given for this direction. (en)">
+					comment = <"*Example: 'Give once only' = 1 or '400mg 12hrly for 3 doses' = 3. (en)">
+				>
+				["at0176"] = <
+					text = <"*Posología">
+					description = <"*The combination of a medication dose and administration timing for a single day. (en)">
+				>
+				["at0177"] = <
+					text = <"*Criterio de revisión">
+					description = <"*After a number of administrations for when a review is required. (en)">
+					comment = <"*For example: '3 administrations' or 'Two weeks'. (en)">
+				>
+				["at0178"] = <
+					text = <"*Fecha y hora de inicio de la prescripción">
+					description = <"*The date and optional time to commence the administration. (en)">
+				>
+				["at0179"] = <
+					text = <"*Fecha y hora de fin de la prescripción">
 					description = <"*The date and optional time when it is planned to cease the administration. (en)">
 				>
 			>
