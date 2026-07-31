@@ -12,6 +12,11 @@ language
 			author = <
 			>
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
 	>
 
 description
@@ -33,6 +38,10 @@ description
 			language = <[ISO_639-1::ca]>
 			copyright = <"© openEHR Foundation">
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -42,20 +51,20 @@ CDA Package v1.0 [Internet]. Australia: NEHTA. Available from: http://www.nehta.
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"4ba770c5c0507617527b960a2d93332a">
+		["MD5-CAM-1.0.1"] = <"0ff32912c3bcb1ce085f13dadf32fcdc">
 		["build_uid"] = <"436a80bf-4b65-439a-91d2-e2b6dc7fa7e1">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- Document Entry Metadata
+	CLUSTER[at0000] matches {    -- Metadatos del documento
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Document Creation Time
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Fecha y hora de creación del documento
 				value matches {
 					DV_DATE_TIME matches {*}
 				}
 			}
-			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Encounter ID
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Identificador del encuentro asistencial
 				value matches {
 					DV_TEXT matches {*}
 					DV_IDENTIFIER matches {*}
@@ -69,15 +78,15 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Document Entry Metadata">
+					text = <"Metadatos del documento">
 					description = <"Metadata associated with the documents within the XDM message (XDSDocumentEntry) as defined in the NEHTA CDA Packaging Specification.">
 				>
 				["at0001"] = <
-					text = <"Document Creation Time">
+					text = <"Fecha y hora de creación del documento">
 					description = <"Date and/or Time the document was created in the system of origin.">
 				>
 				["at0003"] = <
-					text = <"Encounter ID">
+					text = <"Identificador del encuentro asistencial">
 					description = <"Unique ID for this event from the CIS (note, source of info is the SEHR).">
 				>
 			>
@@ -85,15 +94,31 @@ ontology
 		["ca"] = <
 			items = <
 				["at0000"] = <
-					text = <"Metadades d'entrada del document">
+					text = <"*Metadatos del documento (en)">
 					description = <"*Metadata associated with the documents within the XDM message (XDSDocumentEntry) as defined in the NEHTA CDA Packaging Specification. (en)">
 				>
 				["at0001"] = <
-					text = <"Hora de creació del document">
+					text = <"*Fecha y hora de creación del documento (en)">
 					description = <"*Date and/or Time the document was created in the system of origin. (en)">
 				>
 				["at0003"] = <
-					text = <"Identificador de la trobada">
+					text = <"*Identificador del encuentro asistencial (en)">
+					description = <"*Unique ID for this event from the CIS (note, source of info is the SEHR). (en)">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Metadatos del documento">
+					description = <"*Metadata associated with the documents within the XDM message (XDSDocumentEntry) as defined in the NEHTA CDA Packaging Specification. (en)">
+				>
+				["at0001"] = <
+					text = <"Fecha y hora de creación del documento">
+					description = <"*Date and/or Time the document was created in the system of origin. (en)">
+				>
+				["at0003"] = <
+					text = <"Identificador del encuentro asistencial">
 					description = <"*Unique ID for this event from the CIS (note, source of info is the SEHR). (en)">
 				>
 			>
