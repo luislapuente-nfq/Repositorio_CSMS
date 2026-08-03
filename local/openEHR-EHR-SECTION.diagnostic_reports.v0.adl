@@ -20,6 +20,11 @@ language
 			author = <
 			>
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
 	>
 
 description
@@ -52,6 +57,10 @@ This archetype is intended to be used as one component of complex COMPOSITION ar
 			language = <[ISO_639-1::ca]>
 			copyright = <"© openEHR Foundation">
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
@@ -60,7 +69,7 @@ This archetype is intended to be used as one component of complex COMPOSITION ar
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"c4804734f50cf7fd444f83a8212e141d">
+		["MD5-CAM-1.0.1"] = <"32e5c51d7b75125b9eec28f6ed48d5d9">
 		["build_uid"] = <"fb64dfbe-3ac5-444e-80b2-368695b42d66">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -141,6 +150,26 @@ ontology
 				>
 				["at0003"] = <
 					text = <"Resum de l'informe">
+					description = <"*Slot constrained to include archetypes representing narrative synopses of laboratory and/or imaging test results. (en)">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Resultados de pruebas diagnósticas">
+					description = <"*Suggested design pattern for including diagnostic test results in a template. (en)">
+				>
+				["at0001"] = <
+					text = <"Resultados de pruebas de laboratorio">
+					description = <"*The results of laboratory tests. (en)">
+				>
+				["at0002"] = <
+					text = <"Resultados de pruebas de imagen">
+					description = <"*The results of imaging tests. (en)">
+				>
+				["at0003"] = <
+					text = <"Resumen del informe">
 					description = <"*Slot constrained to include archetypes representing narrative synopses of laboratory and/or imaging test results. (en)">
 				>
 			>
