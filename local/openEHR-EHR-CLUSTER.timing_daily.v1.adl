@@ -49,6 +49,11 @@ language
 			author = <
 			>
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
 	>
 
 description
@@ -114,6 +119,10 @@ Cet archétype est conçu pour être utilisé dans le SLOT 'Timing' de l'archét
 			language = <[ISO_639-1::ca]>
 			copyright = <"© openEHR Foundation">
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
@@ -121,7 +130,7 @@ Cet archétype est conçu pour être utilisé dans le SLOT 'Timing' de l'archét
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"eb76644488ebaa5f81bb83174909a100">
+		["MD5-CAM-1.0.1"] = <"866f11a8580870f3a5d8a1fceea84a26">
 		["build_uid"] = <"40503a79-6d6e-4eba-ba13-b51bf56726e4">
 		["revision"] = <"1.0.2">
 	>
@@ -772,12 +781,12 @@ ontology
 					comment = <"*For example when administering antiparkinson medications. (en)">
 				>
 				["at0024"] = <
-					text = <"Segons calgui">
+					text = <"Segons necessitat">
 					description = <"*Record as True if the activity should only occur when the \"'As required' criterion\" is met. (en)">
 					comment = <"*Termed 'PRN' (\"pro re nata\", latin: \"as the situation arises\") or 'PN' (\"per necessare\", latin: \"when required\") in some cultures. (en)">
 				>
 				["at0025"] = <
-					text = <"Criteri de «segons calgui»">
+					text = <"Criteri de l'administració segons necessitat">
 					description = <"*The condition which triggers an 'As required' activity. (en)">
 					comment = <"*For example: \"for pain\". (en)">
 				>
@@ -787,25 +796,25 @@ ontology
 					comment = <"*For example: \"Before each meal\", \"at bedtime\", \"in the morning\". It is understood that these event names may not equate to the same exact times in different cultures. Coding with a terminology, for example HL7 FHIR Named events, is recommended where appropriate. (en)">
 				>
 				["at0027"] = <
-					text = <"Descripció de la temporalització">
+					text = <"Descripció de la pauta temporal">
 					description = <"*Text description of the daily timing. This element is intended to allow implementers to use the structures for different timings without necessarily specifying the timings in a structured way. (en)">
 					comment = <"*For example: \"Take morning and evening\". (en)">
 				>
 				["at0035"] = <
-					text = <"Cicle d'activació/desactivació">
+					text = <"Cicle d'administració/descans">
 					description = <"*A cycle of activity where an on-off pattern is required. (en)">
 					comment = <"*For example: \"Apply an ice pack on for 20 minutes, off for an hour, repeat\". (en)">
 				>
 				["at0036"] = <
-					text = <"On">
+					text = <"Període d'administració">
 					description = <"*The period of time for which the activity should take place. (en)">
 				>
 				["at0037"] = <
-					text = <"Off">
+					text = <"Període de descans">
 					description = <"*The period of time for which the activity should NOT take place. (en)">
 				>
 				["at0038"] = <
-					text = <"Repeticions">
+					text = <"Nombre de cicles">
 					description = <"*The number of repetitions of the on/off cycle. (en)">
 				>
 				["at0039"] = <
@@ -813,7 +822,81 @@ ontology
 					description = <"*A specific, named time event that the activity should occur in relation to. (en)">
 				>
 				["at0040"] = <
-					text = <"Desplaçament temporal">
+					text = <"Temps relatiu a l'esdeveniment">
+					description = <"*The period of time before or after the named event when the activity should take place. Negative durations can be used to signify that the activity should take place before the event. (en)">
+					comment = <"*For example: '30 minutes after meal = meal + 30 minutes', '2 hours before bedtime = bedtime -2 hours'. (en)">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Frecuencia: diaria">
+					description = <"*Structured information about the intended timing of a therapeutic or diagnostic activity within any 24 hour period. (en)">
+				>
+				["at0003"] = <
+					text = <"Frecuencia">
+					description = <"*The frequency as number of times per time period that the activity is to take place. (en)">
+					comment = <"*For example: \"4 times per day\" or \"3 to 4 times per hour\". (en)">
+				>
+				["at0004"] = <
+					text = <"Hora concreta">
+					description = <"*A specific time or interval of time when the activity should occur. (en)">
+					comment = <"*For example: \"08:00\" or \"15:00-16:00\". (en)">
+				>
+				["at0014"] = <
+					text = <"Intervalo">
+					description = <"*The time interval or minimum and maximum range of an interval between each scheduled activity. (en)">
+					comment = <"*For example: \"Every 4 hours\" or \"Every 4 to 6 hours\". (en)">
+				>
+				["at0023"] = <
+					text = <"¿La precisión temporal es crítica?">
+					description = <"*Is exact timing of the activity critical to effectiveness, or patient safety or wellbeing? (en)">
+					comment = <"*For example when administering antiparkinson medications. (en)">
+				>
+				["at0024"] = <
+					text = <"Según necesidad">
+					description = <"*Record as True if the activity should only occur when the \"'As required' criterion\" is met. (en)">
+					comment = <"*Termed 'PRN' (\"pro re nata\", latin: \"as the situation arises\") or 'PN' (\"per necessare\", latin: \"when required\") in some cultures. (en)">
+				>
+				["at0025"] = <
+					text = <"Criterio de administración según necesidad">
+					description = <"*The condition which triggers an 'As required' activity. (en)">
+					comment = <"*For example: \"for pain\". (en)">
+				>
+				["at0026"] = <
+					text = <"Nombre del evento">
+					description = <"*The name of the event that triggers the activity to take place. (en)">
+					comment = <"*For example: \"Before each meal\", \"at bedtime\", \"in the morning\". It is understood that these event names may not equate to the same exact times in different cultures. Coding with a terminology, for example HL7 FHIR Named events, is recommended where appropriate. (en)">
+				>
+				["at0027"] = <
+					text = <"Descripción de la pauta temporal">
+					description = <"*Text description of the daily timing. This element is intended to allow implementers to use the structures for different timings without necessarily specifying the timings in a structured way. (en)">
+					comment = <"*For example: \"Take morning and evening\". (en)">
+				>
+				["at0035"] = <
+					text = <"Ciclo de administración/descanso">
+					description = <"*A cycle of activity where an on-off pattern is required. (en)">
+					comment = <"*For example: \"Apply an ice pack on for 20 minutes, off for an hour, repeat\". (en)">
+				>
+				["at0036"] = <
+					text = <"Período de administración">
+					description = <"*The period of time for which the activity should take place. (en)">
+				>
+				["at0037"] = <
+					text = <"Período de descanso">
+					description = <"*The period of time for which the activity should NOT take place. (en)">
+				>
+				["at0038"] = <
+					text = <"Número de ciclos">
+					description = <"*The number of repetitions of the on/off cycle. (en)">
+				>
+				["at0039"] = <
+					text = <"Evento específico">
+					description = <"*A specific, named time event that the activity should occur in relation to. (en)">
+				>
+				["at0040"] = <
+					text = <"Tiempo relativo al evento">
 					description = <"*The period of time before or after the named event when the activity should take place. Negative durations can be used to signify that the activity should take place before the event. (en)">
 					comment = <"*For example: '30 minutes after meal = meal + 30 minutes', '2 hours before bedtime = bedtime -2 hours'. (en)">
 				>
