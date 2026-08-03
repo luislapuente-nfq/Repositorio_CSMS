@@ -38,6 +38,11 @@ language
 			author = <
 			>
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
 	>
 
 description
@@ -126,6 +131,10 @@ In order for this list to be accurate and safe to use as the basis for decision 
 			language = <[ISO_639-1::ca]>
 			copyright = <"© openEHR Foundation">
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -135,7 +144,7 @@ In order for this list to be accurate and safe to use as the basis for decision 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"129db36b90bd377b7813291026fe9114">
+		["MD5-CAM-1.0.1"] = <"e41de8cecdf4fdf37648258050170c3a">
 		["build_uid"] = <"46c18c89-3428-4e56-8aaa-33e4907ea711">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -292,6 +301,33 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Absència d'informació">
+					description = <"*A positive statement that no information is available about problems, diagnoses or procedures. (en)">
+					comment = <"*For example: \"No information available concerning procedures\". (en)">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Lista de Problemas">
+					description = <"*Framework for consistent modelling of content within a template for a Problem list. (en)">
+					comment = <"*Intended to be used within the COMPOSITION.problem_list. (en)">
+				>
+				["at0001"] = <
+					text = <"Problemas, diagnósticos, preocupaciones o procesos de salud">
+					description = <"*Positive statements about the presence of problems, diagnoses, concerns or health issue threads. (en)">
+				>
+				["at0002"] = <
+					text = <"Procedimientos">
+					description = <"*Positive statements about the presence of procedures that have been performed. (en)">
+				>
+				["at0003"] = <
+					text = <"Declaración de exclusión">
+					description = <"*A positive statement about the exclusion of known problems, diagnoses and procedures. (en)">
+					comment = <"*For example: \"No problems or diagnoses\" or No operations or procedures\". (en)">
+				>
+				["at0004"] = <
+					text = <"Información ausente">
 					description = <"*A positive statement that no information is available about problems, diagnoses or procedures. (en)">
 					comment = <"*For example: \"No information available concerning procedures\". (en)">
 				>
