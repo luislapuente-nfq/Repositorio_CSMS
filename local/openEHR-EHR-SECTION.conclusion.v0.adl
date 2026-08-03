@@ -29,6 +29,11 @@ language
 			author = <
 			>
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
 	>
 
 description
@@ -71,6 +76,10 @@ This archetype is intended to be nested within any relevant COMPOSITION archetyp
 			language = <[ISO_639-1::ca]>
 			copyright = <"© openEHR Foundation">
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -79,7 +88,7 @@ This archetype is intended to be nested within any relevant COMPOSITION archetyp
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"1835be4cf99480732c1e2654b28af3c2">
+		["MD5-CAM-1.0.1"] = <"507e73d512e08ffd3aec46281f05e863">
 		["build_uid"] = <"c2f502cd-6b9f-4477-9938-044d3ca0e4a0">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -140,6 +149,18 @@ ontology
 				>
 				["at0001"] = <
 					text = <"Opinió">
+					description = <"*Opinions, conclusions or diagnoses drawn at the end of an investigative clinical process. (en)">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Conclusión">
+					description = <"*Example framework for modelling opinions, conclusions or diagnoses drawn at the end of an investigative clinical process. (en)">
+				>
+				["at0001"] = <
+					text = <"Opinión">
 					description = <"*Opinions, conclusions or diagnoses drawn at the end of an investigative clinical process. (en)">
 				>
 			>
