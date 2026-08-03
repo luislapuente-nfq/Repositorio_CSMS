@@ -30,6 +30,11 @@ language
 			author = <
 			>
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
 	>
 
 description
@@ -88,6 +93,10 @@ This list can be comprised of three types of statements, each represented by spe
 			language = <[ISO_639-1::ca]>
 			copyright = <"© openEHR Foundation">
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -96,7 +105,7 @@ This list can be comprised of three types of statements, each represented by spe
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"afa110d454f6f76a226e5ab816e0dd5b">
+		["MD5-CAM-1.0.1"] = <"c38e846bb94864d9ee0d5076e0497ef7">
 		["build_uid"] = <"7838dcfa-e0f0-43f3-867d-20a61ef567f9">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -204,6 +213,28 @@ ontology
 				>
 				["at0003"] = <
 					text = <"Declaració d'absència">
+					description = <"*A positive statement that no information is available about adverse reactions. (en)">
+					comment = <"*For example: 'No information available about adverse reactions'. (en)">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Lista de reacciones adversas">
+					description = <"*Framework for consistent modelling of content within a template for an Adverse reaction list. (en)">
+				>
+				["at0001"] = <
+					text = <"Reacciones adversas">
+					description = <"*Positive statements about the presence of adverse reactions. (en)">
+				>
+				["at0002"] = <
+					text = <"Declaración de exclusión">
+					description = <"*A positive statement about the exclusion of adverse reactions. (en)">
+					comment = <"*For example: 'No known adverse reactions'. (en)">
+				>
+				["at0003"] = <
+					text = <"Declaración de ausencia">
 					description = <"*A positive statement that no information is available about adverse reactions. (en)">
 					comment = <"*For example: 'No information available about adverse reactions'. (en)">
 				>
