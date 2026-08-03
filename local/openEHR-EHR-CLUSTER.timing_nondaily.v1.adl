@@ -36,11 +36,6 @@ language
 			author = <
 			>
 		>
-		["es"] = <
-			language = <[ISO_639-1::es]>
-			author = <
-			>
-		>
 	>
 
 description
@@ -106,10 +101,6 @@ In use cases where it can be safely assumed that an activity should be carried o
 			language = <[ISO_639-1::ca]>
 			copyright = <"© openEHR Foundation">
 		>
-		["es"] = <
-			language = <[ISO_639-1::es]>
-			copyright = <"© openEHR Foundation">
-		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -117,7 +108,7 @@ In use cases where it can be safely assumed that an activity should be carried o
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"ccf91374ae0f50338ee7ef8ef5b9b664">
+		["MD5-CAM-1.0.1"] = <"373fa4e1c7368f7c9ca3f65e562e9263">
 		["build_uid"] = <"2ef82baf-6b4f-4485-9308-810aaae13914">
 		["revision"] = <"1.1.2">
 	>
@@ -795,7 +786,7 @@ ontology
 					comment = <"*For example: 'Every 3 weeks'. If necessary, this element can be used to explicity specify that an activity is to take place every single day, by setting it to \"1 day\". (en)">
 				>
 				["at0003"] = <
-					text = <"Dia concret de la setmana">
+					text = <"Dia de la setmana concret">
 					description = <"*The activity should take place on a specific day of the week. (en)">
 					comment = <"*For example: 'On Monday, Wednesday and Friday'. (en)">
 				>
@@ -822,25 +813,25 @@ ontology
 					description = <"*The activity should take place on Tuesday. (en)">
 				>
 				["at0009"] = <
-					text = <"Temps relatiu a l'esdeveniment">
+					text = <"Desplaçament temporal">
 					description = <"*The period of time before or after the named event when the activity should take place. Negative durations can be used to signify that the activity should be taken before a known event. (en)">
 					comment = <"*For example: '3 days after onset of menstruation = menstrual onset + 3 days', '2 weeks prior to admission= admission -2 weeks'. (en)">
 				>
 				["at0010"] = <
-					text = <"Cicle d'administració/descans">
+					text = <"Cicle d'activació/desactivació">
 					description = <"*A cycle of activity where an on-off pattern is required. (en)">
 					comment = <"*For example: 'take for 1 week, omit 2 weeks, repeat 4 times' (en)">
 				>
 				["at0011"] = <
-					text = <"Període d'administració">
+					text = <"On">
 					description = <"*The period of time for which the activity should take place. (en)">
 				>
 				["at0012"] = <
-					text = <"Període de descans">
+					text = <"Off">
 					description = <"*The period of time for which the activity should NOT take place. (en)">
 				>
 				["at0013"] = <
-					text = <"Nombre de cicles">
+					text = <"Repeticions">
 					description = <"*The number of repetitions of the on/off cycle. (en)">
 				>
 				["at0014"] = <
@@ -869,114 +860,12 @@ ontology
 					description = <"*The activity should take place on Sunday. (en)">
 				>
 				["at0021"] = <
-					text = <"Descripció de la pauta temporal">
+					text = <"Descripció de la temporalització">
 					description = <"*Text description of the timing. (en)">
 					comment = <"*For example: 'Use for one week, then stop for two weeks, then repeat'. This element is intended to allow implementers to use the structures for daily timings without necessarily specifying the non-daily timings in a structured way. (en)">
 				>
 				["at0022"] = <
-					text = <"Administracions per període de temps">
-					description = <"*The number of activities per time period. (en)">
-					comment = <"*For example: '3 activities per week', '2-4 times per month'. (en)">
-				>
-			>
-		>
-		["es"] = <
-			items = <
-				["at0000"] = <
-					text = <"Pauta no diaria">
-					description = <"*Structured information about the intended timing pattern for a therapeutic or diagnostic activity occurring over days, weeks, months or years. (en)">
-				>
-				["at0001"] = <
-					text = <"Fecha específica">
-					description = <"*The activity should take place on a specific date or a specific range of dates. (en)">
-					comment = <"*For example: 'on 12 Jan 2017' or 'on 30 Oct 2017 to 6 Nov 2017'. (en)">
-				>
-				["at0002"] = <
-					text = <"Intervalo de repetición">
-					description = <"*The interval between repetitions of the activity. (en)">
-					comment = <"*For example: 'Every 3 weeks'. If necessary, this element can be used to explicity specify that an activity is to take place every single day, by setting it to \"1 day\". (en)">
-				>
-				["at0003"] = <
-					text = <"Día específico de la semana">
-					description = <"*The activity should take place on a specific day of the week. (en)">
-					comment = <"*For example: 'On Monday, Wednesday and Friday'. (en)">
-				>
-				["at0004"] = <
-					text = <"Día específico del mes">
-					description = <"*The activity should take place on a specific day or interval of days of the month. (en)">
-					comment = <"*For example: 'on the 3rd, 13th and 23rd of each month' or 'on the 1st to the 10th of each month'. (en)">
-				>
-				["at0005"] = <
-					text = <"Nombre del evento">
-					description = <"*The name of the event that triggers the activity to take place. (en)">
-					comment = <"*This element is intended for events that can occur at variable dates, such as onset of menstruation, and not for doses or activities that are conditional on a different varable. If required, the event name can be coded using a terminology, which could potentially be used to trigger an application to set a concrete date for the activity. (en)">
-				>
-				["at0006"] = <
-					text = <"Evento específico">
-					description = <"*The activity should take place in relation to a specific named event. (en)">
-				>
-				["at0007"] = <
-					text = <"*Monday (en)">
-					description = <"*The activity should take place on Monday. (en)">
-				>
-				["at0008"] = <
-					text = <"*Tuesday (en)">
-					description = <"*The activity should take place on Tuesday. (en)">
-				>
-				["at0009"] = <
-					text = <"Desplazamiento temporal">
-					description = <"*The period of time before or after the named event when the activity should take place. Negative durations can be used to signify that the activity should be taken before a known event. (en)">
-					comment = <"*For example: '3 days after onset of menstruation = menstrual onset + 3 days', '2 weeks prior to admission= admission -2 weeks'. (en)">
-				>
-				["at0010"] = <
-					text = <"Ciclo de administración / descanso">
-					description = <"*A cycle of activity where an on-off pattern is required. (en)">
-					comment = <"*For example: 'take for 1 week, omit 2 weeks, repeat 4 times' (en)">
-				>
-				["at0011"] = <
-					text = <"Periodo de administración">
-					description = <"*The period of time for which the activity should take place. (en)">
-				>
-				["at0012"] = <
-					text = <"Periodo de descanso">
-					description = <"*The period of time for which the activity should NOT take place. (en)">
-				>
-				["at0013"] = <
-					text = <"Número de ciclos">
-					description = <"*The number of repetitions of the on/off cycle. (en)">
-				>
-				["at0014"] = <
-					text = <"Días por periodo de tiempo">
-					description = <"*The number of days per time period on which the activity takes place. (en)">
-					comment = <"*For example: '3 days per week', '2-4 days per month'. Specific details about the timing within each 24 hour period is specified within the CLUSTER.timing_daily archetype. (en)">
-				>
-				["at0016"] = <
-					text = <"*Wednesday (en)">
-					description = <"*The activity should take place on Wednesday. (en)">
-				>
-				["at0017"] = <
-					text = <"*Thursday (en)">
-					description = <"*The activity should take place on Thursday. (en)">
-				>
-				["at0018"] = <
-					text = <"*Friday (en)">
-					description = <"*The activity should take place on Friday. (en)">
-				>
-				["at0019"] = <
-					text = <"*Saturday (en)">
-					description = <"*The activity should take place on Saturday. (en)">
-				>
-				["at0020"] = <
-					text = <"*Sunday (en)">
-					description = <"*The activity should take place on Sunday. (en)">
-				>
-				["at0021"] = <
-					text = <"Descripción de la pauta temporal">
-					description = <"*Text description of the timing. (en)">
-					comment = <"*For example: 'Use for one week, then stop for two weeks, then repeat'. This element is intended to allow implementers to use the structures for daily timings without necessarily specifying the non-daily timings in a structured way. (en)">
-				>
-				["at0022"] = <
-					text = <"Administraciones por periodo de tiempo">
+					text = <"Activitats per període de temps">
 					description = <"*The number of activities per time period. (en)">
 					comment = <"*For example: '3 activities per week', '2-4 times per month'. (en)">
 				>
