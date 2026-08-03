@@ -45,6 +45,11 @@ language
 			author = <
 			>
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
 	>
 
 description
@@ -122,6 +127,10 @@ Cet archétype sera généralement utilisé dans le contexte d’un archétype p
 			language = <[ISO_639-1::ca]>
 			copyright = <"© openEHR Foundation">
 		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -139,7 +148,7 @@ Standards for medication and medical device records – technical annex [Interne
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"7bb82b49683f9ab6daf00c0220f00a22">
+		["MD5-CAM-1.0.1"] = <"d6a5fdd3d245d007ba3e47e741211bfd">
 		["build_uid"] = <"d71af5a8-bdf0-461b-b7ff-bc4bf8004687">
 		["revision"] = <"1.4.2">
 	>
@@ -583,6 +592,65 @@ Where multiple dosage directions are expressed, the 'Direction sequence' makes t
 				>
 				["at0179"] = <
 					text = <"Data/hora límit de la comanda">
+					description = <"*The date and optional time when it is planned to cease the administration. (en)">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pauta terapéutica">
+					description = <"*Structured details of a single therapeutic direction for an ordered item, such as a medication or blood transfusion order. (en)">
+				>
+				["at0057"] = <
+					text = <"Secuencia de la pauta">
+					description = <"*The intended position of this direction within the overall sequence of directions. (en)">
+					comment = <"*For example: ''1' '2', '3'.
+Where multiple dosage directions are expressed, the 'Direction sequence' makes the order in which they should be executed explicit. For example: (1) 1 tab daily for 3 days, (2) 1 tab twice daily for 4 days, (3) 1 tablet for 7 days.   (en)">
+				>
+				["at0066"] = <
+					text = <"Duración de la pauta">
+					description = <"*The length of time for which this direction should be applied. (en)">
+					comment = <"*For example: 'for 7 days','Indefinite'. An example of a set of multiple directions, with varying durations might be ... '1 tablet daily for 3 days, 2 tablets daily for 4 days, then 3 tablets Indefinite'. (en)">
+				>
+				["at0067"] = <
+					text = <"*Indefinite (en)">
+					description = <"*The direction should be continued indefinitely. (en)">
+				>
+				["at0068"] = <
+					text = <"*Indefinite - not to be discontinued (en)">
+					description = <"*The direction should be continued indefinitely with a strong recommendation that it never be discontinued. (en)">
+				>
+				["at0090"] = <
+					text = <"Frecuencia de repetición">
+					description = <"*Structured details about pattern of repetition for each set of daily directions. (en)">
+					comment = <"*For example: 'every 3 days', 'on Thursdays and Sundays', '3 days after onset of menstruation'. (en)">
+				>
+				["at0156"] = <
+					text = <"Detalles adicionales">
+					description = <"*Further details about an ordered item direction. (en)">
+					comment = <"*For example, conditional instructions such as insulin /glucose infusion rates dependent on blood glucose, or detailed administration instructions for particular preparations. (en)">
+				>
+				["at0172"] = <
+					text = <"Número de administraciones">
+					description = <"*The number of administrations to be given for this direction. (en)">
+					comment = <"*Example: 'Give once only' = 1 or '400mg 12hrly for 3 doses' = 3. (en)">
+				>
+				["at0176"] = <
+					text = <"Posología">
+					description = <"*The combination of a medication dose and administration timing for a single day. (en)">
+				>
+				["at0177"] = <
+					text = <"Criterio de revisión">
+					description = <"*After a number of administrations for when a review is required. (en)">
+					comment = <"*For example: '3 administrations' or 'Two weeks'. (en)">
+				>
+				["at0178"] = <
+					text = <"Fecha y hora de inicio de la prescripción">
+					description = <"*The date and optional time to commence the administration. (en)">
+				>
+				["at0179"] = <
+					text = <"Fecha y hora de finalización de la prescripción">
 					description = <"*The date and optional time when it is planned to cease the administration. (en)">
 				>
 			>
