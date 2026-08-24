@@ -1,0 +1,152 @@
+archetype (adl_version=1.4; uid=6217689b-01a9-4384-8803-c577909c2329)
+	openEHR-EHR-CLUSTER.logos.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2025-05-22">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© Departament de Salut de la Generalitat de Catalunya">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© Departament de Salut de la Generalitat de Catalunya">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© Departament de Salut de la Generalitat de Catalunya">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Departament de Salut de la Generalitat de Catalunya">
+		["original_namespace"] = <"org.catsalut">
+		["original_publisher"] = <"Departament de Salut de la Generalitat de Catalunya">
+		["custodian_namespace"] = <"org.catsalut">
+		["MD5-CAM-1.0.1"] = <"f20d8d116877ee4025fa9f042f81a9ee">
+		["build_uid"] = <"e19dcbc1-2bfd-4012-8614-956acad11d9c">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Logos
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- EP logo
+				value matches {
+					DV_URI matches {*}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- UP logo
+				value matches {
+					DV_URI matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Centre logo
+				value matches {
+					DV_URI matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- SA logo
+				value matches {
+					DV_URI matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Logos">
+					description = <"Logos">
+				>
+				["at0001"] = <
+					text = <"EP logo">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Centre logo">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"SA logo">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"UP logo">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Logotips">
+					description = <"Logotips">
+				>
+				["at0001"] = <
+					text = <"Logotip EP">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Logotip del centre">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Logotip SA">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Logotip UP">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Logotipos">
+					description = <"Logotipos">
+				>
+				["at0001"] = <
+					text = <"Logotipo EP">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Logotipo del centro">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Logotipo SA">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Logotipo UP">
+					description = <"">
+				>
+			>
+		>
+	>
