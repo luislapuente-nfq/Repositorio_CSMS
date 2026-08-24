@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "9.0.0",
+      "sem_ver" : "10.0.0",
       "build_uid" : "00acd2bf-01fb-4512-934c-57f7f7ebd78d",
-      "MD5-CAM-1.0.1" : "c1221d3c162f31a2cb1773c8e0f90bc8",
+      "MD5-CAM-1.0.1" : "b9b50827510e1ba5c594a5fcf75b71d5",
       "original_language" : "ISO_639-1::en",
       "PARENT:MD5-CAM-1.0.1" : "BCC9F9AF2C01FAF0258B8743D079C8E7"
     },
@@ -278,6 +278,12 @@
                 "attributes" : [ ],
                 "attributeTuples" : [ ]
               }, {
+                "@type" : "C_COMPLEX_OBJECT",
+                "rmTypeName" : "ELEMENT",
+                "nodeId" : "at0007.0.1",
+                "attributes" : [ ],
+                "attributeTuples" : [ ]
+              }, {
                 "@type" : "C_ARCHETYPE_ROOT",
                 "rmTypeName" : "CLUSTER",
                 "occurrences" : "0..1",
@@ -467,6 +473,13 @@
           "code" : "at0000.1.1",
           "text" : "HC3 Laboratory",
           "description" : "Documento para comunicar información a otras personas sobre el resultado de una prueba o evaluación."
+        },
+        "at0007.0.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0007.0.1",
+          "text" : "Comentario",
+          "description" : "*A narrative statement concerning the diagnostic report as a whole. (en)",
+          "comment" : "*For example: justification for a change or cancellation, recommended time frame for action, or a recommendation to repeat the investigation. (en)"
         }
       }
     },
