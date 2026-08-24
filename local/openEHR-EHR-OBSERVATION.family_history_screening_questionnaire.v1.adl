@@ -1,0 +1,1023 @@
+archetype (adl_version=1.4; uid=ef2d55ec-d1f5-45d3-a123-472d91c327bc)
+	openEHR-EHR-OBSERVATION.family_history_screening_questionnaire.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["name"] = <"Henning Schmidt, Darin Leonhardt, Martin Koch">
+				["organisation"] = <"Medizinische Hochschule Hannover, PLRI für medizinische Informatik/ Medizinische Hochschule, Servei Català de la Salut">
+				["email"] = <"hschmidt@n-z-a.de, leonhardt.darin@mh-hannover.de, martinandreaskoch@catsalut.cat">
+			>
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"Silje Ljosland Bakke, Marit Alice Venheim, John Tore Valand, Liv Laugen, Vebjørn Arntzen, Hanne Marte Bårholm, Kanika Kuwelker">
+				["organisation"] = <"Helse Vest IKT AS, Helse Bergen, ​Oslo University Hospital, Norway">
+				["email"] = <"silje.ljosland.bakke@helse-vest-ikt.no, marit.alice.venheim@helse-vest-ikt.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, liv.laugen@ous-hf.no, varntzen@ous-hf.no, hanne.marte.sandal.barholm@helse-vest-ikt.no, kanika.kuwelker@helse-vest-ikt.no">
+			>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2020-08-20">
+		["name"] = <"Marit Alice Venheim">
+		["organisation"] = <"Helse Vest IKT AS">
+		["email"] = <"marit.alice.venheim@helse-vest-ikt-no">
+	>
+	lifecycle_state = <"published">
+	other_contributors = <"Vebjørn Arntzen, Oslo University Hospital, Norway (openEHR Editor)","Silje Ljosland Bakke, Helse Vest IKT AS, Norway (openEHR Editor)","SB Bhattacharyya, Bhattacharyyas Clinical Records Research & Informatics LLP, India","Hugo Claudio Briceño García, Catsalut, Spain","Clara Calleja Vega, CatSalut. Servei Català de la Salut., Spain","Christian Chevalley, ADOC, Thailand","Giovanni Delussu, crs4, Italy","Mona Didriksen, Helse Vest IKT, Norway","Manuela Domingo, hospital general universitario dr. balmis, Spain","Gunn Elin Blakkisrud, DIPS ASA, Norway","Aleksander Furnes, Helse Nord IKT, Norway","Ciprian Gerstenberger, HN IKT, Norway","Rosane Gotardo, Systema Ltda., Brazil","Heather Grain, Llewelyn Grain Informatics, Australia","Atle Hansen, Universitetssykehuset Nord-Norge, Norway","Evelyn Hovenga, EJSH Consulting, Australia","Susanna Jönsson, Region Värmland, Sweden","Mika Kiviaho, Tietoevry Care, Finland","June Marie Nepstad Knappskog, Helse Nord IKT AS, Norway (openEHR Editor), Norway","Martin Koch, Servei Català de la Salut, Spain","Ronald Krawec, Alberta Health Services, Canada","Lise Kristin Knutsen, Oslo universitetssykehus, Norway","Anjali Kulkarni, Karkinos, India","Kanika Kuwelker, Helse Vest IKT, Norway","Jörgen Kuylenstierna, eWeave AB, Sweden","Eli Larsen, UNN, Norway","Liv Laugen, ​Oslo University Hospital, Norway, Norway (openEHR Editor)","Darin Leonhardt, PLRI für medizinische Informatik/ Medizinische Hochschule, Germany","Heather Leslie, Atomica Informatics, Australia (openEHR Editor)","Ruth Lochan, Akademiska Sjukhuset Uppsala, Sweden","Michael Lutz, BITsoft, Germany","Hanne Marte Bårholm, Helse Vest IKT, Norway (openEHR Norway redaktør)","Ian McNicoll, freshEHR Clinical Informatics, United Kingdom","Arunakiry Natarajan, medondo, Germany","Svenne Naumann, Finnmarkssykehuset, Norway","Olha Nikolaieva, University Hospital Basel, Switzerland","Terje Nordberg, Helse Bergen, Norway","Mikael Nyström, Cambio Healthcare Systems AB, Sweden","Marlene Pérez Colman, Digital Health and Care Wales, United Kingdom","Benjamin Senst, Germany","Andre Smitt-Ingebretsen, Sørlandet sykehus HF, Norway","Norwegian Review Summary, Norwegian Public Hospitals, Norway","John Tore Valand, Helse Vest IKT, Norway (openEHR Editor)","Wouter Zanen, Eurotranplant, Netherlands">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Für die Erstellung eines Rahmens für die Aufzeichnung von Antworten auf vordefinierte Screening-Fragen zu gesundheitlichen Problemen bei genetischen und nicht-genetischen Familienmitgliedern.">
+			keywords = <"Familie, Geschichte, Gesundheit, Zustand, Problem, Diagnose, Familiengeschichte, relativ, biologisch, Beziehung, Hintergrund, genetisch", ...>
+			use = <"*Use to create a framework for recording answers to pre-defined screening questions about health-related problems found in both genetic and non-genetic family members.
+
+Traditionally the scope of family history has been focused on identifying factors or biomarkers in genetically related family members. Non-genetic family members may also be included, such as adopted or long term fostered children, those related by marriage, or other unrelated individuals who participate in the regular life and influence of the family.
+
+The intended scope of this archetype is to include the broadest range of problems or issues that might be found within families. It includes problems or diagnoses that are:
+- genetically inheritable, such as breast cancer or Huntington’s disease
+- not genetically inheritable but influenced by psychological, social, or environmental factors related to the family, such as exposure to toxins in the family home, domestic violence, sexual abuse, alcoholism and other addictions.
+
+This archetype has two discrete approaches for screening for family history:
+- All relationships - Does  *anyone* in the family have ‘Problem/diagnosis name’? 
+- Specified relationship - Does your 'Relationship'  have ‘Problem/diagnosis name’? 
+
+Common use cases include, but are not limited to:
+- Systematic questioning in any consultation, for example:
+--- Is there a history of heart disease in the family?
+--- Is there a history of mental health problems in the family?
+--- Is there a history of addiction in the family?
+--- Did your mother have diabetes?
+- Specific questioning related to chronic disease management or preventive health.
+
+Templates for specific use cases may be constrained to relationships with genetic family members if required.
+
+The semantics of this archetype are intentionally loose, and querying this archetype would normally only be useful or safe within the context of each specific template. In a template, each data element would usually be renamed to the specific question asked. Where value sets have been proposed for common use cases, these can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case.
+
+Use separate EVENTs to specify whether the questions relate to a point in time or an interval of time. For example: \"Do any family members have COVID now?\" as a point in time EVENT and \"Have any family members had COVID during the past 4 weeks?\" as an interval EVENT.
+
+The source of the information in a questionnaire response may vary in different contexts but can be specifically identified using the 'Information provider' element in the Reference Model.
+
+This archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening questionnaire identifies the presence of a health concern in a family member, it is recommended that the clinical system record the specific details using the EVALUATION.family_history archetype or the CLUSTER.family_prevalence archetype. (en)">
+			misuse = <"*Not to be used to record details about the presence or absence of a family-related problem outside of a screening context. Use EVALUATION.family_history or EVALUATION.exclusion_specific for these purposes.
+
+Not to be used to record details about a specific health-related problem. Use EVALUATION.problem_diagnosis for this purpose.
+
+Not to be used to record a Family Pedigree chart of health problems/diagnoses. Use the EVALUATION.family_history archetype for this purpose. (en)">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål om helserelaterte forhold hos både genetiske og ikke-genetiske familiemedlemmer.">
+			keywords = <"familie, historie, anamnese, helse, forhold, problem, diagnose, familiehistorie, slektning, biologisk, bakgrunn, genetisk", ...>
+			use = <"Brukes for å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål om helserelaterte forhold hos både genetiske og ikke-genetiske familiemedlemmer.
+
+Tradisjonelt har omfanget av en familieanamnese vært fokusert på å identifisere faktorer eller biomarkører hos genetisk beslektede familiemedlemmer. Denne arketypen utvider omfanget til også å kunne inkludere ikke-genetiske familiemedlemmer, for eksempel adopterte barn, fosterbarn, ektefeller, eller andre ubeslektede individer som inngår i familiens daglige liv og påvirkning.
+
+Arketypen omfatter et bredest mulig spekter av problemer, bekymringer eller plager som kan oppstå i familier. Dette omfatter kjente problemer eller diagnoser som:
+- Genetisk arvelige, for eksempel brystkreft eller Huntingtons sykdom.
+- Ikke-genetisk arvelige, men som likevel kan være påvirket av psykologiske, sosiale eller miljømessige faktorer knyttet til familien, for eksempel eksponering for giftstoffer i hjemmet, vold i hjemmet, seksuelle overgrep, alkoholisme eller andre avhengigheter.
+
+Denne arketypen har to tilnærminger for å kartlegge familieanamnese:
+- Alle relasjoner – Har et hvilket som helst familiemedlem «Problem-/diagnosenavn»?
+- Spesifikk relasjon – Har det spesifikke familiemedlemmet, som er angitt under \"Relasjon\" \"Problem-/diagnosenavn\"?
+
+Vanlige bruksområder inkluderer, men er ikke begrenset til:
+- Systematiske spørsmål ved konsultasjoner, for eksempel:
+--- Er det kjent hjertesykdom i familien?
+--- Er det psykiske helseproblemer i familien?
+--- Finnes det avhengighetsproblemer i familien?
+--- Har din mor diabetes?
+- Spesifikke spørsmål relatert til håndtering av kronisk sykdom eller forebyggende helse.
+
+Templater for spesifikke brukstilfeller kan, om nødvendig, begrenses til relasjoner med genetiske familiemedlemmer.
+
+Semantikken til denne arketypen er med vilje løst definert, og spørringer etter data i denne arketypen vil normalt bare være hensiktsmessig eller sikker i konteksten av det spesifikke templatet. I et templat vil hvert dataelement vanligvis døpes om til det spesifikke spørsmålet man ønsker svar på. Flere steder er det foreslått verdisett som passer til de vanligste bruksområder, men det er allikevel mulig å tilpasse/endre verdisett for lokal bruk ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN for å harmonere verdisettet til hvert enkelt brukstilfelle.
+
+Bruk egne EVENTer for å skille mellom spørsmål som omhandler et hvilket som helst tidspunkt eller et tidsintervall. For eksempel; \"Har noen familiemedlemmer COVID nå?\" som en tidspunktshendelse (point in time EVENT) sammenlignet med \"Har noen familiemedlemmer hatt COVID de siste fire ukene?\" som en intervallhendelse (Interval EVENT)
+
+Kilden til informasjonen i et spørreskjema kan variere i ulike kontekster, men kan identifiseres spesifikt ved å benytte \"Information provider\"-elementet i openEHR referansemodellen.
+
+Denne arketypen er laget for å bli brukt i et spørreskjema eller for å registrere enkle strukturerte data til for eksempel et sykdomsregister. Dersom det i spørreskjemaet identifiseres at signifikante helserelaterte forhold er tilstede hos et familiemedlem, anbefales det at disse registreres og lagres i pasientjournalen i en relevant arketype, for eksempel i arketypene EVALUATION.family_history (Familieanamnese) eller i CLUSTER.family_prevalence (Familieprevalens).">
+			misuse = <"Brukes ikke for å registrere tilstedeværelse eller fravær av helserelaterte forhold hos familiemedlemmer utenfor konteksten av kartleggingen. Bruk arketypene EVALUATION.family_history (Familieanamnese) eller EVALUATION.exclusion_specific (Eksklusjonsutsagn - spesifikt) for dette formålet.
+
+Brukes ikke som basis for et slektstre over helseproblemer og diagnoser. Bruk arketypen EVALUATION.family_history (Familieanamnese) for dette formålet.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To create a framework for recording answers to pre-defined screening questions about health-related problems found in both genetic and non-genetic family members.">
+			keywords = <"family","history","health","condition","problem","diagnosis","family","history","relative","biological","relationship","background","genetic">
+			copyright = <"© openEHR Foundation">
+			use = <"Use to create a framework for recording answers to pre-defined screening questions about health-related problems found in both genetic and non-genetic family members.
+
+Traditionally the scope of family history has been focused on identifying factors or biomarkers in genetically related family members. Non-genetic family members may also be included, such as adopted or long term fostered children, those related by marriage, or other unrelated individuals who participate in the regular life and influence of the family.
+
+The intended scope of this archetype is to include the broadest range of problems or issues that might be found within families. It includes problems or diagnoses that are:
+- genetically inheritable, such as breast cancer or Huntington’s disease
+- not genetically inheritable but influenced by psychological, social, or environmental factors related to the family, such as exposure to toxins in the family home, domestic violence, sexual abuse, alcoholism and other addictions.
+
+This archetype has two discrete approaches for screening for family history:
+- All relationships - Does *anyone* in the family have ‘Problem/diagnosis name’? 
+- Specified relationship - Does your 'Relationship' have ‘Problem/diagnosis name’? 
+
+Common use cases include, but are not limited to:
+- Systematic questioning in any consultation, for example:
+--- Is there a history of heart disease in the family?
+--- Is there a history of mental health problems in the family?
+--- Is there a history of addiction in the family?
+--- Did your mother have diabetes?
+- Specific questioning related to chronic disease management or preventive health.
+
+Templates for specific use cases may be constrained to relationships with genetic family members if required.
+
+The semantics of this archetype are intentionally loose, and querying this archetype would normally only be useful or safe within the context of each specific template. In a template, each data element would usually be renamed to the specific question asked. Where value sets have been proposed for common use cases, these can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case.
+
+Use separate EVENTs to specify whether the questions relate to a point in time or an interval of time. For example: \"Do any family members have COVID now?\" as a point in time EVENT and \"Have any family members had COVID during the past 4 weeks?\" as an interval EVENT.
+
+The source of the information in a questionnaire response may vary in different contexts but can be specifically identified using the 'Information provider' element in the Reference Model.
+
+This archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening questionnaire identifies the presence of a health concern in a family member, it is recommended that the clinical system record the specific details using the EVALUATION.family_history archetype or the CLUSTER.family_prevalence archetype.">
+			misuse = <"Not to be used to record details about the presence or absence of a family-related problem outside of a screening context. Use EVALUATION.family_history or EVALUATION.exclusion_specific for these purposes.
+
+Not to be used to record a Family Pedigree chart of health problems/diagnoses. Use the EVALUATION.family_history archetype for this purpose.">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			purpose = <"Crear un marc per registrar respostes a preguntes de cribratge predefinides sobre problemes relacionats amb la salut trobats tant en familiars genètics com no genètics.">
+			keywords = <"família","antecedents","salut","condició","problema","diagnòstic","antecedents","familiars","familiar","biològic","relació","entorn","genètic">
+			copyright = <"© openEHR Foundation">
+			use = <"S'utilitza per crear un marc per registrar respostes a preguntes de cribratge predefinides sobre problemes relacionats amb la salut trobats tant en familiars genètics com no genètics.
+
+Tradicionalment, l'abast dels antecedents familiars s'ha centrat a identificar factors o biomarcadors en familiars amb relació genètica. També es poden incloure familiars sense relació genètica, com ara fills adoptats o acollits a llarg termini, persones emparentades per matrimoni o altres individus sense parentiu que participen en la vida habitual i la influència de la família.
+
+L'abast previst d'aquest arquetip és incloure el ventall més ampli possible de problemes o qüestions que es puguin trobar dins les famílies. Inclou problemes o diagnòstics que són:
+- heretables genèticament, com el càncer de mama o la malaltia de Huntington
+- no heretables genèticament però influïts per factors psicològics, socials o ambientals relacionats amb la família, com l'exposició a tòxics a la llar familiar, la violència domèstica, l'abús sexual, l'alcoholisme i altres addiccions.
+
+Aquest arquetip té dos enfocaments diferenciats per fer el cribratge dels antecedents familiars:
+- Totes les relacions - Té *algú* de la família el «Nom del problema/diagnòstic»?
+- Relació especificada - Té la teva «Relació» el «Nom del problema/diagnòstic»?
+
+Els casos d'ús habituals inclouen, entre d'altres:
+- Preguntes sistemàtiques en qualsevol consulta, per exemple:
+--- Hi ha antecedents de malaltia cardíaca a la família?
+--- Hi ha antecedents de problemes de salut mental a la família?
+--- Hi ha antecedents d'addicció a la família?
+--- La teva mare tenia diabetis?
+- Preguntes específiques relacionades amb el maneig de malalties cròniques o la salut preventiva.
+
+Les plantilles per a casos d'ús específics es poden restringir, si cal, a relacions amb familiars genètics.
+
+La semàntica d'aquest arquetip és intencionadament laxa, i consultar aquest arquetip normalment només serà útil o segur dins del context de cada plantilla específica. En una plantilla, cada element de dades normalment es reanomena amb la pregunta concreta formulada. Quan s'han proposat conjunts de valors per a casos d'ús habituals, aquests es poden adaptar per a l'ús local mitjançant l'elecció del tipus de dada DV_TEXT o DV_BOOLEAN segons el cas d'ús concret.
+
+Utilitza EVENTs separats per especificar si les preguntes fan referència a un moment puntual o a un interval de temps. Per exemple: «Algun familiar té la COVID ara?» com a EVENT puntual i «Algun familiar ha tingut la COVID durant les últimes 4 setmanes?» com a EVENT d'interval.
+
+La font de la informació d'una resposta al qüestionari pot variar segons el context, però es pot identificar específicament mitjançant l'element «Proveïdor de la informació» del model de referència.
+
+Aquest arquetip s'ha dissenyat per utilitzar-se com a eina de cribratge o per registrar dades senzilles en format de qüestionari, per a situacions com ara un registre de malalties. Si el qüestionari de cribratge identifica la presència d'un problema de salut en un familiar, es recomana que el sistema clínic registri els detalls específics utilitzant l'arquetip EVALUATION.family_history o l'arquetip CLUSTER.family_prevalence.">
+			misuse = <"No s'ha d'utilitzar per registrar detalls sobre la presència o absència d'un problema familiar fora d'un context de cribratge. Utilitza EVALUATION.family_history o EVALUATION.exclusion_specific per a aquestes finalitats.
+
+No s'ha d'utilitzar per registrar un arbre genealògic (pedigrí familiar) de problemes/diagnòstics de salut. Utilitza l'arquetip EVALUATION.family_history per a aquesta finalitat.">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Crear un marco para registrar respuestas a preguntas de cribado predefinidas sobre problemas relacionados con la salud encontrados tanto en familiares genéticos como no genéticos.">
+			keywords = <"familia","antecedentes","salud","condición","problema","diagnóstico","antecedentes","familiares","familiar","biológico","relación","entorno","genético">
+			copyright = <"© openEHR Foundation">
+			use = <"Se utiliza para crear un marco para registrar respuestas a preguntas de cribado predefinidas sobre problemas relacionados con la salud encontrados tanto en familiares genéticos como no genéticos.
+
+Tradicionalmente, el alcance de los antecedentes familiares se ha centrado en identificar factores o biomarcadores en familiares con relación genética. También pueden incluirse familiares sin relación genética, como hijos adoptados o acogidos a largo plazo, personas emparentadas por matrimonio u otros individuos sin parentesco que participan en la vida habitual y la influencia de la familia.
+
+El alcance previsto de este arquetipo es incluir el abanico más amplio posible de problemas o cuestiones que puedan encontrarse dentro de las familias. Incluye problemas o diagnósticos que son:
+- heredables genéticamente, como el cáncer de mama o la enfermedad de Huntington
+- no heredables genéticamente pero influidos por factores psicológicos, sociales o ambientales relacionados con la familia, como la exposición a tóxicos en el hogar familiar, la violencia doméstica, el abuso sexual, el alcoholismo y otras adicciones.
+
+Este arquetipo tiene dos enfoques diferenciados para el cribado de los antecedentes familiares:
+- Todas las relaciones - ¿Tiene *alguien* de la familia el «Nombre del problema/diagnóstico»?
+- Relación especificada - ¿Tiene tu «Relación» el «Nombre del problema/diagnóstico»?
+
+Los casos de uso habituales incluyen, entre otros:
+- Preguntas sistemáticas en cualquier consulta, por ejemplo:
+--- ¿Hay antecedentes de enfermedad cardíaca en la familia?
+--- ¿Hay antecedentes de problemas de salud mental en la familia?
+--- ¿Hay antecedentes de adicción en la familia?
+--- ¿Tu madre tenía diabetes?
+- Preguntas específicas relacionadas con el manejo de enfermedades crónicas o la salud preventiva.
+
+Las plantillas para casos de uso específicos pueden restringirse, si es necesario, a relaciones con familiares genéticos.
+
+La semántica de este arquetipo es intencionadamente laxa, y consultar este arquetipo normalmente solo será útil o seguro dentro del contexto de cada plantilla específica. En una plantilla, cada elemento de datos normalmente se renombra con la pregunta concreta formulada. Cuando se han propuesto conjuntos de valores para casos de uso habituales, estos pueden adaptarse para el uso local mediante la elección del tipo de dato DV_TEXT o DV_BOOLEAN según el caso de uso concreto.
+
+Utiliza EVENTs separados para especificar si las preguntas hacen referencia a un momento puntual o a un intervalo de tiempo. Por ejemplo: «¿Algún familiar tiene COVID ahora?» como EVENT puntual y «¿Algún familiar ha tenido COVID durante las últimas 4 semanas?» como EVENT de intervalo.
+
+La fuente de la información de una respuesta al cuestionario puede variar según el contexto, pero puede identificarse específicamente mediante el elemento «Proveedor de la información» del modelo de referencia.
+
+Este arquetipo se ha diseñado para utilizarse como herramienta de cribado o para registrar datos sencillos en formato de cuestionario, para situaciones como un registro de enfermedades. Si el cuestionario de cribado identifica la presencia de un problema de salud en un familiar, se recomienda que el sistema clínico registre los detalles específicos utilizando el arquetipo EVALUATION.family_history o el arquetipo CLUSTER.family_prevalence.">
+			misuse = <"No debe utilizarse para registrar detalles sobre la presencia o ausencia de un problema familiar fuera de un contexto de cribado. Utiliza EVALUATION.family_history o EVALUATION.exclusion_specific para estos fines.
+
+No debe utilizarse para registrar un árbol genealógico (pedigrí familiar) de problemas/diagnósticos de salud. Utiliza el arquetipo EVALUATION.family_history para esta finalidad.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"b43459ec3f7c3f1c35eeea2df8ab6607">
+		["build_uid"] = <"9ba86842-e1ee-4201-bfc9-41f2247e68e7">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
+		["revision"] = <"1.0.0">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Family history screening questionnaire
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {0..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Screening purpose
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0038] occurrences matches {0..1} matches {    -- Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									CLUSTER[at0042] occurrences matches {0..*} matches {    -- Any family member
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0043] matches {    -- Problem/diagnosis name
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0044] occurrences matches {0..1} matches {    -- Presence?
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0045,    -- Yes
+															at0046,    -- No
+															at0047,    -- Unknown
+															at0048]    -- Unsure
+														}
+													}
+													DV_TEXT matches {*}
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0050] occurrences matches {0..1} matches {    -- Comment
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0009] occurrences matches {0..*} matches {    -- Specific relationship
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0018] matches {    -- Relationship
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0035] matches {    -- Problem/diagnosis name
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0010] occurrences matches {0..1} matches {    -- Presence?
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0011,    -- Yes
+															at0012,    -- No
+															at0013,    -- Unknown
+															at0041]    -- Unsure
+														}
+													}
+													DV_TEXT matches {*}
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0049] occurrences matches {0..1} matches {    -- Timing
+												value matches {
+													DV_DATE_TIME matches {*}
+													DV_INTERVAL<DV_DATE_TIME> matches {*}
+													DV_DURATION matches {*}
+													DV_INTERVAL<DV_DURATION> matches {*}
+													DV_TEXT matches {*}
+												}
+											}
+											allow_archetype CLUSTER[at0036] occurrences matches {0..*} matches {    -- Additional details
+												include
+													archetype_id/value matches {/.*/}
+											}
+											ELEMENT[at0028] occurrences matches {0..1} matches {    -- Comment
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0039] occurrences matches {0..*} matches {    -- Additional details
+										include
+											archetype_id/value matches {/.*/}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0021] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0029] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	terminologies_available = <"SNOMED-CT", ...>
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Family history screening questionnaire">
+					description = <"Series of questions and associated answers used to screen for health-related problems found in genetic and non-genetic family members.">
+					comment = <"The answers may be self-reported.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Screening purpose">
+					description = <"The context or reason for screening.">
+					comment = <"This data element is intended to provide collection context for the question/answer groups when queried at a later date. It is not expected that this data element will be exposed to the individual, but only stored in data. For example: pre-admission screening or the name of the actual questionnaire.">
+				>
+				["at0009"] = <
+					text = <"Specific relationship">
+					description = <"Details about an identified problem or diagnosis in a specific relationship or relationship degree.">
+					comment = <"‘Relationship’ is the focus of the question, and in order to answer the question both the 'Relationship' and the 'Problem/diagnosis name' need to be mandatory. For example: 'Does your father have diabetes?' or 'Have any of your first degree relations had colorectal cancer?'">
+				>
+				["at0010"] = <
+					text = <"Presence?">
+					description = <"Is there a history of a problem or diagnosis in family members?">
+					comment = <"In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. In cases where an individual is adopted and no information is available, it is recommended to record 'Unknown'. For example: Does your father have diabetes?">
+				>
+				["at0011"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Unknown">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Relationship">
+					description = <"The relationship of the family member to the individual.">
+					comment = <"For example: First degree relative, mother, step-father, maternal grandmother, or paternal uncle. Coding of the relationship with a terminology is preferred, where possible and including specification of maternal and paternal as required.">
+				>
+				["at0021"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0028"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the specific problem, diagnosis or family member, not captured in other fields.">
+				>
+				["at0029"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+					comment = <"For example: local information requirements or additional metadata to align with FHIR.">
+				>
+				["at0035"] = <
+					text = <"Problem/diagnosis name">
+					description = <"Identification of a problem or diagnosis, or grouping of problems or diagnoses in the family.">
+					comment = <"Coding of the 'Problem/diagnosis name' with a terminology is preferred, where possible.">
+				>
+				["at0036"] = <
+					text = <"Additional details">
+					description = <"Structured details or questions about the specific problem or diagnosis.">
+				>
+				["at0038"] = <
+					text = <"Description">
+					description = <"Narrative description about the history of any problem or diagnosis in the family.">
+				>
+				["at0039"] = <
+					text = <"Additional details">
+					description = <"Structured details or questions about screening for significant problems or diagnoses in family members.">
+				>
+				["at0041"] = <
+					text = <"Unsure">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Any family member">
+					description = <"Presence of a specific problem or diagnosis in any family member.">
+					comment = <"'Problem/Diagnosis name' has been made mandatory as it is the sole focus of the question with no further details anticipated. For example: “Does anyone in the family have diabetes?”.">
+				>
+				["at0043"] = <
+					text = <"Problem/diagnosis name">
+					description = <"Identification of a specific problem or diagnosis, or a grouping of problems or diagnoses, in the family.">
+					comment = <"For example: 'Colorectal cancer' or 'Cancer'; 'Angina' or 'Cardiovascular disease'. Coding of the 'Problem/diagnosis name' with a terminology is preferred, where possible.">
+				>
+				["at0044"] = <
+					text = <"Presence?">
+					description = <"Is there a history of a problem or diagnosis, or grouping of problems or diagnoses in the family?">
+					comment = <"In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. In cases where an individual is adopted and no information is available, it is recommended to record 'Unknown'. For example: Does any in your family have diabetes?">
+				>
+				["at0045"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Unknown">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Unsure">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Timing">
+					description = <"Indication of timing related to the problem or diagnosis.">
+					comment = <"The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when an issue, problem or diagnosis occured. The specific and intended semantics can be further clarified in a template. For example: the actual date and/or time; the start and stop time for when the issue, problem or diagnosis occured; the interval of time during which the issue, problem or diagnosis occured; the duration of the issue, problem or diagnosis; the age of the individual at the time of the issue, problem or diagnosis; or the duration of time since it occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year.">
+				>
+				["at0050"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the specific problem or diagnosis in the family, not captured in other fields.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Kartleggingsspørsmål om familieanamnese">
+					description = <"Spørsmål og tilhørende svar som brukes til å kartlegge helserelaterte forhold hos både genetiske og ikke-genetiske familiemedlemmer.">
+					comment = <"Svarene kan være selvrapporterte.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Uspesifisert hendelse">
+					description = <"Standard, uspesifisert tidspunkt eller tidsintervall som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Kartleggingsformål">
+					description = <"Konteksten eller årsaken for kartleggingen.">
+					comment = <"Dette dataelementet er ment for å sette en kontekst for spørsmålene om man senere ønsker å gjøre spørringer på dataene. Det er ikke forventet at dette dataelementet skal være synlig for en bruker av skjemaet, men kun tilgjengelig i de lagrede dataene. For eksempel: \"Preoperativ screening\" eller navnet på det faktiske spørreskjemaet.">
+				>
+				["at0009"] = <
+					text = <"Spesifikk relasjon">
+					description = <"Detaljer om et identifisert problem eller en diagnose i en bestemt familierelasjon eller slektsgrad.">
+					comment = <"\"Relasjon\" er hovedfokuset i spørsmålet, og for å kunne besvare det må både \"Relasjon\" og \"Problem/diagnosenavn\" være obligatoriske. For eksempel: \"Har din far diabetes?\" eller \"Har noen av dine førstegradsslektninger hatt kolorektal kreft?\"">
+				>
+				["at0010"] = <
+					text = <"Tilstede?">
+					description = <"Har det spesifikke problemet eller diagnosen noen gang vært tilstede hos familiemedlemmer?">
+					comment = <"Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN. I tilfeller der et individ er adoptert eller ingen informasjon er tilgjengelig anbefales det å registere \"Ukjent.
+For eksempel: Har faren din diabetes?">
+				>
+				["at0011"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Ukjent">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Relasjon">
+					description = <"Relasjonen mellom familiemedlemmet og individet.">
+					comment = <"For eksempel: Mor, stefar, farmor, onkel på farsside. Koding av relasjonen med en terminologi er foretrukket der dette er mulig, og kan inkludere en spesifisering av mors- og farslinje ved behov.">
+				>
+				["at0021"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0028"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere fritekst om det spesifikke problemet, diagnosen eller familiemedlemmet som ikke er omfattet av andre felt.">
+				>
+				["at0029"] = <
+					text = <"Utvidelse">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller/formalismer.">
+					comment = <"For eksempel lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
+				>
+				["at0035"] = <
+					text = <"Problem/diagnosenavn">
+					description = <"Navnet på problemet eller diagnosen, eller en gruppe av problemer eller diagnoser i familien">
+					comment = <"Koding av problem/diagnosenavnet med en terminologi foretrekkes, der det er mulig.">
+				>
+				["at0036"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Strukturerte detaljer eller spørsmål om det spesifikke problemet eller diagnosen.">
+				>
+				["at0038"] = <
+					text = <"Beskrivelse">
+					description = <"Fritekstbeskrivelse om problemer eller diagnoser hos familiemedlemmer.">
+				>
+				["at0039"] = <
+					text = <"Ytterligere detaljer">
+					description = <"Strukturerte detaljer eller spørsmål om kartleggingen av problemer eller diagnoser hos familiemedlemmer.">
+				>
+				["at0041"] = <
+					text = <"Usikker">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"I familien">
+					description = <"Detaljer om et spesifikt problem eller diagnose hos et hvilket som helst familiemedlem.">
+					comment = <"\"Problem/diagnosenavn\" har blitt gjort obligatorisk ettersom det er hovedfokuset i spørsmålet, og ingen ytterligere detaljer er forventet. For eksempel: \"Har noen i familien diabetes?\".">
+				>
+				["at0043"] = <
+					text = <"Problem/diagnosenavn">
+					description = <"Navnet på problemet eller diagnosen, eller på en gruppe av problemer eller diagnoser i familien.">
+					comment = <"For eksempel: \"Kolorektal kreft\" eller \"Kreft\", \"Angina\" eller \"Hjerte- og karsykdom\". Koding av \"Problem-/diagnosenavn\" med en terminologi foretrekkes der det er mulig.">
+				>
+				["at0044"] = <
+					text = <"Tilstede?">
+					description = <"Har det spesifikke problemet eller diagnosen noen gang vært tilstede i familien?">
+					comment = <"Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN. I tilfeller der et individ er adoptert eller ingen informasjon er tilgjengelig anbefales det å registere \"Ukjent\".
+For eksempel: Har noen i familien din diabetes?">
+				>
+				["at0045"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Nei">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Ukjent">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Usikker">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Tidsangivelse">
+					description = <"Tidsangivelse for problemet eller diagnosen.">
+					comment = <"Dataelementet \"Tidsangivelse\" er med hensikt løst modellert for å støtte ulike måter å angi tidsangivelser for bekymringen, plagen, problemet eller diagnosen i et spørreskjema. Den konkrete semantikken defineres i templatet. For eksempel: Bekymringen, plagen, problemet eller diagnosen faktiske dato og/eller klokkeslett, start- og slutttid for bekymringen, plagen, problemet eller diagnosen, et tidsintervall for når bekymringen, plagen, problemet eller diagnosen oppstod, varigheten av bekymringen, plagen, problemet eller diagnosen, individets alder på tidspunktet for bekymringen, plagen, problemet eller diagnosen, eller hvor lenge det siden det oppstod. Kan være en deldato, for eksempel bare år, ved å bruke datatypen DV_DATE_TIME.">
+				>
+				["at0050"] = <
+					text = <"Kommentar">
+					description = <"Ytterligere fritekst om det spesifikke problemet eller diagnosen som ikke er omfattet av andre felt.">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Fragebogen zur Familienanamnese">
+					description = <"Eine Reihe von Fragen und zugehörigen Antworten dient zum Screening auf gesundheitliche Probleme bei genetischen und nicht genetischen Familienmitgliedern.">
+					comment = <"Die Antworten können selbstberichtet sein.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Jedes Ereignis">
+					description = <"Standardmäßiger, nicht spezifizierter Zeitpunkt oder Intervallereignis, das explizit in einer Vorlage oder zur Laufzeit definiert werden kann.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Untersuchungsgrund">
+					description = <"Der Hintergrund oder die Begründung für die Untersuchung.">
+					comment = <"Dieses Datenelement soll den Sammlungskontext für die Frage-/Antwortgruppen bereitstellen, wenn sie zu einem späteren Zeitpunkt abgefragt werden. Es wird nicht erwartet, dass dieses Datenelement der Person zugänglich gemacht wird, sondern nur in den Daten gespeichert wird. Zum Beispiel: Voraufnahme-Screening oder der Name des eigentlichen Fragebogens.">
+				>
+				["at0009"] = <
+					text = <"Spezifisches Problem oder Diagnose">
+					description = <"*Details about an identified problem or diagnosis in a specific relationship or relationship degree. (en)">
+					comment = <"*‘Relationship’ is the focus of the question, and in order to answer the question both the relationship and the diagnosis need to be mandatory. For example: “Does your father have diabetes?” or “Have any of your first degree relations had colorectal cancer?” (en)">
+				>
+				["at0010"] = <
+					text = <"Präsenz">
+					description = <"Gibt es eine Vorgeschichte der spezifischen Probleme oder Diagnosen bei Familienmitgliedern?">
+					comment = <"In einem Template wird das Datenelement üblicherweise in die konkrete Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem die Datentypen DV_TEXT oder DV_BOOLEAN verwendet werden, um dem jeweiligen Anwendungsfall gerecht zu werden. Bei Adoptionen ohne verfügbare Informationen empfiehlt sich die Angabe „Unbekannt“.
+Beispiel: Gibt es in Ihrer Familie Diabetes?">
+				>
+				["at0011"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Nein">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Unbekannt">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Beziehung">
+					description = <"Die Beziehung des Familienmitglieds zur Person.">
+					comment = <"Zum Beispiel: Mutter, Stiefvater, Großmutter mütterlicherseits oder Onkel väterlicherseits. Die Kodierung der Beziehung mit einer Terminologie wird bevorzugt, wenn möglich, einschließlich der Angabe von mütterlicherseits und väterlicherseits, falls erforderlich.">
+				>
+				["at0021"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0028"] = <
+					text = <"Kommentar">
+					description = <"Zusätzliche Informationen über das spezifische Problem, die Diagnose oder das Familienmitglied, die in anderen Feldern nicht erfasst werden.">
+				>
+				["at0029"] = <
+					text = <"Erweiterung">
+					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
+					comment = <"Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen.">
+				>
+				["at0035"] = <
+					text = <"Problem-/Diagnosenname">
+					description = <"Nennung des signifikanten Problems oder der Diagnose, die bei den Familienmitgliedern festgestellt wurde, mit Namen.">
+					comment = <"Die Kodierung des \"Problem-/Diagnosenamens\" mit einer Terminologie wird, wenn möglich, bevorzugt.">
+				>
+				["at0036"] = <
+					text = <"Zusätzliche Details">
+					description = <"Strukturierte Angaben oder Fragen zu dem spezifischen Problem oder der Diagnose.">
+				>
+				["at0038"] = <
+					text = <"Beschreibung">
+					description = <"Narrative Beschreibung der Vorgeschichte etwaiger Probleme oder Diagnosen in der Familie.">
+				>
+				["at0039"] = <
+					text = <"Zusätzliche Details">
+					description = <"Strukturierte Angaben oder Fragen zum Screening auf signifikante Probleme oder Diagnosen bei Familienmitgliedern.">
+				>
+				["at0041"] = <
+					text = <"Unsicher">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"*Any family member (en)">
+					description = <"Details zu einem bestimmten Problem oder einer Diagnose oder einer Gruppierung von Problemen oder Diagnosen in der Familie.">
+					comment = <"*'Problem/Diagnosis name' has been made mandatory as it is the sole focus of the question with no further details anticipated. For example: “Does anyone in the family have diabetes?”.  (en)">
+				>
+				["at0043"] = <
+					text = <"Problem-/Diagnosename">
+					description = <"*Identification of a specific problem or diagnosis, or a grouping of problems or diagnoses, in the family. (en)">
+					comment = <"*For example: 'Colorectal cancer' or 'Cancer'; 'Angina' or 'Cardiovascular disease'. Coding of the 'Problem/diagnosis name' with a terminology is preferred, where possible. (en)">
+				>
+				["at0044"] = <
+					text = <"Präsenz">
+					description = <"Gibt es eine Vorgeschichte der spezifischen Probleme oder Diagnosen bei Familienmitgliedern?">
+					comment = <"In einem Template wird das Datenelement üblicherweise in die konkrete Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem die Datentypen DV_TEXT oder DV_BOOLEAN verwendet werden, um dem jeweiligen Anwendungsfall gerecht zu werden. Bei Adoptionen ohne verfügbare Informationen empfiehlt sich die Angabe „Unbekannt“.
+Beispiel: Gibt es in Ihrer Familie Diabetes?">
+				>
+				["at0045"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Nein">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Unbekannt">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Unsicher">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Zeitablauf">
+					description = <"Angabe des Zeitablaufs des Problems oder der Diagnose.">
+					comment = <"Das Datenelement „Zeitablauf“ wurde bewusst locker modelliert, um die vielfältigen Einsatzmöglichkeiten in Fragebögen zur Erfassung des Auftretens eines Problems oder einer Diagnose zu unterstützen. Die spezifische und beabsichtigte Semantik kann in einem Template weiter präzisiert werden. Beispiele: das tatsächliche Datum und/oder die Uhrzeit; der Start- und Endzeitpunkt des Auftretens des Problems oder der Diagnose; der Zeitraum, in dem das Problem oder die Diagnose auftrat; die Dauer des Problems oder der Diagnose; das Alter der Person zum Zeitpunkt des Auftretens des Problems oder der Diagnose; oder der Zeitraum seit dem Auftreten. Ein Teildatum ist mit dem Datentyp DV_DATE_TIME gültig, um nur ein Jahr aufzuzeichnen.">
+				>
+				["at0050"] = <
+					text = <"*Comment (en)">
+					description = <"*Additional narrative about the specific problem or diagnosis in the family, not captured in other fields. (en)">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Qüestionari de cribratge d'antecedents familiars">
+					description = <"Sèrie de preguntes i respostes associades utilitzades per fer un cribratge de problemes relacionats amb la salut trobats en familiars genètics i no genètics.">
+					comment = <"Les respostes poden ser autoinformades.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Qualsevol esdeveniment">
+					description = <"Esdeveniment predeterminat, sense especificar, de tipus puntual o d'interval, que es pot definir explícitament en una plantilla o en temps d'execució.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Finalitat del cribratge">
+					description = <"El context o motiu del cribratge.">
+					comment = <"Aquest element de dades té com a finalitat proporcionar el context de recollida per als grups de preguntes/respostes quan es consultin posteriorment. No s'espera que aquest element de dades es mostri a la persona, sinó que només es desi a les dades. Per exemple: cribratge previ a l'ingrés o el nom del qüestionari concret.">
+				>
+				["at0009"] = <
+					text = <"Relació específica">
+					description = <"Detalls sobre un problema o diagnòstic identificat en una relació específica o grau de parentiu.">
+					comment = <"«Relació» és l'objecte de la pregunta, i per respondre-la tant la «Relació» com el «Nom del problema/diagnòstic» han de ser obligatoris. Per exemple: «El teu pare té diabetis?» o «Algun dels teus familiars de primer grau ha tingut càncer colorectal?»">
+				>
+				["at0010"] = <
+					text = <"Presència?">
+					description = <"Hi ha antecedents d'un problema o diagnòstic en familiars?">
+					comment = <"En una plantilla, aquest element de dades normalment es reanomena amb la pregunta concreta formulada. El conjunt de valors proposat es pot adaptar per a l'ús local mitjançant l'elecció del tipus de dada DV_TEXT o DV_BOOLEAN segons el cas d'ús concret. En els casos en què una persona és adoptada i no es disposa d'informació, es recomana registrar «Desconegut». Per exemple: El teu pare té diabetis?">
+				>
+				["at0011"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Desconegut">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Relació">
+					description = <"La relació del familiar amb la persona.">
+					comment = <"Per exemple: familiar de primer grau, mare, padrastre, àvia materna o oncle patern. Es prefereix la codificació de la relació amb una terminologia, quan sigui possible, incloent-hi l'especificació de matern i patern si escau.">
+				>
+				["at0021"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0028"] = <
+					text = <"Comentari">
+					description = <"Narrativa addicional sobre el problema, diagnòstic o familiar específic, no recollida en altres camps.">
+				>
+				["at0029"] = <
+					text = <"Extensió">
+					description = <"Informació addicional necessària per recollir contingut local o per alinear-se amb altres models/formalismes de referència.">
+					comment = <"Per exemple: requisits d'informació local o metadades addicionals per alinear-se amb FHIR.">
+				>
+				["at0035"] = <
+					text = <"Nom del problema/diagnòstic">
+					description = <"Identificació d'un problema o diagnòstic, o agrupació de problemes o diagnòstics, en la família.">
+					comment = <"Es prefereix la codificació del «Nom del problema/diagnòstic» amb una terminologia, quan sigui possible.">
+				>
+				["at0036"] = <
+					text = <"Detalls addicionals">
+					description = <"Detalls o preguntes estructurats sobre el problema o diagnòstic específic.">
+				>
+				["at0038"] = <
+					text = <"Descripció">
+					description = <"Descripció narrativa sobre els antecedents de qualsevol problema o diagnòstic en la família.">
+				>
+				["at0039"] = <
+					text = <"Detalls addicionals">
+					description = <"Detalls o preguntes estructurats sobre el cribratge de problemes o diagnòstics significatius en familiars.">
+				>
+				["at0041"] = <
+					text = <"Insegur">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Qualsevol familiar">
+					description = <"Presència d'un problema o diagnòstic específic en qualsevol familiar.">
+					comment = <"El «Nom del problema/diagnòstic» s'ha fet obligatori, ja que és l'únic objecte de la pregunta i no s'esperen més detalls. Per exemple: «Algú de la família té diabetis?».">
+				>
+				["at0043"] = <
+					text = <"Nom del problema/diagnòstic">
+					description = <"Identificació d'un problema o diagnòstic específic, o d'una agrupació de problemes o diagnòstics, en la família.">
+					comment = <"Per exemple: «Càncer colorectal» o «Càncer»; «Angina» o «Malaltia cardiovascular». Es prefereix la codificació del «Nom del problema/diagnòstic» amb una terminologia, quan sigui possible.">
+				>
+				["at0044"] = <
+					text = <"Presència?">
+					description = <"Hi ha antecedents d'un problema o diagnòstic, o d'una agrupació de problemes o diagnòstics, en la família?">
+					comment = <"En una plantilla, aquest element de dades normalment es reanomena amb la pregunta concreta formulada. El conjunt de valors proposat es pot adaptar per a l'ús local mitjançant l'elecció del tipus de dada DV_TEXT o DV_BOOLEAN segons el cas d'ús concret. En els casos en què una persona és adoptada i no es disposa d'informació, es recomana registrar «Desconegut». Per exemple: Algú de la teva família té diabetis?">
+				>
+				["at0045"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Desconegut">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Insegur">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Temporització">
+					description = <"Indicació de la temporització relacionada amb el problema o diagnòstic.">
+					comment = <"L'element de dades «Temporització» s'ha modelat deliberadament de manera flexible per admetre la multitud de formes en què es pot utilitzar en qüestionaris per registrar quan es va produir un problema o diagnòstic. La semàntica específica i prevista es pot precisar més en una plantilla. Per exemple: la data i/o hora concretes; l'hora d'inici i final del problema o diagnòstic; l'interval de temps durant el qual es va produir; la durada del problema o diagnòstic; l'edat de la persona en el moment del problema o diagnòstic; o el temps transcorregut des que es va produir. És vàlida una data parcial, utilitzant el tipus de dada DV_DATE_TIME, per registrar només un any.">
+				>
+				["at0050"] = <
+					text = <"Comentari">
+					description = <"Narrativa addicional sobre el problema o diagnòstic específic en la família, no recollida en altres camps.">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Cuestionario de cribado de antecedentes familiares">
+					description = <"Serie de preguntas y respuestas asociadas utilizadas para cribar problemas relacionados con la salud encontrados en familiares genéticos y no genéticos.">
+					comment = <"Las respuestas pueden ser autoinformadas.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Cualquier evento">
+					description = <"Evento predeterminado, no especificado, de tipo puntual o de intervalo, que puede definirse explícitamente en una plantilla o en tiempo de ejecución.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Finalidad del cribado">
+					description = <"El contexto o motivo del cribado.">
+					comment = <"Este elemento de datos tiene como finalidad proporcionar el contexto de recogida para los grupos de preguntas/respuestas cuando se consulten posteriormente. No se espera que este elemento de datos se muestre a la persona, sino que solo se almacene en los datos. Por ejemplo: cribado previo al ingreso o el nombre del cuestionario concreto.">
+				>
+				["at0009"] = <
+					text = <"Relación específica">
+					description = <"Detalles sobre un problema o diagnóstico identificado en una relación específica o grado de parentesco.">
+					comment = <"«Relación» es el objeto de la pregunta, y para responderla tanto la «Relación» como el «Nombre del problema/diagnóstico» deben ser obligatorios. Por ejemplo: «¿Tu padre tiene diabetes?» o «¿Alguno de tus familiares de primer grado ha tenido cáncer colorrectal?»">
+				>
+				["at0010"] = <
+					text = <"¿Presencia?">
+					description = <"¿Existen antecedentes de un problema o diagnóstico en familiares?">
+					comment = <"En una plantilla, este elemento de datos normalmente se renombra con la pregunta concreta formulada. El conjunto de valores propuesto puede adaptarse para el uso local mediante la elección del tipo de dato DV_TEXT o DV_BOOLEAN según el caso de uso concreto. En los casos en que una persona es adoptada y no se dispone de información, se recomienda registrar «Desconocido». Por ejemplo: ¿Tu padre tiene diabetes?">
+				>
+				["at0011"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Desconocido">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Relación">
+					description = <"La relación del familiar con la persona.">
+					comment = <"Por ejemplo: familiar de primer grado, madre, padrastro, abuela materna o tío paterno. Se prefiere la codificación de la relación con una terminología, cuando sea posible, incluyendo la especificación de materno y paterno si procede.">
+				>
+				["at0021"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0028"] = <
+					text = <"Comentario">
+					description = <"Narrativa adicional sobre el problema, diagnóstico o familiar específico, no recogida en otros campos.">
+				>
+				["at0029"] = <
+					text = <"Extensión">
+					description = <"Información adicional necesaria para recoger contenido local o para alinearse con otros modelos/formalismos de referencia.">
+					comment = <"Por ejemplo: requisitos de información local o metadatos adicionales para alinearse con FHIR.">
+				>
+				["at0035"] = <
+					text = <"Nombre del problema/diagnóstico">
+					description = <"Identificación de un problema o diagnóstico, o agrupación de problemas o diagnósticos, en la familia.">
+					comment = <"Se prefiere la codificación del «Nombre del problema/diagnóstico» con una terminología, cuando sea posible.">
+				>
+				["at0036"] = <
+					text = <"Detalles adicionales">
+					description = <"Detalles o preguntas estructurados sobre el problema o diagnóstico específico.">
+				>
+				["at0038"] = <
+					text = <"Descripción">
+					description = <"Descripción narrativa sobre los antecedentes de cualquier problema o diagnóstico en la familia.">
+				>
+				["at0039"] = <
+					text = <"Detalles adicionales">
+					description = <"Detalles o preguntas estructurados sobre el cribado de problemas o diagnósticos significativos en familiares.">
+				>
+				["at0041"] = <
+					text = <"Inseguro">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Cualquier familiar">
+					description = <"Presencia de un problema o diagnóstico específico en cualquier familiar.">
+					comment = <"El «Nombre del problema/diagnóstico» se ha hecho obligatorio, ya que es el único objeto de la pregunta y no se esperan más detalles. Por ejemplo: «¿Alguien de la familia tiene diabetes?».">
+				>
+				["at0043"] = <
+					text = <"Nombre del problema/diagnóstico">
+					description = <"Identificación de un problema o diagnóstico específico, o de una agrupación de problemas o diagnósticos, en la familia.">
+					comment = <"Por ejemplo: «Cáncer colorrectal» o «Cáncer»; «Angina» o «Enfermedad cardiovascular». Se prefiere la codificación del «Nombre del problema/diagnóstico» con una terminología, cuando sea posible.">
+				>
+				["at0044"] = <
+					text = <"¿Presencia?">
+					description = <"¿Existen antecedentes de un problema o diagnóstico, o de una agrupación de problemas o diagnósticos, en la familia?">
+					comment = <"En una plantilla, este elemento de datos normalmente se renombra con la pregunta concreta formulada. El conjunto de valores propuesto puede adaptarse para el uso local mediante la elección del tipo de dato DV_TEXT o DV_BOOLEAN según el caso de uso concreto. En los casos en que una persona es adoptada y no se dispone de información, se recomienda registrar «Desconocido». Por ejemplo: ¿Alguien de tu familia tiene diabetes?">
+				>
+				["at0045"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Desconocido">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Inseguro">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Temporización">
+					description = <"Indicación de la temporización relacionada con el problema o diagnóstico.">
+					comment = <"El elemento de datos «Temporización» se ha modelado deliberadamente de forma flexible para admitir la multitud de formas en que puede utilizarse en cuestionarios para registrar cuándo se produjo un problema o diagnóstico. La semántica específica y prevista puede precisarse más en una plantilla. Por ejemplo: la fecha y/o hora concretas; la hora de inicio y fin del problema o diagnóstico; el intervalo de tiempo durante el cual se produjo; la duración del problema o diagnóstico; la edad de la persona en el momento del problema o diagnóstico; o el tiempo transcurrido desde que se produjo. Es válida una fecha parcial, utilizando el tipo de dato DV_DATE_TIME, para registrar solo un año.">
+				>
+				["at0050"] = <
+					text = <"Comentario">
+					description = <"Narrativa adicional sobre el problema o diagnóstico específico en la familia, no recogida en otros campos.">
+				>
+			>
+		>
+	>
+	term_bindings = <
+		["SNOMED-CT"] = <
+			items = <
+				["at0011"] = <[SNOMED-CT::373066001]>
+				["at0012"] = <[SNOMED-CT::373067005]>
+				["at0013"] = <[SNOMED-CT::261665006]>
+				["at0045"] = <[SNOMED-CT::373066001]>
+				["at0046"] = <[SNOMED-CT::373067005]>
+				["at0047"] = <[SNOMED-CT::261665006]>
+			>
+		>
+	>
