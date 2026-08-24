@@ -1,0 +1,651 @@
+archetype (adl_version=1.4; uid=c46904df-7f95-45be-abac-335098e45c63)
+	openEHR-EHR-OBSERVATION.scale_screening.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+				["name"] = <"Hugo Briceño">
+				["organisation"] = <"Servei Català de la Salut">
+				["email"] = <"hugobriceno@catsalut.cat">
+			>
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+				["name"] = <"Hugo Briceño">
+				["organisation"] = <"Servei Català de la Salut">
+				["email"] = <"hugobriceno@catsalut.cat">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2025-05-09">
+		["name"] = <"Hugo Briceño">
+		["organisation"] = <"Catsalut">
+		["email"] = <"hugobriceno@catsalut.cat">
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Hugo Briceño, CatSalut, España","Tara Bonet, CatSalut, España","Ana Pascual, CatSalut, España","Clara Calleja, CatSalut, España">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To create a framework for recording answers to pre-defined screening questions about clinical scales or scores.">
+			keywords = <"Scale, score, questionnaire", ...>
+			copyright = <"© Departament de Salut de la Generalitat de Catalunya., Departament de Salut de la Generalitat de Catalunya">
+			use = <"Use to create a framework for recording answers to pre-defined screening questions about clinical scales or scores. 
+
+Common use cases include, but are not limited to:
+- Patient self-reporting
+- Creating a patient profile in a disease registry
+- Systematic questioning in any consultation related to clinical scales or scores
+
+The semantics of this archetype are intentionally loose, and querying this archetype would normally only be useful or safe within the context of each specific template. Each data element would usually be renamed in a template to represent the specific question asked. Where value sets have been proposed for common use cases, these can be adapted to align with local requirements by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. 
+
+Utilising this framework within a template can enable documentation of a broad range of question/answer pairs such as:
+- Have you undergone functional assessment scales? Yes, No, Unknown.
+- What was the result of the ECOG scale?
+- When was the last time the ESAS-r scale was performed?
+- What degree of risk does the patient have according to the CURB-65 score?
+
+The EVENT structure from the reference model can be used to specify whether the questions relate to a point in time or over a period of time. Use a separate instance of this archetype to distinguish between a questionnaire recording information about a clinical scale or score that has been done at any time in the past and information about a clinical scale or score done within a specified time interval - for example, the difference between \"Has a Charlson Comorbidity Index (CCI) scale ever been performed?\" compared to \"Has a Charlson Comorbidity Index (CCI) scale been performed during the last four weeks?\".
+
+The source of the information in a questionnaire response may vary in different contexts but can be specifically identified using the 'Information provider' element in the Reference Model.
+
+This archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening questionnaire identifies a clinical scales or score has been carried out, additional details required for persistence as part of a clinical record can be captured using specific scale archetypes.">
+			misuse = <"Not to be used to record formal clinical scale or  score - use appropriate OBSERVATIONS for this purpose. For example, the OBSERVATION.charlson_comorbidity_index.v2, 	
+OBSERVATION.curb_65.v1 or OBSERVATION.ecog.v1.">
+		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			purpose = <"Crear una estructura base per registrar respostes a preguntes de cribatge predefinides escales o \"score\" clínics. ">
+			keywords = <"Escala, score, qüestionari.", ...>
+			copyright = <"© Departament de Salut de la Generalitat de Catalunya., Departament de Salut de la Generalitat de Catalunya">
+			use = <"Utilitzeu-lo per crear una estructura base per registrar respostes a preguntes de screening predefinides sobre escales o \"score\" clínics. 
+
+Els casos d'ús comuns inclouen, entre d'altres:
+- Autoinforme del pacient
+- Creació dun perfil de pacient en un registre de malalties.
+- Preguntes sistemàtiques a qualsevol consulta relacionada amb escales o \"score\" clínics.
+
+La semàntica d'aquest arquetip és intencionalment vaga i consultar aquest arquetip normalment només seria útil o segur dins del context de cada plantilla específica. En general, es canviaria el nom de cada element de dades a una plantilla per representar la pregunta específica formulada. Quan s'han proposat conjunts de valors per a casos d'ús comuns, es poden adaptar per alinear-se amb els requisits locals utilitzant l'opció de tipus de dades DV_TEXT o DV_BOOLEAN perquè coincideixi amb cada cas d'ús específic.
+
+La utilització d'aquesta estructura dins d'una plantilla pot permetre la documentació d'una àmplia gamma de preguntes/respostes, com ara:
+- Se li han realitzat escales de valoració funcional?
+- Quin resultat es va obtenir en l'escala de ECOG?
+- Quan va ser l'última vegada que se li va realitzar el la escala ESAS-r?
+- Quin grau de risc té el pacient segons el score CURB-65?
+
+L'estructura EVENT del model de referència es pot fer servir per especificar si les preguntes es relacionen amb un moment determinat o durant un període de temps. Utilitzeu una instància separada d'aquest arquetip per distingir entre un qüestionari que enregistra informació sobre una escala o \"score\" clínic que es va realitzar en qualsevol moment en el passat, i informació sobre una iescala o \"score\" cllínic dins d'un interval de temps específic; per exemple, la diferència entre \"
+S'ha realitzat alguna vegada una escala Charlson Comorbidity Index (CCI)?\" en comparació amb \"S'ha realitzat una escala Charlson Comorbidity Index (CCI) durant les últimes 4 setmanes?\".
+
+La font d'informació d'una resposta del qüestionari pot variar segons el context, però es pot identificar de manera específica utilitzant l'element 'Proveïdor d'informació' al Model de Referència.
+
+Aquest arquetip ha estat dissenyat per fer-se servir com a eina de cribatge o per registrar dades en format de qüestionari simple per al seu ús en situacions com un registre de malalties. Si el qüestionari identifica que s'ha dut a terme una escala o \"score\" clínics, es poden registrar detalls addicionals necessaris per a la seva persistència com a part d'un registre clínic utilitzant arquetips d'escala o \"score\" clínic específics.">
+			misuse = <"No s'ha de fer servir per registrar escales o \"score\" clínics formals - utilitzar OBSERVATIONS apropiades per a aquest propòsit. Per exemple, OBSERVATION.charlson_comorbidity_index.v2, 	
+OBSERVATION.curb_65.v1 or OBSERVATION.ecog.v1.">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Crear una estructura base para registrar respuestas a preguntas de cribado predefinidas sobre escalas o \"score\" clínicos.">
+			keywords = <"Escala, score, cuestionario", ...>
+			copyright = <"© Departament de Salut de la Generalitat de Catalunya., Departament de Salut de la Generalitat de Catalunya">
+			use = <"Úselo para crear una estructura base para registrar respuestas a preguntas de screening predefinidas sobre escalas o \"score\" clínicos. 
+
+Los casos de uso comunes incluyen, entre otros:
+- Autoinforme del paciente
+- Creación de un perfil de paciente en un registro de enfermedades.
+- Preguntas sistemáticas en cualquier consulta relacionada con escalas o \"score\" clínicos.
+
+La semántica de este arquetipo es intencionalmente vaga y consultar este arquetipo normalmente solo sería útil o seguro dentro del contexto de cada plantilla específica. Por lo general, se cambiaría el nombre de cada elemento de datos en una plantilla para representar la pregunta específica formulada. Cuando se han propuesto conjuntos de valores para casos de uso comunes, estos se pueden adaptar para alinearse con los requisitos locales utilizando la opción de tipos de datos DV_TEXT o DV_BOOLEAN para que coincida con cada caso de uso específico.
+
+La utilización de esta estructura dentro de una plantilla puede permitir la documentación de una amplia gama de preguntas/respuestas, como por ejemplo:
+- Se le han realizado escalas de valoración funcional?
+- Qué resultado se obtuvo en la escala de ECOG?
+- Cuando fue la última vez que se le realizó el la escala ESAS-r?
+- Qué grado de riesgo tiene el paciente según el score CURB-65?
+
+La estructura EVENT del modelo de referencia se puede utilizar para especificar si las preguntas se relacionan con un momento determinado o durante un período de tiempo. Utilice una instancia separada de este arquetipo para distinguir entre un cuestionario que registra información sobre una escala o \"score\" clínico que se realizó en cualquier momento en el pasado, e información sobre una escala o \"score\" clínico realizada dentro de un intervalo de tiempo específico; por ejemplo, la diferencia entre \"¿Se ha realizado alguna vez una escala Charlson Comorbidity Index (CCI)?\" en comparación con \"¿Se ha realizado una escala Charlson Comorbidity Index (CCI) durante las últimas 4 semanas?\".
+
+La fuente de información de una respuesta del cuestionario puede variar según el contexto, pero puede identificarse de forma específica utilizando el elemento 'Proveedor de información' en el Modelo de Referencia.
+
+Este arquetipo ha sido diseñado para usarse como herramienta de cribado o para registrar datos en formato de cuestionario simple para su uso en situaciones como un registro de enfermedades. Si el cuestionario identifica que se ha llevado a cabo una escala o \"score\" clínico, se pueden registrar detalles adicionales necesarios para su persistencia como parte de un registro clínico, utilizando arquetipos de escala o \"score\" clínico específicos.">
+			misuse = <"No debe utilizarse para registrar resultados de escalas o \"score\" clínicos formales - usar OBSERVATIONS apropiadas para este propósito. Por ejemplo, OBSERVATION.charlson_comorbidity_index.v2, 	
+OBSERVATION.curb_65.v1 or OBSERVATION.ecog.v1.">
+		>
+	>
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>">
+		["custodian_organisation"] = <"Departament de Salut de la Generalitat de Catalunya">
+		["current_contact"] = <"ckm.salut@gencat.cat">
+		["original_namespace"] = <"org.catsalut">
+		["original_publisher"] = <"Departament de Salut de la Generalitat de Catalunya">
+		["custodian_namespace"] = <"org.catsalut">
+		["MD5-CAM-1.0.1"] = <"701681071EB5265C37672EE6D71ADCEE">
+		["build_uid"] = <"31858ebf-26d0-429e-8008-bed23b8d2ab6">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Scale screening questionnaire
+		data matches {
+			HISTORY[at0022] matches {    -- Event Series
+				events cardinality matches {0..*; unordered} matches {
+					EVENT[at0023] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0001] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0040] occurrences matches {0..1} matches {    -- Screening purpose
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..*} matches {    -- Any scale?
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0028,    -- Yes
+													at0029,    -- No
+													at0030,    -- Unknown
+													at0045]    -- Unsure
+												}
+											}
+											DV_TEXT matches {*}
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0043] occurrences matches {0..1} matches {    -- Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									CLUSTER[at0026] occurrences matches {0..*} matches {    -- Specific scale
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0021] matches {    -- Scale name
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {    -- Done?
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0036,    -- Yes
+															at0037,    -- No
+															at0039,    -- Unknown
+															at0046]    -- Unsure
+														}
+													}
+													DV_TEXT matches {*}
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0003] occurrences matches {0..*} matches {    -- Timing
+												value matches {
+													DV_DATE_TIME matches {*}
+													DV_TEXT matches {*}
+													DV_INTERVAL<DV_DATE_TIME> matches {*}
+													DV_INTERVAL<DV_DURATION> matches {*}
+													DV_DURATION matches {*}
+													DV_DATE matches {*}
+												}
+											}
+											ELEMENT[at0047] occurrences matches {0..*} matches {    -- Result
+												value matches {
+													DV_TEXT matches {*}
+													DV_ORDINAL matches {*}
+													DV_CODED_TEXT matches {*}
+													DV_COUNT matches {*}
+													DV_BOOLEAN matches {*}
+													DV_DATE matches {*}
+													DV_DATE_TIME matches {*}
+													DV_DURATION matches {*}
+													DV_INTERVAL<DV_COUNT> matches {*}
+													DV_INTERVAL<DV_DATE> matches {*}
+													DV_INTERVAL<DV_DATE_TIME> matches {*}
+													DV_INTERVAL<DV_DURATION> matches {*}
+													DV_INTERVAL<DV_QUANTITY> matches {*}
+													DV_INTERVAL<DV_TIME> matches {*}
+													DV_PROPORTION matches {*}
+													DV_SCALE matches {*}
+													DV_QUANTITY matches {*}
+													DV_TIME matches {*}
+												}
+											}
+											ELEMENT[at0002] occurrences matches {0..*} matches {    -- Conclusion
+												value matches {
+													DV_TEXT matches {*}
+													DV_ORDINAL matches {*}
+													DV_CODED_TEXT matches {*}
+												}
+											}
+											allow_archetype CLUSTER[at0041] occurrences matches {0..*} matches {    -- Additional details
+											}
+											ELEMENT[at0025] occurrences matches {0..1} matches {    -- Comment
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0044] occurrences matches {0..*} matches {    -- Additional details
+									}
+									ELEMENT[at0048] occurrences matches {0..*} matches {    -- Overall comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0005] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0019] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	terminologies_available = <"SNOMED-CT", ...>
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Scale screening questionnaire">
+					description = <"Series of questions and associated answers used to screen whether clinical scales or scores have been carried out.">
+					comment = <"The answers may be self-reported.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Conclusion">
+					description = <"Brief description, summary or interpretation of the clinical scale or score result.">
+					comment = <"For example: 'Low severity', 'Moderate severity', 'High severity'. ">
+				>
+				["at0003"] = <
+					text = <"Timing">
+					description = <"Indication of timing related to the clinical scale.">
+					comment = <"The 'Timing' data element has deliberately been loosely modelled to support the myriad of ways that it can be used in questionnaires to capture when a clinical scale was carried out. The specific and intended semantics can be further clarified in a template. For example: the actual date and/or time; the start and stop time for the clinical scale; the interval of time during which the clinical scale was carried out; the duration of the clinica scale; the age of the individual at the time of the clinical scale; or the duration of time since it occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year.">
+				>
+				["at0005"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0019"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
+				>
+				["at0021"] = <
+					text = <"Scale name">
+					description = <"Name of the clinical scale or score.">
+					comment = <"For example: 'Charlson Comorbidity Index (CCI)', 'Glasgow Coma Scale', 'CURB-65 score', 'ECOG performance status'
+Coding of the 'Scale name' with a terminology is preferred, where possible.">
+				>
+				["at0022"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0023"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.">
+				>
+				["at0024"] = <
+					text = <"Done?">
+					description = <"Is there a history of the clinical scale being performed?">
+					comment = <"In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case.">
+				>
+				["at0025"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the clinical scale or score not captured in other fields.">
+				>
+				["at0026"] = <
+					text = <"Specific scale">
+					description = <"Details about a specific clinical scale or scales relevant to the purpose of the screening.">
+					comment = <"Use separate instances of this CLUSTER to differentiate between specific clinical scales.">
+				>
+				["at0027"] = <
+					text = <"Any scale?">
+					description = <"Is there a history of any clinical scale or score related to the screening purpose?">
+					comment = <"In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case.">
+				>
+				["at0028"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Unknown">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Unknown">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Screening purpose">
+					description = <"The context or reason for screening.">
+					comment = <"This data element is intended to provide collection context for the question/answer groups when queried at a later date. It is not expected that this data element will be exposed to the individual, but only stored in data. For example: pre-admission screening, the name of the actual questionnaire or screening for previous clinical scales.">
+				>
+				["at0041"] = <
+					text = <"Additional details">
+					description = <"Structured details or questions about the clinical scale or score.">
+				>
+				["at0043"] = <
+					text = <"Description">
+					description = <"Narrative description about the history of any clinical scale or score relevant for the screening purpose.">
+				>
+				["at0044"] = <
+					text = <"Additional details">
+					description = <"Structured details or questions about screening for diagnostic investigations.">
+				>
+				["at0045"] = <
+					text = <"Unsure">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Unsure">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Result">
+					description = <"This data element is intended to record the result, either in whole or in part, of the clinical score or scale performed. ">
+					comment = <"It is multiple occurrence in order to record the results of composite scores or scales. However, it is not intended to document each of the parameters or items that make up the scale. For this case, an archetype that concretely represents that scale should be used.">
+				>
+				["at0048"] = <
+					text = <"Overall comment">
+					description = <"Additional narrative about the screening for any clinical scale or score, not captured in other fields.">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Cuestionario cribado escalas">
+					description = <"Serie de preguntas y respuestas asociadas, utilizadas para investigar si se han realizado escalas o \"scores\" clínicos.">
+					comment = <"Las respuestas pueden ser autoinformadas.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Conclusión">
+					description = <"Breve descripción, resumen o interpretación del resultado de la escala o \"score\" clínicos.">
+					comment = <"Por ejemplo: \"Gravedad baja\", \"Gravedad moderada\", \"Gravedad alta\"">
+				>
+				["at0003"] = <
+					text = <"Tiempo">
+					description = <"Información sobre el tiempo relacionado con la escala clínica.">
+					comment = <"El elemento de datos 'Tiempo' se ha modelado deliberadamente de manera flexible para permitir la infinidad de formas en que se puede utilizar en cuestionarios, con el fin de registrar cuándo se realizó una escala clínica. La semántica específica y prevista se puede aclarar aún más en una template. Por ejemplo: la fecha y/u hora real; la hora de inicio y finalización de la escala clínica; el intervalo de tiempo durante el cual se llevó a cabo la escala; la duración de la escala; la edad del individuo en el momento de las escala; o el tiempo transcurrido desde que ocurrió. Una fecha parcial es válida, utilizando el tipo de datos DV_DATE_TIME, para registrar solo un año.">
+				>
+				["at0005"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0019"] = <
+					text = <"Extensión">
+					description = <"Información adicional necesaria para ampliar el modelo con contenido local o para alinearlo con otros modelos o formalismos de referencia.">
+					comment = <"Por ejemplo: requisitos de información local; o metadatos adicionales para alinearse con FHIR.">
+				>
+				["at0021"] = <
+					text = <"Nombre escala">
+					description = <"Nombre de la escala clínica o \"score\".">
+					comment = <"Por ejemplo: 'Charlson Comorbidity Index (CCI)', 'Glasgow Coma Scale', 'CURB-65 score', 'ECOG performance status'.
+Siempre que sea posible, se prefiere codificar el 'Nombre escala' con una terminología.">
+				>
+				["at0022"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0023"] = <
+					text = <"Cualquier evento">
+					description = <"Evento predeterminado, en un intervalo de tiempo o momento no específico, que puede ser definido de forma expresa en una plantilla o en tiempo de ejecución.">
+				>
+				["at0024"] = <
+					text = <"¿Realizada?">
+					description = <"¿Existen antecedentes de que se haya realizado la escala clínica?">
+					comment = <"En un template, el nombre del elemento de datos normalmente se cambiaría según la pregunta específica formulada. El conjunto de valores propuesto se puede adaptar para uso local utilizando la opción de tipos de datos DV_TEXT o DV_BOOLEAN para que coincida con cada caso de uso específico.">
+				>
+				["at0025"] = <
+					text = <"Comentario">
+					description = <"Narración adicional sobre la escala clínica o \"score\", no registrada en otros campos.">
+				>
+				["at0026"] = <
+					text = <"Escala específica">
+					description = <"Detalles sobre una o varias escalas clínicas específicas pertinentes para el objetivo del cribado.">
+					comment = <"Utilice instancias separadas de este CLUSTER para diferenciar entre escalas clínicas específicas.">
+				>
+				["at0027"] = <
+					text = <"¿Alguna escala clínica?">
+					description = <"¿Existen antecedentes de alguna escala clínica o \"score\" relacionada con el propósito del cribado?">
+					comment = <"En un template, el nombre del elemento de datos normalmente se cambiaría según la pregunta específica formulada. El conjunto de valores propuesto se puede adaptar para uso local utilizando la opción de tipos de datos DV_TEXT o DV_BOOLEAN para que coincida con cada caso de uso específico.">
+				>
+				["at0028"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Desconocido">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Desconocido">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Propósito del cribado">
+					description = <"Contexto o motivo del cribado.">
+					comment = <"Este elemento de datos está destinado a proporcionar un contexto de la recopilación de los grupos de preguntas/respuestas cuando se consulte en una fecha posterior. No se espera que este elemento de datos se exponga al individuo, sino que sólo se almacene en los datos. Por ejemplo: revisión previa a la admisión, el nombre del propio cuestionario o comprobación de las escalas clínicas previas.">
+				>
+				["at0041"] = <
+					text = <"Detalles adicionales">
+					description = <"Detalles estructurados o cuestiones sobre la escala clínica o \"score\".">
+				>
+				["at0043"] = <
+					text = <"Descripción">
+					description = <"Descripción narrativa sobre la historia de cualquier escala clínica o \"score\" relevante para el propósito del cribado.">
+				>
+				["at0044"] = <
+					text = <"Detalles adicionales">
+					description = <"Detalles estructurados o preguntas sobre el cribado de escalas o \"score\" clínicos.">
+				>
+				["at0045"] = <
+					text = <"Unsure">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Unsure">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Resultado">
+					description = <"Este elemento de datos se utiliza para registrar el resultado, ya sea total o parcial, del \"score\" o escala clínicos realizados. ">
+					comment = <"Es de ocurrencia múltiple para poder registrar los resultados de escalas o escores compuestos. Sin embargo, no pretende documentar cada uno de los parámetros o ítems que componen la escala. Para este caso, se debería utilizar un arquetipo que represente concretamente esa escala.">
+				>
+				["at0048"] = <
+					text = <"Comentario general">
+					description = <"Narración adicional sobre cualquier escala clínica o \"score\" o conjunto, no registrada en otros campos.">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Qüestionari cribratge escales">
+					description = <"Sèries de preguntes i respostes associades utilitzades per investigar si s'han realitzat escales o \"scores\" clínics.">
+					comment = <"Les respostes poden ser autoinformades.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Conclusió">
+					description = <"Breu descripció, resum o interpretació del resultat de l'escala o \"score\" clínics.">
+					comment = <"Per exemple: \"Gravetat baixa\", \"Gravetat moderada\", \"Gravedad alta\"">
+				>
+				["at0003"] = <
+					text = <"Temps">
+					description = <"Informació sobre el temps relacionat amb l'escala clínica.">
+					comment = <"L'element de dades 'Temps' s'ha modelat deliberadament de manera flexible per permetre la infinitat de formes en què es pot utilitzar en qüestionaris, per tal de registrar quan es va dur a terme una escala clínica. La semàntica específica i prevista es pot aclarir encara més en una template. Per exemple: la data i/o hora real; l'hora d'inici i de finalització de l'escala clínica; l'interval de temps durant el qual es va dur a terme l'escala; la durada de l'escala; l'edat de l'individu al moment de realitzar l'escala; o el temps transcorregut des que va passar. Una data parcial és vàlida, utilitzant el tipus de dades DV_DATE_TIME, per registrar només un any.">
+				>
+				["at0005"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0019"] = <
+					text = <"Extensió">
+					description = <"Informació addicional necessària per ampliar el model amb contingut local, o per alinear-lo amb altres models o formalismes de referència.">
+					comment = <"Per exemple: requisits dinformació local; o metadades addicionals per alinear-se amb FHIR.">
+				>
+				["at0021"] = <
+					text = <"Nom escala">
+					description = <"Nom de l'escala clínica o \"score\".">
+					comment = <"Per exemple: 'Charlson Comorbidity Index (CCI)', 'Glasgow Coma Scale', 'CURB-65 score', 'ECOG performance status'.
+Sempre que sigui possible, es prefereix codificar el 'Nom escala' amb una terminologia.">
+				>
+				["at0022"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0023"] = <
+					text = <"Qualsevol esdeveniment">
+					description = <"Esdeveniment predeterminat, en un interval de temps o moment no específic, que es pot definir de forma expressa en una plantilla o en temps d'execució.">
+				>
+				["at0024"] = <
+					text = <"Realitzada?">
+					description = <"Existeixen antecedents que s'hagi realitzat l'escala clínica?">
+					comment = <"En un template, el nom de l'element de dades normalment es canviaria segons la pregunta específica formulada. El conjunt de valors proposat es pot adaptar per a ús local utilitzant lopció de tipus de dades DV_TEXT o DV_BOOLEAN perquè coincideixi amb cada cas dús específic.">
+				>
+				["at0025"] = <
+					text = <"Comentari">
+					description = <"Narració addicional sobre l'escala clínica o \"score\", no registrada a altres camps.">
+				>
+				["at0026"] = <
+					text = <"Escala específica">
+					description = <"Detalls sobre una o diverses escales clíniques específiques pertinents per a l'objectiu del cribratge.">
+					comment = <"Utilitzeu instàncies separades d'aquest CLÚSTER per diferenciar entre escales clíniques específiques.">
+				>
+				["at0027"] = <
+					text = <"Alguna escala clínica?">
+					description = <"Hi ha antecedents d'alguna escala clínica o \"score\" relacionada amb el propòsit del cribatge?">
+					comment = <"En un template, el nom de l'element de dades normalment es canviaria segons la pregunta específica formulada. El conjunt de valors proposat es pot adaptar per a ús local utilitzant l'opció de tipus de dades DV_TEXT o DV_BOOLEAN perquè coincideixi amb cada cas d'ús específic.">
+				>
+				["at0028"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Desconegut">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Desconegut">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Propòsit del cribratge">
+					description = <"Context o motiu del cribatge.">
+					comment = <"Aquest element de dades està destinat a proporcionar un context de la recopilació dels grups de preguntes/respostes quan es consulti en una data posterior. No s'espera que aquest element de dades s'exposi a l'individu, sinó que només s'emmagatzemi en les dades. Per exemple: revisió prèvia a l'admissió, el nom del propi qüestionari o comprovació de les escales clíniques prèvies.">
+				>
+				["at0041"] = <
+					text = <"Detalls addicionals">
+					description = <"Detalls estructurats o qüestions sobre l'escala clínica o \"score\".">
+				>
+				["at0043"] = <
+					text = <"Descripció">
+					description = <"Descripció narrativa sobre la història de qualsevol escala clínica o \"score\" rellevant per al propòsit del cribatge.">
+				>
+				["at0044"] = <
+					text = <"Detalls addicionals">
+					description = <"Detalls estructurats o qüestions sobre el cribatge de escales o \"score\" clínics.">
+				>
+				["at0045"] = <
+					text = <"Unsure">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Unsure">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Resultat">
+					description = <"Aquest element de dades s'utilitza per a registrar el resultat, ja sigui total o parcial, de l'escala o \"score\" clínics realitzats.">
+					comment = <"És d'ocurrència múltiple per a poder registrar els resultats d'escales o escoris composts. No obstant això, no pretén documentar cadascun dels paràmetres o ítems que componen l'escala. Per a aquest cas, s'hauria d'utilitzar un arquetip que representi concretament aquesta escala.">
+				>
+				["at0048"] = <
+					text = <"Comentari general">
+					description = <"Narració addicional sobre qualsevol escala clínica o \"score\" o grup, no registrada a altres camps.">
+				>
+			>
+		>
+	>
+	term_bindings = <
+		["SNOMED-CT"] = <
+			items = <
+				["at0030"] = <[SNOMED-CT::261665006]>
+				["at0028"] = <[SNOMED-CT::373066001]>
+				["at0029"] = <[SNOMED-CT::373067005]>
+				["at0036"] = <[SNOMED-CT::373066001]>
+				["at0037"] = <[SNOMED-CT::373067005]>
+				["at0039"] = <[SNOMED-CT::261665006]>
+			>
+		>
+	>
