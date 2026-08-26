@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "6.1.0",
+      "sem_ver" : "7.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "0154576f84d96de1be74911925d80b5a",
+      "MD5-CAM-1.0.1" : "46c90eb7082c0c0084307cfdf5db845c",
       "PARENT:MD5-CAM-1.0.1" : "cfa9058dbd794ff9c1686358f319df3c"
     },
     "details" : {
@@ -659,11 +659,23 @@
                 }, {
                   "@type" : "C_COMPLEX_OBJECT",
                   "rmTypeName" : "CLUSTER",
-                  "nodeId" : "at0113",
+                  "nodeId" : "at0113.1",
                   "attributes" : [ {
                     "@type" : "C_ATTRIBUTE",
                     "rmAttributeName" : "items",
                     "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0012.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0013.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
                       "@type" : "C_COMPLEX_OBJECT",
                       "rmTypeName" : "ELEMENT",
                       "occurrences" : "0..0",
@@ -751,6 +763,12 @@
                   "attributes" : [ ],
                   "attributeTuples" : [ ]
                 }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "nodeId" : "at0167.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
                   "@type" : "C_ARCHETYPE_ROOT",
                   "rmTypeName" : "CLUSTER",
                   "occurrences" : "0..1",
@@ -761,6 +779,26 @@
                   "referenceType" : "archetypeOverlay"
                 } ]
               } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0005",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0004.1",
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             } ]
           } ],
@@ -779,7 +817,60 @@
         "es-ar" : { },
         "de" : { },
         "sv" : { },
-        "es" : { },
+        "es" : {
+          "at0091.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0091.1",
+            "text" : "Ruta",
+            "description" : "*The route by which the ordered item is to be administered into the subject's body.(en)",
+            "comment" : "*For example: 'oral', 'intravenous', or 'topical'.\r\nCoding of the route with a terminology is preferred, where possible. Multiple potential routes may be specified.(en)"
+          },
+          "at0070.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0070.1",
+            "text" : "Medicamento",
+            "description" : "*Name of the medication, vaccine or other therapeutic/prescribable item being ordered.(en)",
+            "comment" : "*Depending on the prescribing context this field could be used for either generic- or product-based prescribing. This data field can be used to record tightly bound orders of different medications when they are prescribed as a single pack. It is strongly recommended that the 'Medication item' be coded with a terminology capable of triggering decision support, where possible. The extent of coding may vary from the simple name of the medication item through to structured details about the actual medication pack to be used. Free text entry should only be used if there is no appropriate terminology available.(en)"
+          },
+          "at0094.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0094.1",
+            "text" : "Método de administración",
+            "description" : "*The technique or device by which the ordered item is to be administered.(en)",
+            "comment" : "*For example: ' via Z-track injection'; 'via nebuliser'. Coding of the method with a terminology is preferred, where possible.(en)"
+          },
+          "at0113.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0113.1",
+            "text" : "Detalles del pedido",
+            "description" : "*Details about the whole medication order.(en)"
+          },
+          "at0012.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012.1",
+            "text" : "Fecha y hora de inicio del pedido",
+            "description" : "*The date and optional time to commence use of the ordered item.(en)"
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Fecha y hora límite de pedido",
+            "description" : "*The date and optional time when it is planned to cease use of the ordered item.(en)"
+          },
+          "at0167.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0167.1",
+            "text" : "Comentario",
+            "description" : "*Additional narrative about the medication order not captured in other fields.(en)"
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Identificador del pedido",
+            "description" : "*Unique identifier for the medication order.(en)",
+            "comment" : "*This data element allows for multiple occurrences to be defined more explicitly at run-time, if required.(en)"
+          }
+        },
         "ca" : { },
         "sk" : { },
         "fr" : { }
@@ -4852,6 +4943,7 @@
                     "children" : [ {
                       "@type" : "C_TERMINOLOGY_CODE",
                       "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "0..1",
                       "terminologyId" : {
                         "value" : "local_terms"
                       },
@@ -9192,7 +9284,7 @@
                 }, {
                   "@type" : "C_COMPLEX_OBJECT",
                   "rmTypeName" : "CLUSTER",
-                  "nodeId" : "at0113",
+                  "nodeId" : "at0113.1",
                   "attributes" : [ {
                     "@type" : "C_ATTRIBUTE",
                     "rmAttributeName" : "items",
@@ -9297,7 +9389,14 @@
               "attributeTuples" : [ ]
             } ]
           } ],
-          "attributeTuples" : [ ]
+          "attributeTuples" : [ ],
+          "attributeCustomizations" : {
+            "description" : {
+              "aliases" : {
+                "es" : "descripción"
+              }
+            }
+          }
         } ]
       } ],
       "attributeTuples" : [ ]
@@ -9312,7 +9411,35 @@
         "es-ar" : { },
         "de" : { },
         "sv" : { },
-        "es" : { },
+        "es" : {
+          "at0091.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0091.1",
+            "text" : "Ruta",
+            "description" : "*The route by which the ordered item is to be administered into the subject's body.(en)",
+            "comment" : "*For example: 'oral', 'intravenous', or 'topical'.\r\nCoding of the route with a terminology is preferred, where possible. Multiple potential routes may be specified.(en)"
+          },
+          "at0070.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0070.1",
+            "text" : "Medicamento",
+            "description" : "*Name of the medication, vaccine or other therapeutic/prescribable item being ordered.(en)",
+            "comment" : "*Depending on the prescribing context this field could be used for either generic- or product-based prescribing. This data field can be used to record tightly bound orders of different medications when they are prescribed as a single pack. It is strongly recommended that the 'Medication item' be coded with a terminology capable of triggering decision support, where possible. The extent of coding may vary from the simple name of the medication item through to structured details about the actual medication pack to be used. Free text entry should only be used if there is no appropriate terminology available.(en)"
+          },
+          "at0094.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0094.1",
+            "text" : "Método de administración",
+            "description" : "*The technique or device by which the ordered item is to be administered.(en)",
+            "comment" : "*For example: ' via Z-track injection'; 'via nebuliser'. Coding of the method with a terminology is preferred, where possible.(en)"
+          },
+          "at0113.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0113.1",
+            "text" : "Detalles del pedido",
+            "description" : "*Details about the whole medication order.(en)"
+          }
+        },
         "ca" : { },
         "sk" : { },
         "fr" : { }
@@ -13466,11 +13593,23 @@
                 }, {
                   "@type" : "C_COMPLEX_OBJECT",
                   "rmTypeName" : "CLUSTER",
-                  "nodeId" : "at0113",
+                  "nodeId" : "at0113.1",
                   "attributes" : [ {
                     "@type" : "C_ATTRIBUTE",
                     "rmAttributeName" : "items",
                     "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0012.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0013.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
                       "@type" : "C_COMPLEX_OBJECT",
                       "rmTypeName" : "ELEMENT",
                       "occurrences" : "0..0",
@@ -13558,6 +13697,12 @@
                   "attributes" : [ ],
                   "attributeTuples" : [ ]
                 }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "nodeId" : "at0167.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
                   "@type" : "C_ARCHETYPE_ROOT",
                   "rmTypeName" : "CLUSTER",
                   "occurrences" : "0..1",
@@ -13568,6 +13713,26 @@
                   "referenceType" : "archetypeOverlay"
                 } ]
               } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0005",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0004.1",
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             } ]
           } ],
@@ -13586,7 +13751,60 @@
         "es-ar" : { },
         "de" : { },
         "sv" : { },
-        "es" : { },
+        "es" : {
+          "at0091.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0091.1",
+            "text" : "Ruta",
+            "description" : "*The route by which the ordered item is to be administered into the subject's body.(en)",
+            "comment" : "*For example: 'oral', 'intravenous', or 'topical'.\r\nCoding of the route with a terminology is preferred, where possible. Multiple potential routes may be specified.(en)"
+          },
+          "at0070.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0070.1",
+            "text" : "Medicamento",
+            "description" : "*Name of the medication, vaccine or other therapeutic/prescribable item being ordered.(en)",
+            "comment" : "*Depending on the prescribing context this field could be used for either generic- or product-based prescribing. This data field can be used to record tightly bound orders of different medications when they are prescribed as a single pack. It is strongly recommended that the 'Medication item' be coded with a terminology capable of triggering decision support, where possible. The extent of coding may vary from the simple name of the medication item through to structured details about the actual medication pack to be used. Free text entry should only be used if there is no appropriate terminology available.(en)"
+          },
+          "at0094.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0094.1",
+            "text" : "Método de administración",
+            "description" : "*The technique or device by which the ordered item is to be administered.(en)",
+            "comment" : "*For example: ' via Z-track injection'; 'via nebuliser'. Coding of the method with a terminology is preferred, where possible.(en)"
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Identificador del pedido",
+            "description" : "*Unique identifier for the medication order.(en)",
+            "comment" : "*This data element allows for multiple occurrences to be defined more explicitly at run-time, if required.(en)"
+          },
+          "at0113.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0113.1",
+            "text" : "Detalles del pedido",
+            "description" : "*Details about the whole medication order.(en)"
+          },
+          "at0012.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012.1",
+            "text" : "Fecha y hora de inicio del pedido",
+            "description" : "*The date and optional time to commence use of the ordered item.(en)"
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Fecha y hora límite de pedido",
+            "description" : "*The date and optional time when it is planned to cease use of the ordered item.(en)"
+          },
+          "at0167.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0167.1",
+            "text" : "Comentario",
+            "description" : "*Additional narrative about the medication order not captured in other fields.(en)"
+          }
+        },
         "ca" : { },
         "sk" : { },
         "fr" : { }
