@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "7.0.0",
+      "sem_ver" : "8.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "46c90eb7082c0c0084307cfdf5db845c",
+      "MD5-CAM-1.0.1" : "8421c04417743f530bc1999679c83d51",
       "PARENT:MD5-CAM-1.0.1" : "cfa9058dbd794ff9c1686358f319df3c"
     },
     "details" : {
@@ -4526,7 +4526,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Encapçalament ad hoc (2)",
+            "text" : "Medicación durante la hospitalización",
             "description" : "Un encapçalament de secció genèric que s'hauria de reanomenar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
@@ -5565,7 +5565,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Encapçalament ad hoc (4)",
+            "text" : "Resumen de medicación",
             "description" : "Un encapçalament de secció genèric que s'hauria de reanomenar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
@@ -9291,6 +9291,18 @@
                     "children" : [ {
                       "@type" : "C_COMPLEX_OBJECT",
                       "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0012.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0013.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
                       "occurrences" : "0..0",
                       "nodeId" : "at0011.1",
                       "attributes" : [ ],
@@ -9376,6 +9388,12 @@
                   "attributes" : [ ],
                   "attributeTuples" : [ ]
                 }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "nodeId" : "at0167.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
                   "@type" : "C_ARCHETYPE_ROOT",
                   "rmTypeName" : "CLUSTER",
                   "occurrences" : "0..1",
@@ -9397,6 +9415,26 @@
               }
             }
           }
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0005",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0004.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
         } ]
       } ],
       "attributeTuples" : [ ]
@@ -9438,6 +9476,31 @@
             "code" : "at0113.1",
             "text" : "Detalles del pedido",
             "description" : "*Details about the whole medication order.(en)"
+          },
+          "at0012.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012.1",
+            "text" : "Fecha y hora de inicio del pedido",
+            "description" : "*The date and optional time to commence use of the ordered item.(en)"
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Fecha y hora límite de pedido",
+            "description" : "*The date and optional time when it is planned to cease use of the ordered item.(en)"
+          },
+          "at0167.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0167.1",
+            "text" : "Comentario",
+            "description" : "*Additional narrative about the medication order not captured in other fields.(en)"
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Identificador del pedido",
+            "description" : "*Unique identifier for the medication order.(en)",
+            "comment" : "*This data element allows for multiple occurrences to be defined more explicitly at run-time, if required.(en)"
           }
         },
         "ca" : { },
@@ -9891,7 +9954,14 @@
             "description" : "Una capçalera de secció genèrica que s'ha de rebatejar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
-        "es" : { },
+        "es" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Medicación al ingreso",
+            "description" : "Un encapçalament de secció genèric que s'hauria de reanomenar en una plantilla per adaptar-se a un context clínic específic."
+          }
+        },
         "pt-pt" : { },
         "pt" : { },
         "tr" : { }
@@ -14323,7 +14393,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Encapçalament ad hoc (3)",
+            "text" : "Medicación al alta",
             "description" : "Un encapçalament de secció genèric que s'hauria de reanomenar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
