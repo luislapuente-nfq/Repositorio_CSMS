@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "87.0.1",
+      "sem_ver" : "87.0.2",
       "build_uid" : "aec330a4-e535-4e67-9434-6ede586984bf",
-      "MD5-CAM-1.0.1" : "39ca0bae138e02c46cee9af51832c8fc",
+      "MD5-CAM-1.0.1" : "b0dc14d62c49d1d23fcb489d2cd03de7",
       "PARENT:MD5-CAM-1.0.1" : "c28eab00a763892a287b3634e3eab523",
       "original_language" : "ISO_639-1::en"
     },
@@ -11838,7 +11838,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Unhealthy habits",
+            "text" : "Hábitos poco saludables",
             "description" : "Serie de preguntas y respuestas relacionadas, utilizadas para detectar cuestiones, problemas o diagnósticos.",
             "comment" : "Las respuestas pueden ser autorreportadas"
           }
