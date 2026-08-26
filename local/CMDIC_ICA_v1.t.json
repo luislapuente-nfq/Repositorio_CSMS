@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "85.0.0",
+      "sem_ver" : "85.0.1",
       "build_uid" : "aec330a4-e535-4e67-9434-6ede586984bf",
-      "MD5-CAM-1.0.1" : "103a4beb0b3d027f59330d0d2cfd8f61",
+      "MD5-CAM-1.0.1" : "9aa69c9c06e4a2f513685063cf3ffb7d",
       "PARENT:MD5-CAM-1.0.1" : "c28eab00a763892a287b3634e3eab523",
       "original_language" : "ISO_639-1::en"
     },
@@ -3169,16 +3169,10 @@
           }
         },
         "es" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Participations",
-            "description" : "Un ser humano individual"
-          },
           "at0004.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0004.1",
-            "text" : "Professional category",
+            "text" : "Categoría profesional",
             "description" : "La relación o rol del individuo con el sujeto al que pertenece el registro de salud",
             "comment" : "Por ejemplo: el encargado de guardar la copia física del documento de voluntades anticipadas; la persona de contacto en una organización; el pariente en una entrada de historia familiar; el recolector de muestras; o el testigo de una caída o accidente. Si la persona que se describe mediante este arquetipo es el sujeto de la historia clínica, estos datos son redundantes."
           }
