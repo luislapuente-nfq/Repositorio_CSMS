@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "85.0.1",
+      "sem_ver" : "86.0.0",
       "build_uid" : "aec330a4-e535-4e67-9434-6ede586984bf",
-      "MD5-CAM-1.0.1" : "9aa69c9c06e4a2f513685063cf3ffb7d",
+      "MD5-CAM-1.0.1" : "4945af83f3a7ecb3564848c08f2a37fa",
       "PARENT:MD5-CAM-1.0.1" : "c28eab00a763892a287b3634e3eab523",
       "original_language" : "ISO_639-1::en"
     },
@@ -4377,7 +4377,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "61697dd0ba06a277b50c9a973be9e09d"
+        "PARENT:MD5-CAM-1.0.1" : "49b15ff916b678158f471455766b40f3"
       },
       "details" : {
         "de" : {
@@ -4986,7 +4986,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Clinical process data",
+            "text" : "Datos del proceso clínico",
             "description" : "Un encapçalament de secció genèric que s'hauria de reanomenar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
@@ -5608,7 +5608,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Episode details",
+            "text" : "Detalles del episodio",
             "description" : "Detalles administrativos sobre un periodo de atención a los pacientes ingresados entre un ingreso formal o estadístico y una alta formal o estadística, caracterizados únicamente por un tipo de atención en una institución sanitaria."
           },
           "at0006.1" : {
@@ -6398,7 +6398,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Health conditions screening",
+            "text" : "Detección de problemas de salud",
             "description" : "Serie de preguntas y respuestas relacionadas, utilizadas para detectar cuestiones, problemas o diagnósticos.",
             "comment" : "Las respuestas pueden ser autorreportadas"
           }
@@ -6903,7 +6903,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Neonatal history",
+            "text" : "Antecedentes neonatales",
             "description" : "Serie de preguntas y respuestas relacionadas, utilizadas para detectar cuestiones, problemas o diagnósticos.",
             "comment" : "Las respuestas pueden ser autorreportadas"
           }
@@ -7408,7 +7408,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Obstetric history",
+            "text" : "Antecedentes obstétricos",
             "description" : "Serie de preguntas y respuestas relacionadas, utilizadas para detectar cuestiones, problemas o diagnósticos.",
             "comment" : "Las respuestas pueden ser autorreportadas"
           }
@@ -7906,7 +7906,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Surgical history",
+            "text" : "Antecedentes quirúrgicos",
             "description" : "Serie de preguntas y respuestas asociadas que se utilizan para filtrar procedimientos realizados en el pasado.",
             "comment" : "Las respuestas pueden ser auto-reportadas."
           }
@@ -8911,29 +8911,7 @@
             "comment" : "Pot ser una data parcial, per exemple, només un any."
           }
         },
-        "es" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Vaccination screening questionnaire",
-            "description" : "Serie de preguntas y respuestas asociadas utilizadas para detectar el uso de medicamentos.",
-            "comment" : "Las respuestas pueden ser autoinformadas."
-          },
-          "at0021.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0021.1",
-            "text" : "Vaccination name",
-            "description" : "Nombre del medicamento o grupo de medicamentos.",
-            "comment" : "Por ejemplo: \"ácido alendrónico\", \"medicamentos contra la osteoporosis\" o \"bifosfonatos\".\r\nSiempre que sea posible, es preferible codificar el \"Nombre de la medicación\" con una terminología."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Administration date",
-            "description" : "La fecha y/u hora de administración de la dosis más reciente del medicamento o grupo de medicamentos.",
-            "comment" : "Puede ser una fecha parcial, por ejemplo, solo un año."
-          }
-        }
+        "es" : { }
       },
       "termBindings" : {
         "Catàleg de Productes del catàleg SIVAIN" : {
@@ -9407,15 +9385,7 @@
             "comment" : "Per exemple: \"Zinacef 750 mg pols\" o \"cefuroxima\". Aquest element s'ha de codificar, si és possible, utilitzant, per exemple, RxNorm, DM+D, Australian Medicines Terminology o FEST. La utilització daquest element variarà segons el context d'ús. Aquest element es pot ometre quan el nom del medicament es registri a l'arquetip principal INSTRUCTION o ACTION, i aquest arquetip només s'utilitzi per registrar que la forma ha de ser o era \"líquida\"."
           }
         },
-        "es" : {
-          "at0132.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0132.1",
-            "text" : "Brand name",
-            "description" : "Nombre del medicamento o componente del medicamento.",
-            "comment" : "Por ejemplo: \"Zinacef 750 mg en polvo\" o \"cefuroxima\". Si es posible, codificar el elemento, utilizando, por ejemplo, RxNorm, DM+D, Terminologia Australiana de Medicamentos or FEST. La utilización de este elemento variará según el contexto de uso. Este elemento se puede omitir cuando el nombre del medicamento se registre en el arquetipo principal de tipo INSTRUCTION o ACTION, y este arquetipo únicamente se utilice para registro que la forma ha de ser o era \"líquida\"."
-          }
-        },
+        "es" : { },
         "fr" : {
           "at0132.1" : {
             "@type" : "ARCHETYPE_TERM",
@@ -11324,7 +11294,7 @@
           "at0178.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0178.1",
-            "text" : "Dose",
+            "text" : "Dosis",
             "description" : "Descripción textual de la dosis.",
             "comment" : "Por ejemplo: \"Aplicar pomada en la zona afectada hasta que brille\". Este elemento está pensado para que los implementadores puedan utilizar las estructuras para aumentar/disminuir dosis sin especificar necesariamente las dosis de forma estructurada."
           }
@@ -12344,24 +12314,17 @@
           }
         },
         "es" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Functional status screening questionnaire",
-            "description" : "Serie de preguntas y respuestas asociadas, utilizadas para investigar si se han realizado escalas o \"scores\" clínicos.",
-            "comment" : "Las respuestas pueden ser autoinformadas."
-          },
           "at0002.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0002.1",
-            "text" : "Interpretation",
+            "text" : "Interpretación",
             "description" : "Breve descripción, resumen o interpretación del resultado de la escala o \"score\" clínicos.",
             "comment" : "Por ejemplo: \"Gravedad baja\", \"Gravedad moderada\", \"Gravedad alta\""
           },
           "at0048.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0048.1",
-            "text" : "Functional status",
+            "text" : "Estado funcional",
             "description" : "Narración adicional sobre cualquier escala clínica o \"score\" o conjunto, no registrada en otros campos."
           }
         },
@@ -17311,7 +17274,14 @@
         "es-ar" : { },
         "en" : { },
         "nb" : { },
-        "es" : { },
+        "es" : {
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002.1",
+            "text" : "Cualquier evento",
+            "description" : "*Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.(en)"
+          }
+        },
         "pt-br" : { },
         "zh-cn" : { },
         "de" : { },
@@ -18109,15 +18079,7 @@
             "comment" : "Svarene kan være selvrapporterte."
           }
         },
-        "es" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Complementary test screening questionnaire",
-            "description" : "Serie de preguntas y respuestas asociadas, utilizadas para evaluar si se han realizado investigaciones diagnósticas.",
-            "comment" : "Las respuestas pueden ser autoinformadas."
-          }
-        },
+        "es" : { },
         "ca" : {
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
@@ -18503,14 +18465,7 @@
             "description" : "Informe o resum narratiu sobre un pacient, específicament des de la perspectiva d'un professional d’atenció sanitària, i amb o sense interpretacions associades."
           }
         },
-        "es" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Clinical progress",
-            "description" : "Resumen narrativo o visión general sobre un paciente, específicamente desde la perspectiva de un profesional sanitario, y con o sin interpretaciones asociadas."
-          }
-        },
+        "es" : { },
         "el" : {
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
@@ -19645,6 +19600,12 @@
         }, {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "ELEMENT",
+          "nodeId" : "at0111.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
           "occurrences" : "0..0",
           "nodeId" : "at0060.1",
           "attributes" : [ {
@@ -20032,7 +19993,15 @@
         "zh" : { },
         "zh-cn" : { },
         "ca" : { },
-        "es" : { }
+        "es" : {
+          "at0111.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0111.1",
+            "text" : "Categoría del trastorno",
+            "description" : "*A high‑level grouping of the problem or diagnosis. (en)",
+            "comment" : "*For example: 'Cancer', 'Mental health and/or addiction', 'Infectious disease', 'Rare disease'. \r\nCoding with a terminology is preferred, where possible. (en)"
+          }
+        }
       },
       "termBindings" : {
         "SNOMED-CT" : {
@@ -21021,6 +20990,12 @@
             }, {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0072.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
               "occurrences" : "0..0",
               "nodeId" : "at0065.1",
               "attributes" : [ ],
@@ -21077,6 +21052,12 @@
             }, {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0073.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
               "occurrences" : "0..0",
               "nodeId" : "at0060.1",
               "attributes" : [ ],
@@ -21111,6 +21092,12 @@
                   "attributeTuples" : [ ]
                 } ]
               } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0074.1",
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             }, {
               "@type" : "C_COMPLEX_OBJECT",
@@ -21206,7 +21193,28 @@
         "ar-sy" : { },
         "ru" : { },
         "nb" : { },
-        "es" : { },
+        "es" : {
+          "at0072.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0072.1",
+            "text" : "Propósito",
+            "description" : "*The intended outcome of the procedure. (en)",
+            "comment" : "*For example: An operation with curative intent may be planned, while during the operation it is discovered that curative treatment is not possible and the operation is carried out with a palliative intent instead. Coding of the 'Intent' with a terminology is recommended, if available. This data element allows multiple occurrences to enable the user to record multiple responses, if required. (en)"
+          },
+          "at0073.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0073.1",
+            "text" : "Fecha y hora de inicio",
+            "description" : "*The date or datetime when the entire procedure, or the first component of a multicomponent procedure, was first started. (en)",
+            "comment" : "*For example: the knife to skin time. Only for use in association with the 'Procedure performed', 'Procedure suspended', 'Procedure aborted' or 'Procedure completed' pathway steps. This may be the same as the RM 'time' attribute for the 'Procedure commenced' pathway step. (en)"
+          },
+          "at0074.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0074.1",
+            "text" : "Duración del paso de la ruta",
+            "description" : "*The duration of time between the start of the most recent pathway step for this procedure and the start of the current pathway step. (en)"
+          }
+        },
         "de" : { },
         "pt-pt" : { },
         "sv" : { },
@@ -21883,7 +21891,14 @@
               "attributeTuples" : [ ]
             } ]
           } ],
-          "attributeTuples" : [ ]
+          "attributeTuples" : [ ],
+          "attributeCustomizations" : {
+            "description" : {
+              "aliases" : {
+                "es" : "descripción"
+              }
+            }
+          }
         } ]
       }, {
         "@type" : "C_ATTRIBUTE",
@@ -22068,16 +22083,10 @@
           }
         },
         "es" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Discharge medication order",
-            "description" : "Una prescripción para un medicamento, vacuna, producto nutricional o otro producto terapéutico para un individuo específico"
-          },
           "at0070.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0070.1",
-            "text" : "Active substance",
+            "text" : "Sustancia activa",
             "description" : "*Name of the medication, vaccine or other therapeutic/prescribable item being ordered.(en)",
             "comment" : "*Depending on the prescribing context this field could be used for either generic- or product-based prescribing. This data field can be used to record tightly bound orders of different medications when they are prescribed as a single pack. It is strongly recommended that the 'Medication item' be coded with a terminology capable of triggering decision support, where possible. The extent of coding may vary from the simple name of the medication item through to structured details about the actual medication pack to be used. Free text entry should only be used if there is no appropriate terminology available.(en)"
           },
