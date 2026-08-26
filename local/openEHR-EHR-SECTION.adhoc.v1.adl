@@ -238,7 +238,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"61697dd0ba06a277b50c9a973be9e09d">
+		["MD5-CAM-1.0.1"] = <"49b15ff916b678158f471455766b40f3">
 		["build_uid"] = <"36964f0d-0251-4791-be69-ae1ccd23be77">
 		["revision"] = <"1.0.12">
 	>
@@ -339,7 +339,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"Encapçalament ad hoc">
+					text = <"Encabezado ad hoc">
 					description = <"Un encapçalament de secció genèric que s'hauria de reanomenar en una plantilla per adaptar-se a un context clínic específic.">
 				>
 			>
