@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "86.0.0",
+      "sem_ver" : "86.0.1",
       "build_uid" : "aec330a4-e535-4e67-9434-6ede586984bf",
-      "MD5-CAM-1.0.1" : "4945af83f3a7ecb3564848c08f2a37fa",
+      "MD5-CAM-1.0.1" : "9a2b5c1ecdb128119495941dd1b874fc",
       "PARENT:MD5-CAM-1.0.1" : "c28eab00a763892a287b3634e3eab523",
       "original_language" : "ISO_639-1::en"
     },
@@ -22093,9 +22093,16 @@
           "at0009.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0009.1",
-            "text" : "Posology",
+            "text" : "Posología",
             "description" : "*Complete narrative description about how the ordered item is to be used.(en)",
             "comment" : "*This narrative should normally subsume data captured in 'Dose amount', 'Dose timing' and any additional instructions for use. Where the medication dose directions are fully carried by the structured, computable dose directions, this element should carry the narrative equivalent, generally auto-generated. If it is not possible to represent the intended 'Dose direction' fully in computable form, partial representation is not recommended, and the directions should be only recorded in narrative form using this data element.(en)"
+          },
+          "at0091.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0091.1",
+            "text" : "Ruta",
+            "description" : "*The route by which the ordered item is to be administered into the subject's body.(en)",
+            "comment" : "*For example: 'oral', 'intravenous', or 'topical'.\r\nCoding of the route with a terminology is preferred, where possible. Multiple potential routes may be specified.(en)"
           }
         },
         "sk" : {
@@ -22751,17 +22758,10 @@
           }
         },
         "es" : {
-          "at0132.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0132.1",
-            "text" : "Brand name",
-            "description" : "Nombre del medicamento o componente del medicamento.",
-            "comment" : "Por ejemplo: \"Zinacef 750 mg en polvo\" o \"cefuroxima\". Si es posible, codificar el elemento, utilizando, por ejemplo, RxNorm, DM+D, Terminologia Australiana de Medicamentos or FEST. La utilización de este elemento variará según el contexto de uso. Este elemento se puede omitir cuando el nombre del medicamento se registre en el arquetipo principal de tipo INSTRUCTION o ACTION, y este arquetipo únicamente se utilice para registro que la forma ha de ser o era \"líquida\"."
-          },
           "at0152.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0152.1",
-            "text" : "Medication dose",
+            "text" : "Dosis",
             "description" : "La dosis del medicamento o del componente del medicamento, expresada en forma de proporción.",
             "comment" : "En algunos casos, como en los medicamentos líquidos o semisólidos, el denominador de la proporción de concentración es una cantidad física, por ejemplo, 2 mg/5 ml. En algunos de estos casos, el denominador también refleja el volumen real del componente: 5 ml en el ejemplo anterior. En este caso, la «Concentración (potencia)» sería 0,4 mg/ml. En otros casos, cuando la concentración incluye un denominador que no es una cantidad física, por ejemplo, 4 mg/comprimido, el denominador se expresa como un valor unitario '1' con la unidad 'comprimido'. Esta forma de representación se eligió para alinearse con el enfoque adoptado por la norma ISO IDMP para catálogos de medicamentos. Si se utiliza el elemento «Concentración (potencia)», este cluster se vuelve redundante."
           }
@@ -23629,7 +23629,7 @@
           "at0176.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0176.1",
-            "text" : "Units per intake",
+            "text" : "Unidades por toma",
             "description" : "Representación alternativa de la cantidad de medicación administrada de una sola vez.",
             "comment" : "Por ejemplo, puede utilizarse para representar un valor basado en la unidad de dosis, como \"tabletas\", cuando la cantidad de dosis se expresa como una unidad SI, como \"mg\", o cuando se requiere expresar el volumen total de una infusión, así como la cantidad de principio activo."
           }
@@ -25621,7 +25621,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Discharge magistral formula order",
+            "text" : "Pedido de fórmula magistral para el alta",
             "description" : "Una prescripción para un medicamento, vacuna, producto nutricional o otro producto terapéutico para un individuo específico"
           },
           "at0070.1" : {
@@ -25630,6 +25630,13 @@
             "text" : "Magistral formula",
             "description" : "*Name of the medication, vaccine or other therapeutic/prescribable item being ordered.(en)",
             "comment" : "*Depending on the prescribing context this field could be used for either generic- or product-based prescribing. This data field can be used to record tightly bound orders of different medications when they are prescribed as a single pack. It is strongly recommended that the 'Medication item' be coded with a terminology capable of triggering decision support, where possible. The extent of coding may vary from the simple name of the medication item through to structured details about the actual medication pack to be used. Free text entry should only be used if there is no appropriate terminology available.(en)"
+          },
+          "at0091.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0091.1",
+            "text" : "Ruta",
+            "description" : "*The route by which the ordered item is to be administered into the subject's body.(en)",
+            "comment" : "*For example: 'oral', 'intravenous', or 'topical'.\r\nCoding of the route with a terminology is preferred, where possible. Multiple potential routes may be specified.(en)"
           }
         },
         "sk" : {
@@ -26983,7 +26990,7 @@
           "at0178.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0178.1",
-            "text" : "Dose",
+            "text" : "Dosis",
             "description" : "Descripción textual de la dosis.",
             "comment" : "Por ejemplo: \"Aplicar pomada en la zona afectada hasta que brille\". Este elemento está pensado para que los implementadores puedan utilizar las estructuras para aumentar/disminuir dosis sin especificar necesariamente las dosis de forma estructurada."
           }
@@ -29113,13 +29120,13 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Vaccination order",
+            "text" : "Orden de vacunación",
             "description" : "Una prescripción para un medicamento, vacuna, producto nutricional o otro producto terapéutico para un individuo específico"
           },
           "at0070.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0070.1",
-            "text" : "Vaccination item",
+            "text" : "Elemento de vacunación",
             "description" : "*Name of the medication, vaccine or other therapeutic/prescribable item being ordered.(en)",
             "comment" : "*Depending on the prescribing context this field could be used for either generic- or product-based prescribing. This data field can be used to record tightly bound orders of different medications when they are prescribed as a single pack. It is strongly recommended that the 'Medication item' be coded with a terminology capable of triggering decision support, where possible. The extent of coding may vary from the simple name of the medication item through to structured details about the actual medication pack to be used. Free text entry should only be used if there is no appropriate terminology available.(en)"
           }
@@ -29870,7 +29877,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Action Plan",
+            "text" : "Plan de acción",
             "description" : "Una sugerencia, consejo o propuesta de gestión clínica."
           }
         },
