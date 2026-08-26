@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "86.0.1",
+      "sem_ver" : "87.0.0",
       "build_uid" : "aec330a4-e535-4e67-9434-6ede586984bf",
-      "MD5-CAM-1.0.1" : "9a2b5c1ecdb128119495941dd1b874fc",
+      "MD5-CAM-1.0.1" : "7be18fd96a0a9e1c2106358b166daaad",
       "PARENT:MD5-CAM-1.0.1" : "c28eab00a763892a287b3634e3eab523",
       "original_language" : "ISO_639-1::en"
     },
@@ -4978,7 +4978,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Clinical process data",
+            "text" : "Dades del procés clínic",
             "description" : "Una capçalera de secció genèrica que s'ha de rebatejar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
@@ -5593,13 +5593,13 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Episode details",
+            "text" : "Detalls de l'episodi",
             "description" : "Dades administratives sobre un període d’atenció als pacients ingressats entre un ingrés formal o estadístic i una alta formal o estadística, caracteritzats només per un tipus d’atenció d’un centre sanitari."
           },
           "at0006.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0006.1",
-            "text" : "Discharge reason",
+            "text" : "Motiu de l'alta",
             "description" : "Resultat per al pacient al final de l’episodi d’atenció.",
             "comment" : "Per exemple: recobrat/no recobrat/mort."
           }
@@ -6380,7 +6380,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Health conditions screening",
+            "text" : "Detecció de problemes de salut",
             "description" : "Sèrie de preguntes i respostes relacionades, utilitzades per a detectar qüestions, problemes o diagnòstics.",
             "comment" : "Les respostes poden ser autodiagnosticades."
           }
@@ -6885,7 +6885,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Neonatal history",
+            "text" : "Antecedents neonatals",
             "description" : "Sèrie de preguntes i respostes relacionades, utilitzades per a detectar qüestions, problemes o diagnòstics.",
             "comment" : "Les respostes poden ser autodiagnosticades."
           }
@@ -7390,7 +7390,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Obstetric history",
+            "text" : "Antecedents obstètrics",
             "description" : "Sèrie de preguntes i respostes relacionades, utilitzades per a detectar qüestions, problemes o diagnòstics.",
             "comment" : "Les respostes poden ser autodiagnosticades."
           }
@@ -7897,7 +7897,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Surgical history",
+            "text" : "Antecedents quirúrgics",
             "description" : "Sèries de preguntes i respostes associades utilitzades per a analitzar els procediments que s'han dut a terme en el passat.",
             "comment" : "Les respostes poden ser autoinformades."
           }
@@ -8892,21 +8892,21 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Vaccination screening questionnaire",
+            "text" : "Qüestionari de cribratge per a la vacunació",
             "description" : "Sèrie de preguntes i respostes associades utilitzades per detectar l'ús de medicaments.",
             "comment" : "Les respostes poden ser autoinformades."
           },
           "at0021.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0021.1",
-            "text" : "Vaccination name",
+            "text" : "Nom de la vacuna",
             "description" : "Nom de la medicació o agrupació de medicacions.",
             "comment" : "Per exemple: \"àcid alendrònic\", \"medicaments contra l'osteoporosi'' o \"bifosfonats\".\r\nEs prefereix la codificació del \"Nom de la medicació\" amb una terminologia, sempre que sigui possible."
           },
           "at0003.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0003.1",
-            "text" : "Administration date",
+            "text" : "Data d'administració",
             "description" : "La data i/o l'hora d'administració de la dosi més recent de la medicació o del grup de medicacions.",
             "comment" : "Pot ser una data parcial, per exemple, només un any."
           }
@@ -10056,17 +10056,19 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_CODED_TEXT",
-              "occurrences" : "0..1",
+              "occurrences" : "1..1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "defining_code",
-                "existence" : "0..1",
                 "children" : [ {
                   "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
                   "terminologyId" : {
                     "value" : "local_terms_2"
                   },
                   "constraint" : [ ],
+                  "selectedTerminologies" : [ "local_terms_2" ],
                   "includedExternalTerminologyCodes" : [ {
                     "terminologyId" : "local_terms_2",
                     "code" : "420134006",
@@ -10241,7 +10243,7 @@
           "at0007.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0007.1",
-            "text" : "Reaction type",
+            "text" : "Tipus de reacció",
             "description" : "Informació descriptiva de la reacció adversa en conjunt amb detalls de la manifestació si fos necessari."
           },
           "at0024.1" : {
@@ -11303,7 +11305,7 @@
           "at0178.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0178.1",
-            "text" : "Dose",
+            "text" : "Dosi",
             "description" : "Descripció de la dosi.",
             "comment" : "Per exemple: «Aplicar pomada a la zona afectada fins que brilli». Aquest element pretén que els implementadors puguin utilitzar les estructures per a augmentar/disminuir les dosis sense la necessitat d’especificar les dosis de manera estructurada."
           }
@@ -12339,14 +12341,14 @@
           "at0002.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0002.1",
-            "text" : "Interpretation",
+            "text" : "Interpretació",
             "description" : "Breu descripció, resum o interpretació del resultat de l'escala o \"score\" clínics.",
             "comment" : "Per exemple: \"Gravetat baixa\", \"Gravetat moderada\", \"Gravedad alta\""
           },
           "at0048.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0048.1",
-            "text" : "Functional status",
+            "text" : "Estat funcional",
             "description" : "Narració addicional sobre qualsevol escala clínica o \"score\" o grup, no registrada a altres camps."
           }
         }
@@ -12955,7 +12957,7 @@
                     }, {
                       "@type" : "C_COMPLEX_OBJECT",
                       "rmTypeName" : "CLUSTER",
-                      "nodeId" : "at0022",
+                      "nodeId" : "at0022.1",
                       "attributes" : [ {
                         "@type" : "C_ATTRIBUTE",
                         "rmAttributeName" : "items",
@@ -14526,14 +14528,14 @@
           "at0132.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0132.1",
-            "text" : "Brand name",
+            "text" : "Nom de la marca",
             "description" : "Nom del medicament o del component del medicament.",
             "comment" : "Per exemple: \"Zinacef 750 mg pols\" o \"cefuroxima\". Aquest element s'ha de codificar, si és possible, utilitzant, per exemple, RxNorm, DM+D, Australian Medicines Terminology o FEST. La utilització daquest element variarà segons el context d'ús. Aquest element es pot ometre quan el nom del medicament es registri a l'arquetip principal INSTRUCTION o ACTION, i aquest arquetip només s'utilitzi per registrar que la forma ha de ser o era \"líquida\"."
           },
           "at0152.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0152.1",
-            "text" : "Medication dose",
+            "text" : "Dosi de medicament",
             "description" : "La dosi del medicament o del component del medicament, expressada en forma de proporció.",
             "comment" : "En alguns casos, com per als medicaments líquids o semisòlids, el denominador de proporció de dosi és una quantitat física, per exemple 2 mg/5 ml. En alguns casos, el denominador també reflecteix el volum real del component: 5 ml a l'exemple anterior. En aquest cas, la \"Dosi (concentració)\" seria de 0,4 mg/ml. En altres casos, quan la dosi implica un denominador que no és una quantitat física, per exemple 4 mg/comprimit, el denominador s'expressa com un valor unitari “1” amb una unitat de “comprimit”. Aquesta disposició s'ha optat per ajustar-se a l'enfocament adoptat per la norma ISO IDMP per als catàlegs de medicaments. Si utilitzeu l'element \"Dosi (concentració)\", aquest grup és redundant."
           }
@@ -18084,7 +18086,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Complementary test screening questionnaire",
+            "text" : "Qüestionari de cribratge per a proves complementàries",
             "description" : "Sèrie de preguntes i respostes associades, utilitzades per avaluar si s'han fet investigacions diagnòstiques.",
             "comment" : "Les respostes poden ser autoinformades."
           }
@@ -18461,7 +18463,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Clinical progress",
+            "text" : "Evolució clínica",
             "description" : "Informe o resum narratiu sobre un pacient, específicament des de la perspectiva d'un professional d’atenció sanitària, i amb o sense interpretacions associades."
           }
         },
@@ -19992,7 +19994,15 @@
         "sv" : { },
         "zh" : { },
         "zh-cn" : { },
-        "ca" : { },
+        "ca" : {
+          "at0111.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0111.1",
+            "text" : "Categoria de trastorn",
+            "description" : "*A high‑level grouping of the problem or diagnosis. (en)",
+            "comment" : "*For example: 'Cancer', 'Mental health and/or addiction', 'Infectious disease', 'Rare disease'. \r\nCoding with a terminology is preferred, where possible. (en)"
+          }
+        },
         "es" : {
           "at0111.1" : {
             "@type" : "ARCHETYPE_TERM",
@@ -21218,7 +21228,28 @@
         "de" : { },
         "pt-pt" : { },
         "sv" : { },
-        "ca" : { },
+        "ca" : {
+          "at0072.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0072.1",
+            "text" : "Intenció",
+            "description" : "*The intended outcome of the procedure. (en)",
+            "comment" : "*For example: An operation with curative intent may be planned, while during the operation it is discovered that curative treatment is not possible and the operation is carried out with a palliative intent instead. Coding of the 'Intent' with a terminology is recommended, if available. This data element allows multiple occurrences to enable the user to record multiple responses, if required. (en)"
+          },
+          "at0073.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0073.1",
+            "text" : "Data i hora d'inici",
+            "description" : "*The date or datetime when the entire procedure, or the first component of a multicomponent procedure, was first started. (en)",
+            "comment" : "*For example: the knife to skin time. Only for use in association with the 'Procedure performed', 'Procedure suspended', 'Procedure aborted' or 'Procedure completed' pathway steps. This may be the same as the RM 'time' attribute for the 'Procedure commenced' pathway step. (en)"
+          },
+          "at0074.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0074.1",
+            "text" : "Durada del pas de la ruta",
+            "description" : "*The duration of time between the start of the most recent pathway step for this procedure and the start of the current pathway step. (en)"
+          }
+        },
         "zh-cn" : { }
       },
       "termBindings" : {
@@ -21895,7 +21926,8 @@
           "attributeCustomizations" : {
             "description" : {
               "aliases" : {
-                "es" : "descripción"
+                "es" : "descripción",
+                "ca" : "descripció"
               }
             }
           }
@@ -22064,13 +22096,13 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Discharge medication order",
+            "text" : "Ordre de medicació a l'alta",
             "description" : "Una ordre per una medicació, vacuna, producte nutricional o altre element terapèutic per a un individu identificat."
           },
           "at0070.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0070.1",
-            "text" : "Active substance",
+            "text" : "Substància activa",
             "description" : "Nom del medicament, vacuna, o altre producte terapèutic/prescriptible que s'ha ordenat.",
             "comment" : "Depenent del context de prescripció, aquest camp podria ser utilitzat per a la prescripció genèrica o basada en productes. Aquest camp de dades es pot utilitzar per registrar ordres estretament lligades de diferents medicaments quan es prescriguin com un únic paquet. Es recomana encaridament que el \"producte de medicació \"sigui codificat amb una terminologia capaç de provocar el suport de la decisió, sempre que sigui possible. L'extensió de la codificació pot variar des del nom senzill de l'element de medicació fins als detalls estructurats sobre el paquet de medicació que s'utilitzarà. L'entrada de text lliure només s'ha d'utilitzar si no hi ha disponible una terminologia adequada."
           },
@@ -22745,14 +22777,14 @@
           "at0132.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0132.1",
-            "text" : "Brand name",
+            "text" : "Nom de la marca",
             "description" : "Nom del medicament o del component del medicament.",
             "comment" : "Per exemple: \"Zinacef 750 mg pols\" o \"cefuroxima\". Aquest element s'ha de codificar, si és possible, utilitzant, per exemple, RxNorm, DM+D, Australian Medicines Terminology o FEST. La utilització daquest element variarà segons el context d'ús. Aquest element es pot ometre quan el nom del medicament es registri a l'arquetip principal INSTRUCTION o ACTION, i aquest arquetip només s'utilitzi per registrar que la forma ha de ser o era \"líquida\"."
           },
           "at0152.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0152.1",
-            "text" : "Medication dose",
+            "text" : "Dosi de medicament",
             "description" : "La dosi del medicament o del component del medicament, expressada en forma de proporció.",
             "comment" : "En alguns casos, com per als medicaments líquids o semisòlids, el denominador de proporció de dosi és una quantitat física, per exemple 2 mg/5 ml. En alguns casos, el denominador també reflecteix el volum real del component: 5 ml a l'exemple anterior. En aquest cas, la \"Dosi (concentració)\" seria de 0,4 mg/ml. En altres casos, quan la dosi implica un denominador que no és una quantitat física, per exemple 4 mg/comprimit, el denominador s'expressa com un valor unitari “1” amb una unitat de “comprimit”. Aquesta disposició s'ha optat per ajustar-se a l'enfocament adoptat per la norma ISO IDMP per als catàlegs de medicaments. Si utilitzeu l'element \"Dosi (concentració)\", aquest grup és redundant."
           }
@@ -23638,7 +23670,7 @@
           "at0176.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0176.1",
-            "text" : "Units per intake",
+            "text" : "Unitats per ingesta",
             "description" : "Representació alternativa de la quantitat de medicació administrada al mateix temps.",
             "comment" : "Per exemple: es pot utilitzar per a representar un valor basat en la unitat de dosi, com «comprimits», quan la quantitat de dosi s’expressa com una unitat del SI (Sistema Internacional), com «mg», o quan s’ha d’expressar el volum total d’una infusió, així com la quantitat del principi actiu."
           }
@@ -24902,7 +24934,7 @@
           "at0002.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0002.1",
-            "text" : "Frequency",
+            "text" : "Freqüència",
             "description" : "*The interval between repetitions of the activity. (en)",
             "comment" : "*For example: 'Every 3 weeks'. If necessary, this element can be used to explicity specify that an activity is to take place every single day, by setting it to \"1 day\". (en)"
           }
@@ -25482,7 +25514,14 @@
               "attributeTuples" : [ ]
             } ]
           } ],
-          "attributeTuples" : [ ]
+          "attributeTuples" : [ ],
+          "attributeCustomizations" : {
+            "description" : {
+              "aliases" : {
+                "ca" : "descripció"
+              }
+            }
+          }
         } ]
       }, {
         "@type" : "C_ATTRIBUTE",
@@ -25606,13 +25645,13 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Discharge magistral formula order",
+            "text" : "Ordre de fórmula magistral per a l'alta",
             "description" : "Una ordre per una medicació, vacuna, producte nutricional o altre element terapèutic per a un individu identificat."
           },
           "at0070.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0070.1",
-            "text" : "Magistral formula",
+            "text" : "Fórmula magistral",
             "description" : "Nom del medicament, vacuna, o altre producte terapèutic/prescriptible que s'ha ordenat.",
             "comment" : "Depenent del context de prescripció, aquest camp podria ser utilitzat per a la prescripció genèrica o basada en productes. Aquest camp de dades es pot utilitzar per registrar ordres estretament lligades de diferents medicaments quan es prescriguin com un únic paquet. Es recomana encaridament que el \"producte de medicació \"sigui codificat amb una terminologia capaç de provocar el suport de la decisió, sempre que sigui possible. L'extensió de la codificació pot variar des del nom senzill de l'element de medicació fins als detalls estructurats sobre el paquet de medicació que s'utilitzarà. L'entrada de text lliure només s'ha d'utilitzar si no hi ha disponible una terminologia adequada."
           }
