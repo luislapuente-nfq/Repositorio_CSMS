@@ -6,6 +6,18 @@ concept
 
 language
 	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			author = <
+			>
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			author = <
+			>
+		>
+	>
 
 description
 	original_author = <
@@ -16,6 +28,14 @@ description
 		["en"] = <
 			language = <[ISO_639-1::en]>
 		>
+		["ca"] = <
+			language = <[ISO_639-1::ca]>
+			copyright = <"© openEHR Foundation">
+		>
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -23,7 +43,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"c7fac442d986b971fe5be08fa35984ef">
+		["MD5-CAM-1.0.1"] = <"28c70c7585d4fb4ebd9b80c7e85bc86c">
 		["build_uid"] = <"7afc5d37-4490-3786-ac7c-189af50761bc">
 	>
 
@@ -48,6 +68,30 @@ ontology
 				>
 				["at0001"] = <
 					text = <"Withdrawal percentage from CatSalut pharmacies">
+					description = <"">
+				>
+			>
+		>
+		["ca"] = <
+			items = <
+				["at0000"] = <
+					text = <"Percentatge de retirada de farmàcies del CatSalut">
+					description = <"*Pharmacy withdrawal percentage (en)">
+				>
+				["at0001"] = <
+					text = <"Percentatge de retirada de farmàcies del CatSalut a dia d'avui">
+					description = <"">
+				>
+			>
+		>
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Porcentaje de retirada de farmacias de CatSalut">
+					description = <"*Pharmacy withdrawal percentage (en)">
+				>
+				["at0001"] = <
+					text = <"Porcentaje de retirada de farmacias de CatSalut a día de hoy">
 					description = <"">
 				>
 			>
