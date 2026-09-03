@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "3.0.0",
+      "sem_ver" : "4.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "1f0ec3cdc1d25e3b4950739d5a3ce318",
+      "MD5-CAM-1.0.1" : "70cb3b3035cf1962514894489e60e15c",
       "PARENT:MD5-CAM-1.0.1" : "6e742ff80729a9065eb7370332b330e0"
     },
     "details" : {
@@ -574,7 +574,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "General diagnosis",
+            "text" : "Health problems",
             "description" : "A generic section header which should be renamed in a template to suit a specific clinical context."
           }
         },
@@ -591,7 +591,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Diagnòstic general",
+            "text" : "Problemes de salut",
             "description" : "Una capçalera de secció genèrica que s'ha de rebatejar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
@@ -599,7 +599,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Diagnóstico general",
+            "text" : "Problemas de salud",
             "description" : "Un encapçalament de secció genèric que s'hauria de reanomenar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
