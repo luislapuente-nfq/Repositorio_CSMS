@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "21.1.0",
+      "sem_ver" : "21.1.1",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "eaf262111f8671fee5a6358b127edeac",
+      "MD5-CAM-1.0.1" : "7f2b66d2296fdba1393c11187a46ab7a",
       "original_language" : "ISO_639-1::en",
       "PARENT:MD5-CAM-1.0.1" : "6e742ff80729a9065eb7370332b330e0"
     },
@@ -349,7 +349,14 @@
           "description" : "Ένας επίμονος και διαχειριζόμενος κατάλογος οποιουδήποτε συνδυασμού διαγνώσεων, προβλημάτων ή / και διαδικασιών που μπορεί να επηρεάσουν τη λήψη κλινικών αποφάσεων και την παροχή φροντίδας για το υποκείμενο της φροντίδας."
         }
       },
-      "ca" : { }
+      "ca" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "HC3 Diagnosis list",
+          "description" : "*A persistent and managed list of any combination of diagnoses, problems and/or procedures that may influence clinical decision-making and care provision for the subject of care. (en)"
+        }
+      }
     },
     "termBindings" : { },
     "terminologyExtracts" : { },
@@ -618,7 +625,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "129db36b90bd377b7813291026fe9114"
+        "PARENT:MD5-CAM-1.0.1" : "e41de8cecdf4fdf37648258050170c3a"
       },
       "details" : {
         "de" : {
@@ -686,6 +693,19 @@
               "value" : "ISO_639-1"
             },
             "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
           },
           "keywords" : [ ],
           "copyright" : "© openEHR Foundation",
@@ -766,7 +786,8 @@
             "description" : "*Framework for consistent modelling of content within a template for a Problem list. (en)",
             "comment" : "*Intended to be used within the COMPOSITION.problem_list. (en)"
           }
-        }
+        },
+        "es" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -835,6 +856,16 @@
           "value" : "ISO_639-1"
         },
         "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
       },
       "author" : { },
       "otherDetails" : { }
@@ -2057,7 +2088,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "afa110d454f6f76a226e5ab816e0dd5b"
+        "PARENT:MD5-CAM-1.0.1" : "c38e846bb94864d9ee0d5076e0497ef7"
       },
       "details" : {
         "ru" : {
@@ -2112,6 +2143,19 @@
               "value" : "ISO_639-1"
             },
             "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
           },
           "keywords" : [ ],
           "copyright" : "© openEHR Foundation",
@@ -2174,7 +2218,8 @@
             "description" : "*Framework for consistent modelling of content within a template for an Adverse reaction list. (en)"
           }
         },
-        "ca" : { }
+        "ca" : { },
+        "es" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -2229,6 +2274,16 @@
           "value" : "ISO_639-1"
         },
         "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
       },
       "author" : { },
       "otherDetails" : { }
@@ -3012,7 +3067,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "129db36b90bd377b7813291026fe9114"
+        "PARENT:MD5-CAM-1.0.1" : "e41de8cecdf4fdf37648258050170c3a"
       },
       "details" : {
         "de" : {
@@ -3080,6 +3135,19 @@
               "value" : "ISO_639-1"
             },
             "codeString" : "ca"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
           },
           "keywords" : [ ],
           "copyright" : "© openEHR Foundation",
@@ -3160,7 +3228,8 @@
             "description" : "*Framework for consistent modelling of content within a template for a Problem list. (en)",
             "comment" : "*Intended to be used within the COMPOSITION.problem_list. (en)"
           }
-        }
+        },
+        "es" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -3229,6 +3298,16 @@
           "value" : "ISO_639-1"
         },
         "codeString" : "ca"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
       },
       "author" : { },
       "otherDetails" : { }
