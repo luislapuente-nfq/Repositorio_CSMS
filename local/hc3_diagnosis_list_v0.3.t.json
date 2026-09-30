@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "21.1.1",
+      "sem_ver" : "21.1.2",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "7f2b66d2296fdba1393c11187a46ab7a",
+      "MD5-CAM-1.0.1" : "23fec8e3fcc48ebf02b31ce90b70344c",
       "original_language" : "ISO_639-1::en",
       "PARENT:MD5-CAM-1.0.1" : "6e742ff80729a9065eb7370332b330e0"
     },
@@ -1308,38 +1308,10 @@
       "conceptCode" : "at0000",
       "termDefinitions" : {
         "es" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Diagnosis",
-            "description" : "Detalles sobre una única condición de salud, lesión, discapacidad o cualquier otro problema identificado que afecte al bienestar físico, mental y/o social de un individuo.",
-            "comment" : "En la práctica, no es fácil distinguir claramente entre el alcance de un problema y el de un diagnóstico. A efectos de la documentación clínica con este arquetipo, el problema y el diagnóstico se consideran un continuo, con niveles crecientes de detalle y evidencia de apoyo que generalmente aportan peso a la etiqueta de \"diagnóstico\"."
-          },
-          "at0002.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0002.1",
-            "text" : "Diagnosis name",
-            "description" : "Identificación del problema o diagnóstico, por nombre.",
-            "comment" : "Siempre que sea posible, es preferible codificar el nombre del problema o diagnóstico con una terminología."
-          },
-          "at0003.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0003.1",
-            "text" : "Diagnosis Starting Date",
-            "description" : "Fecha/hora estimada o real en que un profesional sanitario reconoció el diagnóstico o el problema.",
-            "comment" : "Se aceptan fechas parciales. Si el sujeto atendido es menor de un año, entonces es necesaria la fecha completa o un mínimo del mes y año para permitir cálculos de edad precisos, por ejemplo, si se utiliza para impulsar el apoyo a la toma de decisiones. Los datos registrados/importados, como \"Edad en el momento del reconocimiento clínico\", deben convertirse a una fecha utilizando la fecha de nacimiento del sujeto."
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005.1",
-            "text" : "Diagnosis Relevance",
-            "description" : "Evaluación de la gravedad global del problema o diagnóstico.",
-            "comment" : "Si la gravedad está incluida dentro del nombre del problema/diagnóstico mediante códigos precoordinados, este elemento de datos se vuelve redundante. Nota: Se puede registrar una clasificación de gravedad más específica utilizando el SLOT de detalles específicos."
-          },
           "at0030.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0030.1",
-            "text" : "Diagnosis Ending Date",
+            "text" : "Fecha/Hora de Resolución",
             "description" : "Fecha/hora estimada o real de resolución o remisión de este problema o diagnóstico, determinada por un profesional sanitario.",
             "comment" : "Se aceptan fechas parciales. Si el sujeto atendido es menor de un año, entonces es necesaria la fecha completa o un mínimo del mes y año para permitir cálculos de edad precisos, por ejemplo, si se utiliza para impulsar el apoyo a la toma de decisiones. Los datos registrados/importados como \"Edad en el momento de la resolución\" deben convertirse a una fecha utilizando la fecha de nacimiento del sujeto."
           }
@@ -2908,14 +2880,14 @@
           "at0002.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0002.1",
-            "text" : "Allergy name",
+            "text" : "Alergia",
             "description" : "Identificación de una sustancia, o categoría de sustancias, que se considera que pone al paciente en riesgo de evento de reacción adversa.",
             "comment" : "La sustancia personal, así como el tipo de sustancia, son entradas válidas en \"Sustancia\". Una sustancia puede ser un compuesto de sustancias más puras, por ejemplo, un medicamento. Se recomienda encarecidamente que \"Sustancia\" se encuentre codificada con una terminología capaz de activar la ayuda a la toma de decisiones, en la medida de lo posible. Por ejemplo, SNOMED CT, DM+D, RxNorm, NDFRT, ATC, Listado Universal de Medicinas de Nueva Zelanda o Terminologia de Medicinas de Australia. La entrada de texto libre solamente se ha de utilizar si no se dispone de una terminología adecuada."
           },
           "at0133.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0133.1",
-            "text" : "Allergy starting date",
+            "text" : "Fecha de inicio de la alergia",
             "description" : "La aparición del primer incidente conocido como un evento de reacción.",
             "comment" : "Por ejemplo: la fecha u hora actual de la aparición; el intervalo de tiempo durante el cual la aparición se inició; la edad de la persona cuando la aparición se inició; o la duración de tiempo desde que la aparición se inició. Una fecha parcial es válida, utilizando el tipo de dato DV_DATE_TIME para registrar únicamente un año."
           }
@@ -4453,26 +4425,26 @@
           }
         },
         "es" : {
-          "at0002.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0002.1",
-            "text" : "Procedure Name",
-            "description" : "Identificación del procedimiento por su nombre.",
-            "comment" : "*Coding of the 'Procedure name' with a terminology is recommended, if available. (en)"
-          },
           "at0066.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0066.1",
-            "text" : "Procedure Starting Date",
+            "text" : "Fecha planificada del procedimiento",
             "description" : "*The date or datetime on which the procedure is intended to be performed. (en)",
             "comment" : "Sólo para su uso en asociación con la etapa \"Procedimiento programado\"."
           },
           "at0060.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0060.1",
-            "text" : "Procedure Ending Date",
+            "text" : "Fecha de fin del procedimiento",
             "description" : "*The date or datetime when the entire procedure, or the last component of a multicomponent procedure, was finished. (en)",
             "comment" : "Sólo para su uso en asociación con la etapa \"Procedimiento realizado\", y en situaciones en las que el procedimiento se repite en varias ocasiones antes de completarse, o hay varios componentes en todo el procedimiento. Puede ser el mismo que el atributo de tiempo RM de la etapa \"Procedimiento completado\"."
+          },
+          "at0073.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0073.1",
+            "text" : "Fecha de inicio del procedimiento",
+            "description" : "*The date or datetime when the entire procedure, or the first component of a multicomponent procedure, was first started. (en)",
+            "comment" : "*For example: the knife to skin time. Only for use in association with the 'Procedure performed', 'Procedure suspended', 'Procedure aborted' or 'Procedure completed' pathway steps. This may be the same as the RM 'time' attribute for the 'Procedure commenced' pathway step. (en)"
           }
         },
         "de" : {
