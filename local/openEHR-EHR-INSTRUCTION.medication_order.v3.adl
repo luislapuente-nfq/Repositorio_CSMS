@@ -572,7 +572,7 @@ Standards for medication and medical device records – technical annex [Interne
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"07222CF9D1D4B1180BCF7C0F9B16D502">
+		["MD5-CAM-1.0.1"] = <"5a9143998b51d5e75905018d54284c97">
 		["build_uid"] = <"8de91e4b-9439-4984-a9ba-feca86157628">
 		["revision"] = <"3.2.1">
 	>
@@ -3035,7 +3035,7 @@ The goal or target dose might be recorded here or more commonly as part of a lin
 					comment = <"*For example: 'Adjusted for amputation'.(en)">
 				>
 				["at0177"] = <
-					text = <"*Structured dose and timing directions(en)">
+					text = <"Instrucciones estructuradas sobre la dosis y el horario de administración">
 					description = <"*Details of structured dose and timing directions.(en)">
 					comment = <"*This SLOT has been designed to be used with the CLUSTER.therapeutic_direction archetype to enable recording of a complex set of dosage and timing directions. While it's possible to use other CLUSTER archetypes within this SLOT, it's strongly advised to do so only when predictable queryability is not a priority.(en)">
 				>
