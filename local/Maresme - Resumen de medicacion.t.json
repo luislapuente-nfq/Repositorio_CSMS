@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "12.2.0",
+      "sem_ver" : "13.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "86abd5651bd75633e784d9ae9c317265",
+      "MD5-CAM-1.0.1" : "043c5ec783e39f3ef9b5c6103060a8bf",
       "PARENT:MD5-CAM-1.0.1" : "cfa9058dbd794ff9c1686358f319df3c"
     },
     "details" : {
@@ -4520,7 +4520,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Medicació durant l'hospitalització",
+            "text" : "medicació durant l’ingrés",
             "description" : "Una capçalera de secció genèrica que s'ha de rebatejar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
@@ -8907,7 +8907,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Medication at admission",
+            "text" : "Pre-admission medication",
             "description" : "A generic section header which should be renamed in a template to suit a specific clinical context."
           }
         },
@@ -8924,7 +8924,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Medicació a l'ingrés",
+            "text" : "medicació preingrés",
             "description" : "Una capçalera de secció genèrica que s'ha de rebatejar en una plantilla per adaptar-se a un context clínic específic."
           }
         },
@@ -13303,7 +13303,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Medication at discharge",
+            "text" : "Post-discharge medication",
             "description" : "A generic section header which should be renamed in a template to suit a specific clinical context."
           }
         },
